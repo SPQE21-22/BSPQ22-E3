@@ -4,6 +4,6 @@ module com.example.recipeapp {
 
     requires org.controlsfx.controls;
 
-    opens com.example.recipeapp to javafx.fxml;
-    exports com.example.recipeapp;
+    opens ApplicationPackage to javafx.fxml;
+    exports ApplicationPackage;
 }
