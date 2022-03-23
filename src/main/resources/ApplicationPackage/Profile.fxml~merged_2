@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+<<<<<<< HEAD
+<<<<<<< HEAD:src/main/resources/ApplicationPackage/Profile.fxml
+            fx:controller="ControllerPackage.ProfileController"
+=======
+            fx:controller="ControllerPackage.CreateAccountController"
+>>>>>>> 7904adc (Reformatted Packages & Made Application Working):src/main/resources/ApplicationPackage/CreateAccount.fxml
+=======
+            fx:controller="ControllerPackage.ProfileController"
+>>>>>>> 7904adc (Reformatted Packages & Made Application Working)
+            prefHeight="400.0" prefWidth="600.0">
+
+</AnchorPane>
