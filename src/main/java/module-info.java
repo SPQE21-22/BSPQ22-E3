@@ -3,6 +3,7 @@ module com.example.recipeapp {
     requires javafx.fxml;
 
     requires org.controlsfx.controls;
+    requires org.mongodb.driver.sync.client;
 
 
     opens ApplicationPackage to javafx.fxml;

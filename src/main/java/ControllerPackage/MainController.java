@@ -1,5 +1,10 @@
 package ControllerPackage;
 
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -14,8 +19,11 @@ public class MainController {
         instructionsText.setText("Log In is not set-up yet");
     }
 
+    MongoClient client = MongoClients.create("mongodb+srv://group3:group3@cluster0.zr68o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+    MongoDatabase db = client.getDatabase("appDB");
+    //MongoCollection col = db.getCollection("Collection1");
 
-    ConnectionString connectionString = new ConnectionString("mongodb+srv://group3:<group3>@cluster0.zr68o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+    /*ConnectionString connectionString = new ConnectionString("mongodb+srv://group3:<group3>@cluster0.zr68o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
     MongoClientSettings settings = MongoClientSettings.builder()
             .applyConnectionString(connectionString)
             .serverApi(ServerApi.builder()
@@ -23,7 +31,7 @@ public class MainController {
                     .build())
             .build();
     MongoClient mongoClient = MongoClients.create(settings);
-    MongoDatabase database = mongoClient.getDatabase("test");
+    MongoDatabase database = mongoClient.getDatabase("test");*/
 
 
 
