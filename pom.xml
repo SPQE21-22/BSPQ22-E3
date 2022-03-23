@@ -23,11 +23,7 @@
             <artifactId>mongo-java-driver</artifactId>
             <version>3.4.2</version>
         </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-driver-sync</artifactId>
-            <version>4.0.5</version>
-        </dependency>
+
 
 
         <dependency>
