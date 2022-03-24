@@ -42,15 +42,11 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <SplitPane prefHeight="62.0" prefWidth="215.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="33.0" prefWidth="98.0">
-               <children>
-                  <Button layoutX="59.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Register" textFill="#641e7e" />
-                  <Button layoutX="176.0" layoutY="2.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="88.0" text="Login" textFill="#742680" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="45.0" prefWidth="315.0">
+         <children>
+            <Button layoutX="59.0" layoutY="2.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="76.0" text="Register" textFill="#641e7e" />
+            <Button layoutX="176.0" layoutY="2.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="88.0" text="Login" textFill="#742680" />
+         </children>
+      </AnchorPane>
    </children>
 </VBox>
