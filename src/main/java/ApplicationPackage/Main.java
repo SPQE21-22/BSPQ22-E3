@@ -1,5 +1,7 @@
 package ApplicationPackage;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.Block;
 import com.mongodb.client.*;
 import com.mongodb.ConnectionString;
 import javafx.application.Application;
@@ -10,6 +12,7 @@ import org.bson.Document;
 //import org.bson.Document;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 
 public class Main extends Application {
     @Override
@@ -26,7 +29,11 @@ public class Main extends Application {
         MongoCollection col = db.getCollection("Collection1");
         System.out.println(col.getNamespace());
 
+        BasicDBObject regexQuery = new BasicDBObject();
 
+        FindIterable<Document> cursor = col.find(regexQuery);
+        //MongoCursor<Document> iterator = cursor.iterator();   // THIS IS WHAT IS NOT WORKING. THE ITERATOR
+        cursor.forEach((Consumer<? super Document>) System.out::println);
         //System.out.println(cursor);
 
 
