@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="268.0" prefWidth="357.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="ControllerPackage.MainController">
+<VBox alignment="CENTER" prefHeight="268.0" prefWidth="357.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -36,8 +36,8 @@
                <children>
                   <TextField layoutX="99.0" layoutY="18.0" />
                   <TextField layoutX="99.0" layoutY="45.0" />
-                  <Label layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="103.0" text="Usuario:" />
-                  <Label layoutX="27.0" layoutY="49.0" text="Contraseña:" />
+                  <Label layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="103.0" text="User:" />
+                  <Label layoutX="27.0" layoutY="49.0" text="Password:" />
                </children>
             </AnchorPane>
         </items>
