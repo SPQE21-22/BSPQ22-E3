@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="268.0" prefWidth="357.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.MainController">
+<VBox alignment="CENTER" prefHeight="284.0" prefWidth="355.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.MainController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -20,7 +20,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="84.0" prefWidth="198.0">
                <children>
-                  <ImageView fitHeight="77.0" fitWidth="267.0" focusTraversable="true" layoutX="158.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="77.0" fitWidth="152.0" focusTraversable="true" layoutX="158.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../Desktop/Logo1.PNG" />
                      </image>
@@ -44,8 +44,8 @@
       </SplitPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="45.0" prefWidth="315.0">
          <children>
-            <Button layoutX="39.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="76.0" text="Register" textFill="#641e7e" />
-            <Button layoutX="159.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="88.0" text="Login" textFill="#742680" />
+            <Button layoutX="63.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Register" textFill="#641e7e" />
+            <Button layoutX="184.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="88.0" text="Login" textFill="#742680" />
          </children>
       </AnchorPane>
    </children>

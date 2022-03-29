@@ -11,11 +11,11 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("register.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
 
-        int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
-        int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
-        Scene scene = new Scene(fxmlLoader.load(), screenWidth-750,screenHeight-430);
+        //int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
+        //int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
+        Scene scene = new Scene(fxmlLoader.load(), 355,284);
         stage.setTitle("Welcome to the DeustoFood Recipe App!");
         stage.setScene(scene);
         stage.show();
