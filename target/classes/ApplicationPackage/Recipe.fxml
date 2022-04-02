@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="ControllerPackage.RecipeController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="465.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.RecipeController">
+   <children>
+      <Pane layoutX="12.0" layoutY="45.0" prefHeight="140.0" prefWidth="433.0">
+         <children>
+            <Label layoutX="34.0" layoutY="56.0" text="RECIPE NAME" textFill="#641880">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="236.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane layoutX="5.0" layoutY="183.0" prefHeight="188.0" prefWidth="446.0">
+         <children>
+            <Hyperlink layoutX="93.0" layoutY="120.0" text="Hyperlink" />
+            <Label layoutX="42.0" layoutY="14.0" text="INGREDIENTS:" textFill="#68266d">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="33.0" text="CUISINE:" textFill="#68266d">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button layoutX="393.0" layoutY="144.0" mnemonicParsing="false" text="Back" textFill="#641880" />
+            <Button layoutX="329.0" layoutY="144.0" mnemonicParsing="false" text="Save" textFill="#641880" />
+            <Label layoutX="41.0" layoutY="55.0" text="DIET:" textFill="#68266d">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="78.0" text="RATE:" textFill="#68266d">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="101.0" text="TIME TO COOK:" textFill="#68266d">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="124.0" text="RECIPE:" textFill="#68266d">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
