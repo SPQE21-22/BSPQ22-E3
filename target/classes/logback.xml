@@ -1,5 +1,7 @@
 <configuration>
+    <!--    Disable Status Startup for Logger: -->
     <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+    <!--    Logger appender for CONSOLE: -->
     <appender name="CONSOLE" level="error" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
@@ -8,6 +10,7 @@
         </layout>
     </appender>
 
+    <!--  Logger "Flavor" + Display Level  -->
     <logger name="org.mongodb.driver" level="error" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
