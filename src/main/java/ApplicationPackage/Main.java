@@ -15,9 +15,9 @@ public class Main extends Application {
     public static MyConnector connector;
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 465,460);
-        stage.setTitle("Welcome to the Recipe App!");
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.setTitle("Welcome to Deusto Foods!");
         stage.setScene(scene);
         stage.show();
     }

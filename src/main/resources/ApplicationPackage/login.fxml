@@ -22,7 +22,7 @@
                <children>
                   <ImageView fitHeight="77.0" fitWidth="152.0" focusTraversable="true" layoutX="158.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../Desktop/Logo1.PNG" />
+                        <Image url="@../Images/Logo1.PNG" />
                      </image>
                   </ImageView>
                   <Label alignment="CENTER" layoutX="25.0" layoutY="22.0" prefHeight="42.0" prefWidth="97.0" text="Welcome to" textFill="#66228f">
