@@ -12,44 +12,33 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.8.2</junit.version>
-        <kotlin.version>1.6.20-RC</kotlin.version>
+        <maven-compiler-plugin.source>8</maven-compiler-plugin.source>
+        <maven-compiler-plugin.target>8</maven-compiler-plugin.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mongodb-driver-sync.version>4.2.3</mongodb-driver-sync.version>
+        <mongodb-crypt.version>1.2.0</mongodb-crypt.version>
+        <logback-classic.version>1.2.3</logback-classic.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     </properties>
 
 
     <dependencies>
-       <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
-        <!-- <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
-            <version>3.4.2</version>
-        </dependency> -->
 
-        <!-- https://mvnrepository.com/artifact/com.mongodb/mongo -->
-        <!--
-        <dependency>
-            <groupId>com.mongodb</groupId>
-            <artifactId>mongo</artifactId>
-            <version>1.0</version>
-        </dependency> -->
-        <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
-        <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>4.5.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-core -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-core</artifactId>
-            <version>4.5.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mongodb/bson -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>bson</artifactId>
-            <version>4.5.0</version>
-        </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongodb-driver-sync</artifactId>
+                <version>${mongodb-driver-sync.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongodb-crypt</artifactId>
+                <version>${mongodb-crypt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback-classic.version}</version>
+            </dependency>
 
         <dependency>
             <groupId>org.openjfx</groupId>
