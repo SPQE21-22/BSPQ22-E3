@@ -38,14 +38,15 @@
                   <TextField layoutX="99.0" layoutY="45.0" />
                   <Label layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="103.0" text="User:" />
                   <Label layoutX="27.0" layoutY="49.0" text="Password:" />
+                  <Label fx:id="verification_label" layoutX="27.0" layoutY="68.0" prefHeight="25.0" prefWidth="274.0" />
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="45.0" prefWidth="315.0">
          <children>
-            <Button layoutX="63.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Register" textFill="#641e7e" />
-            <Button layoutX="184.0" layoutY="-10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="88.0" text="Login" textFill="#742680" />
+            <Button fx:id="register_button" layoutX="63.0" layoutY="-10.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="35.0" prefWidth="76.0" text="Register" textFill="#641e7e" />
+            <Button fx:id="login_button" layoutX="184.0" layoutY="-10.0" mnemonicParsing="false" onAction="#onLogInButtonClick" prefHeight="35.0" prefWidth="88.0" text="Login" textFill="#742680" />
          </children>
       </AnchorPane>
    </children>

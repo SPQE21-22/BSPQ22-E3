@@ -12,13 +12,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.RegisterController">
    <children>
-      <SplitPane layoutX="85.0" layoutY="36.0" orientation="VERTICAL" prefHeight="307.0" prefWidth="361.0">
+      <SplitPane orientation="VERTICAL">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="359.0">
+          <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
                <children>
                   <Label layoutX="14.0" layoutY="38.0" prefHeight="20.0" prefWidth="149.0" text="Personal information:" textFill="#68266d">
                      <font>
@@ -26,25 +24,24 @@
                      </font>
                   </Label>
                   <Label layoutX="14.0" layoutY="84.0" text="Name:" />
-                  <Label layoutX="173.0" layoutY="173.0" text="Date of birth:" />
-                  <Label layoutX="16.0" layoutY="173.0" text="Email:" />
-                  <Label layoutX="180.0" layoutY="84.0" text="Username:" />
-                  <Label layoutX="181.0" layoutY="132.0" text="Password:" />
-                  <DatePicker layoutX="254.0" layoutY="161.0" prefHeight="25.0" prefWidth="77.0" />
-                  <TextField layoutX="61.0" layoutY="169.0" prefHeight="25.0" prefWidth="98.0" />
-                  <TextField layoutX="54.0" layoutY="80.0" prefHeight="25.0" prefWidth="113.0" />
-                  <TextField layoutX="244.0" layoutY="80.0" prefHeight="25.0" prefWidth="104.0" />
-                  <PasswordField layoutX="239.0" layoutY="128.0" prefHeight="25.0" prefWidth="113.0" />
-                  <TextField layoutX="73.0" layoutY="128.0" prefHeight="25.0" prefWidth="88.0" />
+                  <Label layoutX="14.0" layoutY="178.0" text="Date of birth:" />
+                  <Label layoutX="224.0" layoutY="84.0" text="Username:" />
+                  <Label layoutX="226.0" layoutY="132.0" text="Password:" />
+                  <DatePicker layoutX="96.0" layoutY="174.0" prefHeight="25.0" prefWidth="113.0" />
+                  <TextField layoutX="54.0" layoutY="80.0" prefHeight="25.0" prefWidth="149.0" />
+                  <TextField layoutX="288.0" layoutY="80.0" prefHeight="25.0" prefWidth="149.0" />
+                  <PasswordField layoutX="288.0" layoutY="128.0" prefHeight="25.0" prefWidth="149.0" />
+                  <TextField layoutX="73.0" layoutY="128.0" prefHeight="25.0" prefWidth="138.0" />
                   <Label layoutX="14.0" layoutY="132.0" prefHeight="17.0" prefWidth="56.0" text="Surname:" />
-                  <Button layoutX="102.0" layoutY="213.0" mnemonicParsing="false" text="Submit" textFill="#64186e" />
-                  <Button layoutX="207.0" layoutY="213.0" mnemonicParsing="false" text="Back" textFill="#641880" />
+                  <Button fx:id="registerButton" layoutX="356.0" layoutY="308.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="25.0" prefWidth="98.0" text="Register" textFill="#64186e" />
+                  <Button layoutX="5.0" layoutY="308.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Back" textFill="#641880" />
                   <ImageView fitHeight="47.0" fitWidth="124.0" layoutX="192.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="59.0" fitWidth="70.0" layoutX="248.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="59.0" fitWidth="70.0" layoutX="388.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Logo3.PNG" />
                      </image>
                   </ImageView>
+                  <Label layoutX="12.0" layoutY="218.0" prefHeight="17.0" prefWidth="200.0" />
                </children>
             </AnchorPane>
         </items>
