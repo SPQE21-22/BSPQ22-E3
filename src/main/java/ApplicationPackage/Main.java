@@ -49,13 +49,10 @@ public class Main extends Application {
             }
         }, viewModel.currentViewProperty()));
 
-        System.out.println(viewModel.getCurrentView().toString());
+        //System.out.println(viewModel.getCurrentView().toString());
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-
-
-
 
     }
 
