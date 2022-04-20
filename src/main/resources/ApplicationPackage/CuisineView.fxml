@@ -29,7 +29,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="202.0" prefWidth="576.0">
                <children>
-                  <Line endX="23.0" endY="112.0" layoutX="265.0" layoutY="63.0" startX="23.0" startY="-54.0" />
+                  <Line endX="23.0" endY="56.0" layoutX="265.0" layoutY="63.0" startX="23.0" startY="-34.0" />
                   <Button layoutX="56.0" layoutY="14.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="222.0" text="ITALY" textFill="#921278">
                      <graphic>
                         <ImageView fitHeight="43.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
@@ -57,18 +57,17 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="302.0" layoutY="74.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="222.0" />
-                  <Button layoutX="56.0" layoutY="131.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="222.0">
-                     <graphic>
-                        <ImageView fitHeight="39.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                  </Button>
-                  <Button layoutX="302.0" layoutY="131.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="222.0">
-                     <graphic>
-                        <ImageView fitHeight="35.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                  </Button>
-                  <ImageView fitHeight="34.0" fitWidth="123.0" layoutX="317.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="302.0" layoutY="74.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="222.0" text="                         JAPAN" textFill="#7a0c73" />
+                  <Button layoutX="167.0" layoutY="136.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="222.0" text="                 AMERICA" textFill="#9f1083" />
+                  <ImageView fitHeight="44.0" fitWidth="64.0" layoutX="363.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/japan.jpg" />
+                     </image></ImageView>
+                  <ImageView fitHeight="33.0" fitWidth="192.0" layoutX="219.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/america.jpg" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
         </items>
