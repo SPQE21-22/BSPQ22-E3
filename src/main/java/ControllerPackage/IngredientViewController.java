@@ -1,2 +1,4 @@
-package ControllerPackage;public class IngredientViewController {
+package ControllerPackage;
+
+public class IngredientViewController {
 }

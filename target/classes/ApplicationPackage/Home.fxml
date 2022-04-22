@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.HomeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ApplicationPackage.Home">
    <children>
       <SplitPane dividerPositions="0.4" layoutX="10.0" layoutY="10.0" orientation="VERTICAL" prefHeight="375.0" prefWidth="579.0">
          <items>
@@ -30,7 +30,7 @@
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="95.0" prefWidth="157.0">
                <children>
                   <Button fx:id="register_button" layoutX="378.0" layoutY="21.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="35.0" prefWidth="76.0" text="Registro" textFill="#641e7e" />
-                  <Button fx:id="login_button" layoutX="478.0" layoutY="21.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="35.0" prefWidth="76.0" text="Login" textFill="#641e7e" />
+                  <Button fx:id="login_button" layoutX="478.0" layoutY="21.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="35.0" prefWidth="76.0" text="Login" textFill="#641e7e" />
                   <Label layoutX="85.0" layoutY="111.0" text="Búsqueda: " textFill="#66228f" />
                   <TextField layoutX="157.0" layoutY="107.0" prefHeight="26.0" prefWidth="264.0" />
                   <Button layoutX="443.0" layoutY="102.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="41.0">
@@ -42,7 +42,6 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="salir_button" layoutX="251.0" layoutY="154.0" mnemonicParsing="false" onAction="#onSalirButtonClick" prefHeight="35.0" prefWidth="76.0" text="Salir" textFill="#641e7e" />
                </children>
             </AnchorPane>
          </items>
