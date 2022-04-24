@@ -19,23 +19,24 @@ public class Main extends Application {
     public static MyConnector connector;
     @Override
     public void start(Stage stage) throws IOException {
-        //ViewModel viewModel = new ViewModel();
+        ViewModel viewModel = new ViewModel();
 
-        // Home View
-        FXMLLoader aLoader = new FXMLLoader(getClass().getResource("Home.fxml"));
-       /* Parent a = aLoader.load();
+        // Login View = a
+        FXMLLoader aLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        Parent a = aLoader.load();
         MainController aController = aLoader.getController();
         aController.setViewModel(viewModel);
 
-       // Register View = b
+        //Register View = b
         FXMLLoader bLoader = new FXMLLoader(getClass().getResource("Register.fxml"));
         Parent b = bLoader.load();
         RegisterController bController = bLoader.getController();
         bController.setViewModel(viewModel);
+
         // ...................
-        */
-        Scene scene = new Scene(aLoader.load(), 600, 400);
-       /*
+
+        Scene scene = new Scene(a, 500, 400);
+
         scene.rootProperty().bind(Bindings.createObjectBinding(() -> {
             if (viewModel.getCurrentView() == ViewModel.View.A) {
                 stage.setTitle("Welcome to Deusto Foods!");
@@ -43,21 +44,26 @@ public class Main extends Application {
             } else if (viewModel.getCurrentView() == ViewModel.View.B) {
                 stage.setTitle("Create an Account 🔐");
                 return b ;
-           } else {
+            } else {
                 return null ;
             }
         }, viewModel.currentViewProperty()));
-*/
-        //System.out.println(viewModel.getCurrentView().toString());
+
+        System.out.println(viewModel.getCurrentView().toString());
         stage.setResizable(false);
         stage.setScene(scene);
-        stage.centerOnScreen();
         stage.show();
+
+
+
 
     }
 
+
+
+
     public static void main(String[] args) {
-        //connector =  new MyConnector();
+        connector =  new MyConnector();
         launch();
     }
 }

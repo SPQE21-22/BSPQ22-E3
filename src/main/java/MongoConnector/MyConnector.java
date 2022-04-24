@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class MyConnector implements cSystem {
     private ArrayList<String> col_Names = new ArrayList<>();
-    private MongoDatabase db;
+
     // Constructors:
     public MyConnector(){
         try {
@@ -21,7 +21,6 @@ public class MyConnector implements cSystem {
                     .build();
             MongoClient mongoClient = MongoClients.create(settings);
             MongoDatabase db = mongoClient.getDatabase(cSystem.DB_Name);
-            setDb(db);
             setCol_Names(db);
             statusToString(db);
 
@@ -35,9 +34,6 @@ public class MyConnector implements cSystem {
     public ArrayList<String> getCol_Names() {
         return col_Names;
     }
-    public MongoDatabase getDb() {
-        return db;
-    }
 
     // Setters:
     public void setCol_Names(MongoDatabase db) {
@@ -48,9 +44,9 @@ public class MyConnector implements cSystem {
     public void setCol_Names(ArrayList<String> col_Names) {
         this.col_Names = col_Names;
     }
-    public void setDb(MongoDatabase db) {
-        this.db = db;
-    }
+
+
+
     // Helper Methods:
 
 
