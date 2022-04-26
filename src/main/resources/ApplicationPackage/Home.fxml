@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
@@ -9,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.HomeController">
+<AnchorPane prefHeight="390.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.HomeController">
    <children>
-      <SplitPane dividerPositions="0.3284182305630027" layoutX="10.0" layoutY="10.0" orientation="VERTICAL" prefHeight="380.0" prefWidth="579.0">
+      <SplitPane dividerPositions="0.3284182305630027" orientation="VERTICAL" prefHeight="390.0" prefWidth="553.0">
          <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="111.0" prefWidth="327.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="566.0">
                <children>
                   <ImageView fitHeight="77.0" fitWidth="152.0" focusTraversable="true" layoutX="295.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -25,7 +26,7 @@
                         <Font name="Gadugi" size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="profile_button" layoutX="516.0" layoutY="14.0" mnemonicParsing="false" onAction="#onProfileButtonClick" prefHeight="35.0" prefWidth="41.0">
+                  <Button fx:id="profile_button" layoutX="477.0" layoutY="14.0" mnemonicParsing="false" onAction="#onProfileButtonClick" prefHeight="35.0" prefWidth="41.0">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -34,7 +35,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="like_button" layoutX="14.0" layoutY="14.0" mnemonicParsing="false">
+                  <Button fx:id="like_button" layoutX="33.0" layoutY="14.0" mnemonicParsing="false">
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -45,9 +46,9 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="260.0" prefWidth="577.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="555.0">
                <children>
-                  <Label layoutX="82.0" layoutY="32.0" text="Búsqueda: " textFill="#66228f" />
+                  <Label layoutX="82.0" layoutY="32.0" text="Search:" textFill="#66228f" />
                   <TextField layoutX="157.0" layoutY="28.0" prefHeight="26.0" prefWidth="264.0" />
                   <Button layoutX="443.0" layoutY="23.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="41.0">
                      <graphic>
@@ -58,6 +59,38 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <CheckBox layoutX="435.0" layoutY="120.0" mnemonicParsing="false" text="VEGETARIAN" textFill="#66228f" />
+                  <CheckBox layoutX="435.0" layoutY="149.0" mnemonicParsing="false" text="VEGAN" textFill="#66228f" />
+                  <Button alignment="CENTER_RIGHT" layoutX="71.0" layoutY="78.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="135.0" text="AMERICAN" textFill="#66228f">
+                     <graphic>
+                        <ImageView fitHeight="77.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/american_food.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER_RIGHT" layoutX="252.0" layoutY="78.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="135.0" text="JAPANESE" textFill="#66228f">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/japanese_food.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER_RIGHT" layoutX="71.0" layoutY="154.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="135.0" text="SPANISH" textFill="#66228f" />
+                  <Button alignment="CENTER_RIGHT" layoutX="252.0" layoutY="154.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="135.0" text="ITALIAN" textFill="#66228f" />
+                  <ImageView fitHeight="150.0" fitWidth="50.0" layoutX="265.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/italian_food.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="77.0" fitWidth="50.0" layoutX="83.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/spanish_food.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </items>

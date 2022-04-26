@@ -1,12 +1,10 @@
 package ModelPackage;
 
-import com.fasterxml.jackson.core.FormatSchema;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import javafx.scene.control.TextField;
 import org.bson.Document;
-import org.bson.json.JsonReader;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import static ApplicationPackage.Main.connector;
 
@@ -14,7 +12,7 @@ public class User {
 
     private String username;
     private String password;
-    private String first_name = "";
+    static String first_name = "";
     private String last_name = "";
     private String id;
     private Boolean valid;
@@ -46,9 +44,7 @@ public class User {
         return valid;
     }
 
-    public String getFirst_name() {
-        return first_name;
-    }
+    public String getFirst_name() {return first_name; }
 
     public String getLast_name() {
         return last_name;

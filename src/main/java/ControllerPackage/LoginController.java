@@ -33,7 +33,7 @@ public class LoginController {
     @FXML
     private PasswordField password_box;
 
-    public User local_user;
+    static User local_user;
 
 
 
