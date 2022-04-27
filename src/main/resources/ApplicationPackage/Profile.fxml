@@ -36,19 +36,19 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label layoutX="54.0" layoutY="133.0" text="Username:">
+      <Label layoutX="44.0" layoutY="133.0" text="Username:" textFill="#66228f">
          <font>
-            <Font size="16.0" />
+            <Font name="Tahoma Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="175.0" text="First Name:">
+      <Label layoutX="44.0" layoutY="175.0" text="First Name:" textFill="#66228f">
          <font>
-            <Font size="16.0" />
+            <Font name="Tahoma Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="54.0" layoutY="220.0" text="Second name:">
+      <Label layoutX="44.0" layoutY="220.0" text="Second name:" textFill="#66228f">
          <font>
-            <Font size="16.0" />
+            <Font name="Tahoma Bold" size="16.0" />
          </font>
       </Label>
    </children>
