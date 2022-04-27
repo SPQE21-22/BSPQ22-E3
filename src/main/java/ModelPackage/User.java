@@ -12,7 +12,7 @@ public class User {
 
     private String username;
     private String password;
-    static String first_name = "";
+    private String first_name = "";
     private String last_name = "";
     private String id;
     private Boolean valid;
@@ -26,7 +26,10 @@ public class User {
     }
 
 
-
+    public void clear(User user){
+        this.username = "";
+        this.password = "";
+    }
     // Getters:
     public String getUsername() {
         return username;

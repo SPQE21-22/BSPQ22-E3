@@ -28,7 +28,7 @@ public class HomeController {
 
 
     public void onProfileButtonClick(ActionEvent event) throws Exception {
-        //name_label.setText(local_user.getFirst_name());
+
         try {
             FXMLLoader fmxloader = new FXMLLoader(getClass().getResource("/ApplicationPackage/Profile.fxml"));
             Parent root1 = (Parent) fmxloader.load();
