@@ -5,11 +5,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.ProfileController">
+<AnchorPane prefHeight="354.0" prefWidth="301.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.ProfileController">
    <children>
-      <Button fx:id="logout_button" layoutX="120.0" layoutY="333.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" text="Log Out" textFill="#66228f">
+      <Button fx:id="logout_button" layoutX="116.0" layoutY="283.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" text="Log Out" textFill="#66228f">
          <font>
             <Font name="Tahoma Bold" size="13.0" />
          </font></Button>
@@ -51,5 +52,11 @@
             <Font name="Tahoma Bold" size="16.0" />
          </font>
       </Label>
+      <ImageView fitHeight="57.0" fitWidth="47.0" layoutX="217.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/Logo3grey.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="151.0" layoutX="17.0" layoutY="112.0" stroke="BLACK" strokeType="INSIDE" width="265.0" />
    </children>
 </AnchorPane>
