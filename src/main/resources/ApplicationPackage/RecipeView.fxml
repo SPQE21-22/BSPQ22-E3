@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,6 +27,7 @@
                         <Image url="@../Images/Logo3.PNG" />
                      </image>
                   </ImageView>
+                  <ToggleButton layoutX="30.0" layoutY="141.0" mnemonicParsing="false" text="Add to favs" textFill="#9a126a" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -48,6 +50,8 @@
                   <TextField layoutX="196.0" layoutY="95.0" prefHeight="25.0" prefWidth="35.0" />
                   <TextField layoutX="381.0" layoutY="77.0" prefHeight="25.0" prefWidth="35.0" />
                   <Button layoutX="420.0" layoutY="144.0" mnemonicParsing="false" text="Back" />
+                  <Label layoutX="286.0" layoutY="14.0" text="Rating (from 1 to 10):" />
+                  <Spinner layoutX="409.0" layoutY="10.0" prefHeight="25.0" prefWidth="53.0" />
                </children>
             </AnchorPane>
         </items>
