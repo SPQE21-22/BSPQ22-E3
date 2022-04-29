@@ -1,5 +1,6 @@
 package ModelPackage;
 
+import MongoConnector.MyConnector;
 import com.fasterxml.jackson.core.FormatSchema;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
@@ -20,8 +21,10 @@ public class User {
     private Boolean valid;
 
     //Constructors:
-
     public User(String username, String password) {
+        if (connector == null){
+            connector = new MyConnector();
+        }
         this.username = username;
         this.password = password;
         valid = userVerification();

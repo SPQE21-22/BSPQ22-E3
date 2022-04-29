@@ -23,7 +23,7 @@ public class MyConnector implements cSystem {
             MongoClient mongoClient = MongoClients.create(settings);
             db = mongoClient.getDatabase(cSystem.DB_Name);
             setCol_Names(db);
-            statusToString(db);
+            System.out.println(statusToString(db));
 
         } catch (Exception e) {
             System.err.println("ERROR: Something went wrong in MyConnector.java");
@@ -53,7 +53,7 @@ public class MyConnector implements cSystem {
 
 
     //toStrings:
-    public void statusToString(MongoDatabase db){
+    public String statusToString(MongoDatabase db){
         String divider = "-------------------------\n";
 
         String s = "CONNECTION STATUS: \n" +
@@ -62,6 +62,6 @@ public class MyConnector implements cSystem {
                 String.format("Available Collections: \n%s\n", col_Names.toString()) +
                 divider;
 
-        System.out.print(s);
+        return s;
     }
 }

@@ -1,5 +1,6 @@
 package ModelPackage;
 
+import MongoConnector.MyConnector;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -10,6 +11,11 @@ import static ApplicationPackage.Main.connector;
 public class CreateAccount {
     public String errorMessage = "";
 
+    public CreateAccount(){
+        if (connector == null){
+            connector = new MyConnector();
+        }
+    }
 
    public Boolean newAccountVerification(String username, String password, String first_name, String last_name){
        if (username.equals("")|| password.equals("") || first_name.equals("") || last_name.equals("")){
@@ -46,6 +52,16 @@ public class CreateAccount {
         document.append("last_name", last_name);
         connector.db.getCollection("Credentials").insertOne(document);
         System.out.println("Account created successfully");
+    }
+
+    public void removeOneAccount(String username, String password, String first_name, String last_name){
+        Document document = new Document();
+        document.append("username", username);
+        document.append("password", password);
+        document.append("first_name", first_name);
+        document.append("last_name", last_name);
+        connector.db.getCollection("Credentials").deleteOne(document);
+        System.out.println("Account deleted");
     }
 
 

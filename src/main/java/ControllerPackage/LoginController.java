@@ -60,6 +60,7 @@ public class LoginController {
         System.out.println("Input User: "+ input_user);
         System.out.println("Input Password: "+ input_password);
 
+        // Save & verify user credentials:
         local_user = new User(input_user,input_password);
 
         // If it does, save the User & let them in:
