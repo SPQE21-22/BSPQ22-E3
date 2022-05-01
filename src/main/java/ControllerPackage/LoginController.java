@@ -36,7 +36,7 @@ public class LoginController {
     private PasswordField password_box;
 
     static User local_user;
-
+//
     Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 
