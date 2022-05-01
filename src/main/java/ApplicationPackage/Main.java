@@ -16,7 +16,7 @@ public class Main extends Application {
     // Switch Scenes Variables:
     FXMLLoader loader = new FXMLLoader();
     public static Stage window2;
-    public static String message = "";
+    //public static String message = "";
     Logger logger = LoggerFactory.getLogger(Main.class);
 
 
