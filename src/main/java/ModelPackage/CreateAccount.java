@@ -5,11 +5,14 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import org.bson.Document;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static ApplicationPackage.Main.connector;
 
 public class CreateAccount {
     public String errorMessage = "";
+    Logger logger = LoggerFactory.getLogger(CreateAccount.class);
 
     public CreateAccount(){
         if (connector == null){
@@ -51,7 +54,8 @@ public class CreateAccount {
         document.append("first_name", first_name);
         document.append("last_name", last_name);
         connector.db.getCollection("Credentials").insertOne(document);
-        System.out.println("Account created successfully");
+        //System.out.println("Account created successfully");
+        logger.info("Account created successfully");
     }
 
     public void removeOneAccount(String username, String password, String first_name, String last_name){
@@ -61,7 +65,8 @@ public class CreateAccount {
         document.append("first_name", first_name);
         document.append("last_name", last_name);
         connector.db.getCollection("Credentials").deleteOne(document);
-        System.out.println("Account deleted");
+        //System.out.println("Account deleted");
+        logger.info("Account deleted successfully");
     }
 
 

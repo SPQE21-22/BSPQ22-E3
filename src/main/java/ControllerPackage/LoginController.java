@@ -12,6 +12,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -35,21 +37,14 @@ public class LoginController {
 
     static User local_user;
 
-
+    Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 
 
 
     // Button Events:
 
-    protected void userVerification() {
 
-        // Write Code for Verification using Variable "connector" from Main
-            //1 Connect to connetor.<USERNAME/PASSWORD COLLECTION>
-            //2 Verify that data input provided by the user matches a stored combination
-
-
-    }
 
     @FXML
     private void onLoginButtonClick() throws IOException {
@@ -57,8 +52,10 @@ public class LoginController {
         String input_user = username_box.getText();
         String input_password = password_box.getText();
 
-        System.out.println("Input User: "+ input_user);
-        System.out.println("Input Password: "+ input_password);
+        //System.out.println("Input User: "+ input_user);
+        logger.info("Input User: "+ input_user);
+        //System.out.println("Input Password: "+ input_password);
+        logger.info("Input Password: "+ input_password);
 
         // Save & verify user credentials:
         local_user = new User(input_user,input_password);
@@ -86,7 +83,7 @@ public class LoginController {
     public void switchToHome() throws IOException {
         window2.setTitle("Welcome Home, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Home.fxml"));
-        this.anchorPane = (AnchorPane)this.loader.load();
+        this.anchorPane = this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);
         window2.setScene(scene2);
         window2.show();
@@ -95,7 +92,7 @@ public class LoginController {
     public void switchToRegister() throws IOException {
         window2.setTitle("Create an Account");
         this.loader.setLocation(Main.class.getResource("Register.fxml"));
-        this.anchorPane = (AnchorPane)this.loader.load();
+        this.anchorPane = this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);
         window2.setScene(scene2);
         window2.show();

@@ -5,6 +5,8 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import javafx.scene.control.TextField;
 import org.bson.Document;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static ApplicationPackage.Main.connector;
 
@@ -17,6 +19,7 @@ public class User {
     private String id;
     private Boolean valid;
 
+    Logger logger = LoggerFactory.getLogger(User.class);
     //Constructors:
 
     public User(String username, String password) {
@@ -97,7 +100,8 @@ public class User {
             }
         }
 
-        System.out.println("Matched Credentials? : "+valid);
+        //System.out.println("Matched Credentials? : "+valid);
+        logger.info("Matched Credentials? : "+valid);
         return valid;
     }
 
