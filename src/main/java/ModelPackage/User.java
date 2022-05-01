@@ -1,13 +1,10 @@
 package ModelPackage;
 
-import MongoConnector.MyConnector;
-import com.fasterxml.jackson.core.FormatSchema;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import javafx.scene.control.TextField;
 import org.bson.Document;
-import org.bson.json.JsonReader;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import static ApplicationPackage.Main.connector;
 
@@ -21,17 +18,18 @@ public class User {
     private Boolean valid;
 
     //Constructors:
+
     public User(String username, String password) {
-        if (connector == null){
-            connector = new MyConnector();
-        }
         this.username = username;
         this.password = password;
         valid = userVerification();
     }
 
 
-
+    public void clear(User user){
+        this.username = "";
+        this.password = "";
+    }
     // Getters:
     public String getUsername() {
         return username;
@@ -49,9 +47,7 @@ public class User {
         return valid;
     }
 
-    public String getFirst_name() {
-        return first_name;
-    }
+    public String getFirst_name() {return first_name; }
 
     public String getLast_name() {
         return last_name;
