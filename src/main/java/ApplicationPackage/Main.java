@@ -7,7 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Main extends Application {
     @SuppressWarnings("ClassEscapesDefinedScope")
@@ -18,6 +19,8 @@ public class Main extends Application {
     FXMLLoader loader = new FXMLLoader();
     public static Stage window2;
     public static String message = "";
+    Logger logger = LoggerFactory.getLogger(Main.class);
+
 
     @Override
     public void start(Stage window1) throws IOException {
@@ -30,6 +33,8 @@ public class Main extends Application {
         Scene scene1 = new Scene(this.anchorPane);
         this.window.setScene(scene1);
         this.window.show();
+        logger.info("This is the Main Logger");
+
     }
 
 
