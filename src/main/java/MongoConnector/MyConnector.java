@@ -5,13 +5,17 @@ import com.mongodb.MongoClientSettings;
 import com.mongodb.client.*;
 import org.bson.Document;
 import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.file.FileVisitResult;
 import java.util.ArrayList;
 
 public class MyConnector implements cSystem {
     private ArrayList<String> col_Names = new ArrayList<>();
-    private MongoDatabase db;
+    public MongoDatabase db;
+    Logger logger = LoggerFactory.getLogger(MyConnector.class);
+
     // Constructors:
     public MyConnector(){
         try {
@@ -20,13 +24,14 @@ public class MyConnector implements cSystem {
                     .applyConnectionString(connectionString)
                     .build();
             MongoClient mongoClient = MongoClients.create(settings);
-            MongoDatabase db = mongoClient.getDatabase(cSystem.DB_Name);
-            setDb(db);
+            db = mongoClient.getDatabase(cSystem.DB_Name);
             setCol_Names(db);
-            statusToString(db);
+            //System.out.println(statusToString(db));
+            logger.info(statusToString(db));
 
         } catch (Exception e) {
-            System.err.println("ERROR: Something went wrong in MyConnector.java");
+            //System.err.println("ERROR: Something went wrong in MyConnector.java");
+            logger.error("ERROR: Something went wrong in MyConnector.java");
             e.printStackTrace();
         }
 
@@ -34,9 +39,6 @@ public class MyConnector implements cSystem {
     // Getters:
     public ArrayList<String> getCol_Names() {
         return col_Names;
-    }
-    public MongoDatabase getDb() {
-        return db;
     }
 
     // Setters:
@@ -48,15 +50,15 @@ public class MyConnector implements cSystem {
     public void setCol_Names(ArrayList<String> col_Names) {
         this.col_Names = col_Names;
     }
-    public void setDb(MongoDatabase db) {
-        this.db = db;
-    }
+
+
+
     // Helper Methods:
 
 
 
     //toStrings:
-    public void statusToString(MongoDatabase db){
+    public String statusToString(MongoDatabase db){
         String divider = "-------------------------\n";
 
         String s = "CONNECTION STATUS: \n" +
@@ -65,6 +67,6 @@ public class MyConnector implements cSystem {
                 String.format("Available Collections: \n%s\n", col_Names.toString()) +
                 divider;
 
-        System.out.print(s);
+        return s;
     }
 }
