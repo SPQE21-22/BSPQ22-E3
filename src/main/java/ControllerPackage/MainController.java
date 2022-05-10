@@ -17,6 +17,8 @@ public class MainController {
     @FXML
     private Button login_button;
 
+    private Button fav_button;
+
     private ViewModel viewModel ;
 
 
@@ -47,8 +49,17 @@ public class MainController {
     private void onRegisterButtonClick() {
         viewModel.setCurrentView(ViewModel.View.B);
     }
+    @FXML
+    private void onFavButtonClick() {
+
+        viewModel.setCurrentView(ViewModel.View.A);
+    }
     public void setViewModel(ViewModel viewModel) {
         this.viewModel = viewModel ;
+    }
+
+
+
     }
 
 
@@ -57,5 +68,3 @@ public class MainController {
 
 
 
-
-}

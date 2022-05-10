@@ -27,7 +27,7 @@
                         <Image url="@../Images/Logo3.PNG" />
                      </image>
                   </ImageView>
-                  <ToggleButton layoutX="30.0" layoutY="141.0" mnemonicParsing="false" text="Add to favs" textFill="#9a126a" />
+                  <ToggleButton layoutX="30.0" layoutY="141.0" mnemonicParsing="false" onAction="#onFavButtonClick" text="Add to favs" textFill="#9a126a" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
