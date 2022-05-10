@@ -36,8 +36,8 @@
                <children>
                   <TextField layoutX="99.0" layoutY="18.0" />
                   <TextField layoutX="99.0" layoutY="45.0" />
-                  <Label layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="103.0" text="User:" />
-                  <Label layoutX="27.0" layoutY="49.0" text="Password:" />
+                  <Label layoutX="27.0" layoutY="18.0" prefHeight="25.0" prefWidth="103.0" text="User:" textFill="#95157c" />
+                  <Label layoutX="27.0" layoutY="49.0" text="Password:" textFill="#8d1775" />
                   <Label fx:id="verification_label" layoutX="27.0" layoutY="68.0" prefHeight="25.0" prefWidth="274.0" />
                </children>
             </AnchorPane>
