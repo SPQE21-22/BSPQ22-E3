@@ -27,7 +27,8 @@
                         <Image url="@../Images/Logo3.PNG" />
                      </image>
                   </ImageView>
-                  <ToggleButton layoutX="30.0" layoutY="141.0" mnemonicParsing="false" onAction="#onFavButtonClick" text="Add to favs" textFill="#9a126a" />
+                  <ToggleButton layoutX="14.0" layoutY="141.0" mnemonicParsing="false" onAction="#onFavButtonClick" text="Add to favs" textFill="#9a126a" />
+                  <Label fx:id="Like_label" layoutX="107.0" layoutY="145.0" prefHeight="17.0" prefWidth="41.0" text="Label" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">

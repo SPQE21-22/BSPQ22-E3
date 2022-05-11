@@ -6,6 +6,8 @@ module com.example.recipeapp {
     requires org.mongodb.driver.sync.client;
     requires org.mongodb.bson;
     requires org.mongodb.driver.core;
+    requires com.fasterxml.jackson.databind;
+    requires slf4j.api;
 
 
     opens ApplicationPackage to javafx.fxml;

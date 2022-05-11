@@ -49,11 +49,7 @@ public class MainController {
     private void onRegisterButtonClick() {
         viewModel.setCurrentView(ViewModel.View.B);
     }
-    @FXML
-    private void onFavButtonClick() {
 
-        viewModel.setCurrentView(ViewModel.View.A);
-    }
     public void setViewModel(ViewModel viewModel) {
         this.viewModel = viewModel ;
     }

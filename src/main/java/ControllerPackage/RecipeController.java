@@ -1,20 +1,28 @@
 package ControllerPackage;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
-public class RecipeController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    private Button favorite_button;
-    private ViewModel viewModel;
+public class RecipeController implements Initializable{
+    private Button fav_button;
+    int countLikes = 0;
 
     @FXML
-    private void onFavButtonClick() {
-        viewModel.setCurrentView(ViewModel.View.A);
-    }
-    public void setViewModel(ViewModel viewModel) {
-        this.viewModel = viewModel ;
+    Label Like_label;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+       Like_label.setText(String.valueOf(countLikes));
+
     }
 
-
+    public void onFavButtonClick(ActionEvent event) throws Exception {
+    countLikes +=1;
+        }
 }
