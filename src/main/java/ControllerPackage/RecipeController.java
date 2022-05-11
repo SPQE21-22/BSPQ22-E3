@@ -24,5 +24,6 @@ public class RecipeController implements Initializable{
 
     public void onFavButtonClick(ActionEvent event) throws Exception {
     countLikes +=1;
+    //Falta método para añadir una receta a un array de recetas
         }
 }
