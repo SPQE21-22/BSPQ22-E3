@@ -140,8 +140,9 @@ public class Recipe {
     public void setSourceURL(String sourceURL) {
         this.sourceURL = sourceURL;
     }
+
     //Helper Methods:
-    public Boolean userVerification(){
+    public Boolean recipeVerification(){
 
         MongoCollection<Document> col = connector.db.getCollection("Recipe");
         BasicDBObject query = new BasicDBObject();
