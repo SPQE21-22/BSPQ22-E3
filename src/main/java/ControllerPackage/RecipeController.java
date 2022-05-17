@@ -10,20 +10,27 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RecipeController implements Initializable{
+
     private Button fav_button;
-    int countLikes = 0;
+    private int countLikes = 0;
+    private boolean isSelected;
+
 
     @FXML
     Label Like_label;
 
+    ///Gets the value of the likes counter
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        Like_label.setText(String.valueOf(countLikes));
 
     }
-
+    /// method with the like counter
     public void onFavButtonClick(ActionEvent event) throws Exception {
     countLikes +=1;
-    //Falta método para añadir una receta a un array de recetas
+    Like_label.setText(String.valueOf(countLikes));
+
+
+
         }
 }

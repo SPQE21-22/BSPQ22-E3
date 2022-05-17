@@ -1,7 +1,7 @@
 package ModelPackage;
 
 public class Recipe {
-    private int likes;
+    private int like_counts = 0;
     private String user;
 
 

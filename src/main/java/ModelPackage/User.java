@@ -8,6 +8,8 @@ import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+
 import static ApplicationPackage.Main.connector;
 
 public class User {
@@ -18,7 +20,7 @@ public class User {
     private String last_name = "";
     private String id;
     private Boolean valid;
-    private int likes;
+    public ArrayList<String> likes_list = new ArrayList<String>();
 
     Logger logger = LoggerFactory.getLogger(User.class);
     //Constructors:
@@ -34,6 +36,7 @@ public class User {
         this.username = "";
         this.password = "";
     }
+
     // Getters:
     public String getUsername() {
         return username;
@@ -56,6 +59,8 @@ public class User {
     public String getLast_name() {
         return last_name;
     }
+
+    public ArrayList<String> getLikes_list() { return likes_list;}
 
     //Setters:
     public void setUsername(String username) {
@@ -82,6 +87,8 @@ public class User {
         this.last_name = last_name;
     }
 
+    public void setLikes_list(ArrayList<String> likes_list) { this.likes_list = likes_list;}
+
     //Helper Methods:
     public Boolean userVerification(){
 
@@ -104,8 +111,13 @@ public class User {
         //System.out.println("Matched Credentials? : "+valid);
         logger.info("Matched Credentials? : "+valid);
         return valid;
+
+
     }
 
+    public boolean checkLikesListSize() {
 
+        return (likes_list.size() < 3);
+    }
 
 }
