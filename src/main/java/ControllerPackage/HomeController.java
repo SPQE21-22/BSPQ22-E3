@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ControllerPackage.LoginController;
@@ -23,11 +24,13 @@ import ModelPackage.User;
 import java.io.IOException;
 import java.util.Optional;
 
+import static ApplicationPackage.Main.window2;
 import static ControllerPackage.LoginController.local_user;
 
 public class HomeController {
 
     FXMLLoader loader = new FXMLLoader();
+    private AnchorPane anchorPane;
 
 
     public void onProfileButtonClick(ActionEvent event) throws Exception {
@@ -47,17 +50,13 @@ public class HomeController {
     }
     public void onHeartButtonClick(ActionEvent event) throws Exception {
         try {
+            window2.setTitle("Welcome, please login");
+            this.loader.setLocation(Main.class.getResource("Favorites.fxml"));
+            this.anchorPane = (AnchorPane)this.loader.load();
+            Scene scene2 = new Scene(this.anchorPane);
+            window2.setScene(scene2);
+            window2.show();
 
-            Alert alerta2 = new Alert(Alert.AlertType.INFORMATION);
-            alerta2.setTitle("Sorry, "+local_user.getFirst_name());
-            alerta2.setHeaderText("Window under construction.");
-            Optional<ButtonType> resultado = alerta2.showAndWait();
-
-            if (resultado.get() == ButtonType.OK) {
-                alerta2.close();
-            } else {
-                event.consume();
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
