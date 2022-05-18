@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class CreateAccountTest {
 
 
-    @Rule public ContiPerfRule rule = new ContiPerfRule(new EmptyReportModule());
-    @Rule public ContiPerfRule rule = new ContiPerfRule();
+    //@Rule public ContiPerfRule rule = new ContiPerfRule(new EmptyReportModule());
+    //@Rule public ContiPerfRule rule = new ContiPerfRule();
 
     //The test should be executed 1000 times with 20 concurrent threads, so each thread does 50 invocations.
     //In addition, a maximum execution time of 1.2 seconds and an average below or equals 250 milliseconds are tolerated

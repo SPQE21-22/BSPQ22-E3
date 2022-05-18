@@ -4,6 +4,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import org.bson.Document;
+import org.bson.types.Decimal128;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,12 +14,12 @@ public class Recipe {
 
     private String recipe_id;
     private String title;
-    private float calories;
-    private float carbohydrates;
-    private float fats;
-    private float proteins;
-    private int likes;
-    private int readyInMinutes;
+    private Decimal128 calories;
+    private Decimal128 carbohydrates;
+    private Decimal128 fats;
+    private Decimal128 proteins;
+    private long likes_count;
+    private long readyInMinutes;
     private String image;
     private String imageType;
     private String sourceURL;
@@ -26,32 +27,14 @@ public class Recipe {
 
     Logger logger = LoggerFactory.getLogger(User.class);
 
-    public Recipe(String recipe_id, String title, float calories, float carbohydrates, float fats, float proteins, int likes, int readyInMinutes, String image, String imageType, String sourceURL) {
-        this.recipe_id = recipe_id;
+    public Recipe(String title) {
         this.title = title;
-        this.calories = calories;
-        this.carbohydrates = carbohydrates;
-        this.fats = fats;
-        this.proteins = proteins;
-        this.likes = likes;
-        this.readyInMinutes = readyInMinutes;
-        this.image = image;
-        this.imageType = imageType;
-        this.sourceURL = sourceURL;
+        valid = recipeVerification();
     }
-    public Recipe() {
-        this.recipe_id = "";
-        this.title = "";
-        this.calories = 0;
-        this.carbohydrates = 0;
-        this.fats = 0;
-        this.proteins = 0;
-        this.likes = 0;
-        this.readyInMinutes = 0;
-        this.image = "";
-        this.imageType = "";
-        this.sourceURL = "";
-    }
+
+
+
+
     //Getters and Setters
     public String getRecipe_id() {
         return recipe_id;
@@ -69,47 +52,55 @@ public class Recipe {
         this.title = title;
     }
 
-    public float getCalories() {
+    public Decimal128 getCalories() {
         return calories;
     }
 
-    public void setCalories(float calories) {
+    public void setCalories(Decimal128 calories) {
         this.calories = calories;
     }
 
-    public float getCarbohydrates() {
+    public Decimal128 getCarbohydrates() {
         return carbohydrates;
     }
 
-    public void setCarbohydrates(float carbohydrates) {
+    public void setCarbohydrates(Decimal128 carbohydrates) {
         this.carbohydrates = carbohydrates;
     }
 
-    public float getFats() {
+    public Decimal128 getFats() {
         return fats;
     }
 
-    public void setFats(float fats) {
+    public void setFats(Decimal128 fats) {
         this.fats = fats;
     }
 
-    public float getProteins() {
+    public Decimal128 getProteins() {
         return proteins;
     }
 
-    public void setProteins(float proteins) {
+    public void setProteins(Decimal128 proteins) {
         this.proteins = proteins;
     }
 
-    public int getLikes() {
-        return likes;
+    public Boolean getValid() {
+        return valid;
     }
 
-    public void setLikes(int likes) {
-        this.likes = likes;
+    public void setValid(Boolean valid) {
+        this.valid = valid;
     }
 
-    public int getReadyInMinutes() {
+    public long getlikes_count() {
+        return likes_count;
+    }
+
+    public void setlikes_count(long likes_count) {
+        this.likes_count = likes_count;
+    }
+
+    public long getReadyInMinutes() {
         return readyInMinutes;
     }
 
@@ -147,23 +138,27 @@ public class Recipe {
         MongoCollection<Document> col = connector.db.getCollection("Recipe");
         BasicDBObject query = new BasicDBObject();
 
+        query.put("Title",this.title);
+
+
 
 
         try (MongoCursor<Document> cursor = col.find(query).iterator()) {
             valid = cursor.hasNext();
             if (valid){
                 Document obj = cursor.next();
-                this.recipe_id = obj.get("_id").toString();
-                this.title = obj.get("_id").toString();
-                this.calories = Float.parseFloat(obj.get("_id").toString());
-                this.carbohydrates = Float.parseFloat(obj.get("_id").toString());
-                this.fats = Float.parseFloat(obj.get("_id").toString());
-                this.proteins = Float.parseFloat(obj.get("_id").toString());
-                this.likes = Integer.parseInt(obj.get("_id").toString());
-                this.readyInMinutes = Integer.parseInt(obj.get("_id").toString());
-                this.image = obj.get("_id").toString();
-                this.imageType = obj.get("_id").toString();
-                this.sourceURL = obj.get("_id").toString();
+
+                this.recipe_id = obj.get("Recipe_Id").toString();
+                this.title = obj.get("Title").toString();
+                this.calories = (Decimal128) obj.get("Calories");
+                this.carbohydrates = (Decimal128) obj.get("Carbohydrates");
+                this.fats = (Decimal128) obj.get("Fats");
+                this.proteins = (Decimal128) obj.get("Proteins");
+                this.likes_count = (long) obj.get("Likes");
+                this.readyInMinutes = (long) obj.get("readyInMinutes");
+                this.image = obj.get("image").toString();
+                this.imageType = obj.get("imageType").toString();
+                this.sourceURL = obj.get("sourceURL").toString();
 
 
 

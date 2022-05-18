@@ -1,7 +1,7 @@
 package ModelPackage;
 
 import org.junit.jupiter.api.Test;
-import org.junit.Rule;
+//import org.junit.Rule;
 import org.databene.contiperf.Required;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.junit.ContiPerfRule;
@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @Required(max = 1200, average = 250)
 class UserTest {
     //This activates contiperf
-    @Rule
-    public ContiPerfRule i = new ContiPerfRule();
+   // @Rule
+    //public ContiPerfRule i = new ContiPerfRule();
 
     //Executes the test 300 times, regardless of the number of threads.
     @Test

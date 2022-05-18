@@ -1,38 +1,35 @@
 package ControllerPackage;
 
-import ApplicationPackage.Main;
 import ModelPackage.Recipe;
-import ModelPackage.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static ControllerPackage.LoginController.local_user;
-
-public class RecipeController {
+import static ControllerPackage.HomeController.local_recipe;
+public class RecipeController implements Initializable {
 
     FXMLLoader loader = new FXMLLoader();
 
     @FXML
-    Label name_label;
+    private Label name_label;
     @FXML
-    Label calories_label;
+    private Label calories_label;
     @FXML
-    Label carbohydrates_label;
+    private Label carbohydrates_label;
     @FXML
-    Label proteins_label;
+    private Label proteins_label;
     @FXML
-    Label fats_label;
+    private Label fats_label;
     @FXML
-    Label readyInMinutes_label;
+    private Label readyInMinutes_label;
     @FXML
-    Label likes_label;
+    private Label likes_label;
 
-    static Recipe local_recipe;
-    //loader.setLocation(Main.class.getResource("Recipe.fxml"));
+
+
 
 
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,7 +39,7 @@ public class RecipeController {
         proteins_label.setText(String.valueOf(local_recipe.getProteins()));
         fats_label.setText(String.valueOf(local_recipe.getFats()));
         readyInMinutes_label.setText(String.valueOf(local_recipe.getReadyInMinutes()));
-        likes_label.setText(String.valueOf(local_recipe.getLikes()));
+        likes_label.setText(String.valueOf(local_recipe.getlikes_count()));
     }
 
 }

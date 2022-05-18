@@ -49,8 +49,8 @@
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="572.0">
                <children>
                   <Label layoutX="82.0" layoutY="32.0" text="Search:" textFill="#66228f" />
-                  <TextField layoutX="157.0" layoutY="28.0" prefHeight="26.0" prefWidth="264.0" />
-                  <Button layoutX="443.0" layoutY="23.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="41.0">
+                  <TextField fx:id="recipy_box" layoutX="157.0" layoutY="28.0" prefHeight="26.0" prefWidth="264.0" />
+                  <Button fx:id="lens_button" layoutX="443.0" layoutY="23.0" mnemonicParsing="false" onAction="#onLensRecipyClick" prefHeight="35.0" prefWidth="41.0">
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -3,6 +3,7 @@ package ControllerPackage;
 
 
 import ApplicationPackage.Main;
+import ModelPackage.Recipe;
 import ModelPackage.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +36,10 @@ public class LoginController {
     @FXML
     private PasswordField password_box;
 
+
+
     static User local_user;
+
 
     Logger logger = LoggerFactory.getLogger(LoginController.class);
 
@@ -73,6 +77,7 @@ public class LoginController {
             verification_label.setText("Incorrect username or password");
         }
     }
+
 
     @FXML
     private void onRegisterButtonClick() throws IOException {
