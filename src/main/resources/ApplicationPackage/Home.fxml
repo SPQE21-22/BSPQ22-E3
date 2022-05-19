@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="390.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.HomeController">
+<AnchorPane prefHeight="390.0" prefWidth="579.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.HomeController">
    <children>
-      <SplitPane dividerPositions="0.3284182305630027" orientation="VERTICAL" prefHeight="390.0" prefWidth="553.0">
+      <SplitPane dividerPositions="0.3284182305630027" orientation="VERTICAL" prefHeight="390.0" prefWidth="579.0">
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="566.0">
                <children>
@@ -46,11 +46,11 @@
                   </Button>
                </children>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="555.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="257.0" prefWidth="572.0">
                <children>
                   <Label layoutX="82.0" layoutY="32.0" text="Search:" textFill="#66228f" />
-                  <TextField layoutX="157.0" layoutY="28.0" prefHeight="26.0" prefWidth="264.0" />
-                  <Button layoutX="443.0" layoutY="23.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="41.0">
+                  <TextField fx:id="recipy_box" layoutX="157.0" layoutY="28.0" prefHeight="26.0" prefWidth="264.0" />
+                  <Button fx:id="lens_button" layoutX="443.0" layoutY="23.0" mnemonicParsing="false" onAction="#onLensRecipyClick" prefHeight="35.0" prefWidth="41.0">
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -91,7 +91,7 @@
                         <Image url="@../Images/spanish_food.png" />
                      </image>
                   </ImageView>
-                  <CheckBox layoutX="435.0" layoutY="99.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="99.0" text="GLUTEN FREE" textFill="#66228f" />
+                  <CheckBox layoutX="435.0" layoutY="99.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="111.0" text="GLUTEN FREE" textFill="#66228f" />
                </children>
             </AnchorPane>
          </items>
