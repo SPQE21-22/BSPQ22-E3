@@ -81,7 +81,7 @@ public class HomeController {
         }
     }
     public void switchToRecipe() throws IOException {
-        window2.setTitle("Welcome Recipe, "+local_user.getFirst_name());
+        window2.setTitle("Here is your recipe, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Recipe.fxml"));
         this.anchorPane = this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);
