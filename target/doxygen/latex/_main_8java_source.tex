@@ -1,0 +1,51 @@
+\hypertarget{_main_8java_source}{}\doxysection{Main.\+java}
+\label{_main_8java_source}\index{src/main/java/ApplicationPackage/Main.java@{src/main/java/ApplicationPackage/Main.java}}
+\mbox{\hyperlink{_main_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00001}\mbox{\hyperlink{namespace_application_package}{00001}} \textcolor{keyword}{package }ApplicationPackage;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00003}00003 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_mongo_connector}{MongoConnector}}.\mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{MyConnector}};}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00004}00004 \textcolor{keyword}{import} javafx.application.Application;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00005}00005 \textcolor{keyword}{import} javafx.fxml.FXMLLoader;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00006}00006 \textcolor{keyword}{import} javafx.scene.Scene;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00007}00007 \textcolor{keyword}{import} javafx.scene.layout.AnchorPane;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00008}00008 \textcolor{keyword}{import} javafx.stage.Stage;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00009}00009 \textcolor{keyword}{import} java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00010}00010 \textcolor{keyword}{import} org.slf4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00011}00011 \textcolor{keyword}{import} org.slf4j.LoggerFactory;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00013}\mbox{\hyperlink{class_application_package_1_1_main}{00013}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_application_package_1_1_main}{Main}} \textcolor{keyword}{extends} Application \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00014}00014     @SuppressWarnings(\textcolor{stringliteral}{"{}ClassEscapesDefinedScope"{}})}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00015}\mbox{\hyperlink{class_application_package_1_1_main_a4a55f74f7f1e55ddb4f8714f43cdb79f}{00015}}     public static \mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{MyConnector}} \mbox{\hyperlink{class_application_package_1_1_main_a4a55f74f7f1e55ddb4f8714f43cdb79f}{connector}};}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00016}00016     \textcolor{comment}{// Switch Scenes Variables:}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00017}00017     FXMLLoader loader = new FXMLLoader();}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00018}\mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{00018}}     public static Stage \mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}};}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00019}00019     \textcolor{comment}{//public static String message = "{}"{};}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00020}00020     Logger logger = LoggerFactory.getLogger(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class);}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00023}00023     @Override}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00024}\mbox{\hyperlink{class_application_package_1_1_main_a7c75cabf648bc825cf3d5405816fc037}{00024}}     public \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_package_1_1_main_a7c75cabf648bc825cf3d5405816fc037}{start}}(Stage window1) throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00026}00026         \mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}} = window1;}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00027}00027         \mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}}.setTitle(\textcolor{stringliteral}{"{}Welcome"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00028}00028         \mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}}.setResizable(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00029}00029         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Login.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00030}00030         AnchorPane anchorPane = this.loader.load();}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00031}00031         Scene scene1 = \textcolor{keyword}{new} Scene(anchorPane);}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00032}00032         \mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}}.setScene(scene1);}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00033}00033         \mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}}.show();}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00034}00034         logger.info(\textcolor{stringliteral}{"{}This is the Main Logger"{}});}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00039}\mbox{\hyperlink{class_application_package_1_1_main_ab9f332c37a1eac16bfc63771566c360e}{00039}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_application_package_1_1_main_ab9f332c37a1eac16bfc63771566c360e}{main}}(String[] args) \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00040}00040         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_application_package_1_1_main_a4a55f74f7f1e55ddb4f8714f43cdb79f}{connector}} == \textcolor{keyword}{null}) \{}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00041}00041             \mbox{\hyperlink{class_application_package_1_1_main_a4a55f74f7f1e55ddb4f8714f43cdb79f}{connector}} = \textcolor{keyword}{new} \mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{MyConnector}}();}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00042}00042         \}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00043}00043         launch();}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{_main_8java_source_l00045}00045 \}}
+
+\end{DoxyCode}

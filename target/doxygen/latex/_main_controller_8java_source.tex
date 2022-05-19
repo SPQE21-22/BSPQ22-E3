@@ -1,0 +1,67 @@
+\hypertarget{_main_controller_8java_source}{}\doxysection{Main\+Controller.\+java}
+\label{_main_controller_8java_source}\index{src/main/java/ControllerPackage/MainController.java@{src/main/java/ControllerPackage/MainController.java}}
+\mbox{\hyperlink{_main_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00001}00001 \textcolor{keyword}{package }ControllerPackage;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00005}00005 \textcolor{keyword}{import} javafx.fxml.FXML;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00006}00006 \textcolor{keyword}{import} javafx.scene.control.Button;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00007}00007 \textcolor{keyword}{import} javafx.scene.control.Label;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00008}00008 \textcolor{keyword}{import} javafx.stage.Window;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00011}\mbox{\hyperlink{class_controller_package_1_1_main_controller}{00011}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_controller_package_1_1_main_controller}{MainController}} \{}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00013}00013     @FXML}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00014}00014     \textcolor{keyword}{private} Label verification\_label;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00015}00015     @FXML}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00016}00016     \textcolor{keyword}{private} Button registration\_button;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00017}00017     @FXML}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00018}00018     \textcolor{keyword}{private} Button login\_button;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00020}00020     \textcolor{keyword}{private} \mbox{\hyperlink{class_controller_package_1_1_view_model}{ViewModel}} viewModel ;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00026}00026     \textcolor{comment}{// Button Events:}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00027}00027     @FXML}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00028}\mbox{\hyperlink{class_controller_package_1_1_main_controller_a9ff50e9a62be5a8e77e8585e2372cd92}{00028}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_main_controller_a9ff50e9a62be5a8e77e8585e2372cd92}{onLogInButtonClick}}() \{}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00030}00030         \textcolor{comment}{// Write Code for Verification using Variable "{}connector"{} from Main}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00031}00031             \textcolor{comment}{//1 Connect to connetor.<USERNAME/PASSWORD COLLECTION>}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00032}00032             \textcolor{comment}{//2 Verify that data input provided by the user matches a stored combination}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00034}00034         \textcolor{comment}{// If it does, save the Object ID \& let them in:}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00035}00035         verification\_label.setStyle(\textcolor{stringliteral}{"{}-\/fx-\/text-\/fill:Green"{}});}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00036}00036         \textcolor{comment}{//Write Code here:}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00039}00039         \textcolor{comment}{// Else, display log-\/in message error:}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00040}00040         verification\_label.setStyle(\textcolor{stringliteral}{"{}-\/fx-\/text-\/fill:Red"{}});}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00041}00041         verification\_label.setText(\textcolor{stringliteral}{"{}Incorrect username or password"{}});}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00045}00045     \textcolor{comment}{// Change Views:}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00046}00046     @FXML}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00047}00047     \textcolor{keyword}{private} \textcolor{keywordtype}{void} onRegisterButtonClick() \{}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00048}00048         viewModel.\mbox{\hyperlink{class_controller_package_1_1_view_model_a685c16e48105bdffae0b78f19da9cdc2}{setCurrentView}}(\mbox{\hyperlink{class_controller_package_1_1_view_model}{ViewModel}}.\mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view}{View}}.\mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view_ac277986ea6902b3cb445b37076dbadae}{B}});}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00050}\mbox{\hyperlink{class_controller_package_1_1_main_controller_afaba883670b57e62e5871b84e1458336}{00050}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_main_controller_afaba883670b57e62e5871b84e1458336}{setViewModel}}(\mbox{\hyperlink{class_controller_package_1_1_view_model}{ViewModel}} viewModel) \{}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00051}00051         this.viewModel = viewModel ;}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_main_controller_8java_source_l00061}00061 \}}
+
+\end{DoxyCode}

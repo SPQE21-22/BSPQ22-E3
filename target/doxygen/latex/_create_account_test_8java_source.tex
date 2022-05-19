@@ -1,0 +1,54 @@
+\hypertarget{_create_account_test_8java_source}{}\doxysection{Create\+Account\+Test.\+java}
+\label{_create_account_test_8java_source}\index{src/test/ModelPackage/CreateAccountTest.java@{src/test/ModelPackage/CreateAccountTest.java}}
+\mbox{\hyperlink{_create_account_test_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00001}00001 \textcolor{keyword}{package }ModelPackage;}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00003}00003 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_mongo_connector}{MongoConnector}}.\mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{MyConnector}};}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00004}00004 \textcolor{keyword}{import} org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00005}00005 \textcolor{keyword}{import} org.databene.contiperf.*;}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00006}00006 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_model_package}{ModelPackage}}.\mbox{\hyperlink{class_model_package_1_1_create_account}{CreateAccount}};}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00007}00007 \textcolor{keyword}{import} \textcolor{keyword}{static} org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00008}00008 @PerfTest(invocations = 5)}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00009}00009 @Required(max = 1200, average = 250)}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00010}00010 class CreateAccountTest \{}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00013}00013     \textcolor{comment}{//@Rule public ContiPerfRule rule = new ContiPerfRule(new EmptyReportModule());}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00014}00014     \textcolor{comment}{//@Rule public ContiPerfRule rule = new ContiPerfRule();}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00016}00016     \textcolor{comment}{//The test should be executed 1000 times with 20 concurrent threads, so each thread does 50 invocations.}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00017}00017     \textcolor{comment}{//In addition, a maximum execution time of 1.2 seconds and an average below or equals 250 milliseconds are tolerated}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00018}00018     @Test}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00019}00019     @PerfTest(invocations = 1000, threads = 20)}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00020}00020     @Required(max = 1200, average = 250)}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00021}00021     void writeNewAccount() \{}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00022}00022         CreateAccount c = \textcolor{keyword}{new} CreateAccount();}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00023}00023         \textcolor{keywordtype}{boolean} success = c.newAccountVerification(\textcolor{stringliteral}{"{}thisisaTestAccount2"{}}, \textcolor{stringliteral}{"{}thisisaTestPassword!"{}}, \textcolor{stringliteral}{"{}testname"{}}, \textcolor{stringliteral}{"{}testLastName"{}});}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00024}00024         assertTrue(success);}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00027}00027     \textcolor{comment}{// Requires that 50\% of all executions do not take longer than 45 milliseconds}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00028}00028     @Test}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00029}00029     @Required(median = 45)}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00030}00030     void checkRepeatedUsername()\{}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00031}00031         CreateAccount c = \textcolor{keyword}{new} CreateAccount();}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00032}00032         \textcolor{keywordtype}{boolean} success = c.userNameCheck(\textcolor{stringliteral}{"{}Francisco"{}});}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00033}00033         assertTrue(success);}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00036}00036     \textcolor{comment}{//Requires that 95\% of all executions do not take longer than 4000 milliseconds}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00037}00037     @Test}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00038}00038     @Required(percentile95 = 4000)}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00039}00039     void deleteNewAccount()\{}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00040}00040         CreateAccount c = \textcolor{keyword}{new} CreateAccount();}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00041}00041         c.removeOneAccount(\textcolor{stringliteral}{"{}thisisaTestAccount2"{}}, \textcolor{stringliteral}{"{}thisisaTestPassword!"{}}, \textcolor{stringliteral}{"{}testname"{}}, \textcolor{stringliteral}{"{}testLastName"{}});}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00042}00042         \textcolor{keywordtype}{boolean} success = !(c.userNameCheck(\textcolor{stringliteral}{"{}thisisaTestAccount2"{}}));}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00043}00043         assertTrue(success);}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_create_account_test_8java_source_l00048}00048 \}}
+
+\end{DoxyCode}

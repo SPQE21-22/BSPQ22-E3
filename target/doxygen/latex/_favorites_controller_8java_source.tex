@@ -1,0 +1,35 @@
+\hypertarget{_favorites_controller_8java_source}{}\doxysection{Favorites\+Controller.\+java}
+\label{_favorites_controller_8java_source}\index{src/main/java/ControllerPackage/FavoritesController.java@{src/main/java/ControllerPackage/FavoritesController.java}}
+\mbox{\hyperlink{_favorites_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00001}00001 \textcolor{keyword}{package }ControllerPackage;}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00003}00003 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}};}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00004}00004 \textcolor{keyword}{import} javafx.fxml.FXMLLoader;}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00005}00005 \textcolor{keyword}{import} javafx.scene.Scene;}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00006}00006 \textcolor{keyword}{import} javafx.scene.layout.AnchorPane;}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00008}00008 \textcolor{keyword}{import} java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00010}00010 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.\mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}};}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00012}\mbox{\hyperlink{class_controller_package_1_1_favorites_controller}{00012}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_controller_package_1_1_favorites_controller}{FavoritesController}} \{}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00013}00013     FXMLLoader loader = \textcolor{keyword}{new} FXMLLoader();}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00014}00014     \textcolor{keyword}{private} AnchorPane anchorPane;}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00016}\mbox{\hyperlink{class_controller_package_1_1_favorites_controller_a8938cf05d8e0db3f38de128abbf1a5c8}{00016}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_favorites_controller_a8938cf05d8e0db3f38de128abbf1a5c8}{onBackButtonClick}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00017}00017         \mbox{\hyperlink{class_controller_package_1_1_favorites_controller_a9a1bed1c27bca129898c9911fbde09e6}{switchToHome}}();}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00018}00018     \}}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00020}\mbox{\hyperlink{class_controller_package_1_1_favorites_controller_a9a1bed1c27bca129898c9911fbde09e6}{00020}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_favorites_controller_a9a1bed1c27bca129898c9911fbde09e6}{switchToHome}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00021}00021         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Home.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00022}00022         this.anchorPane = (AnchorPane)this.loader.load();}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00023}00023         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00024}00024         window2.setScene(scene2);}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00025}00025         window2.show();}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_favorites_controller_8java_source_l00029}00029 \}}
+
+\end{DoxyCode}

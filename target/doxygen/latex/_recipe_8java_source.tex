@@ -1,0 +1,178 @@
+\hypertarget{_recipe_8java_source}{}\doxysection{Recipe.\+java}
+\label{_recipe_8java_source}\index{src/main/java/ModelPackage/Recipe.java@{src/main/java/ModelPackage/Recipe.java}}
+\mbox{\hyperlink{_recipe_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00001}00001 \textcolor{keyword}{package }ModelPackage;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00003}00003 \textcolor{keyword}{import} com.mongodb.BasicDBObject;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00004}00004 \textcolor{keyword}{import} com.mongodb.client.MongoCollection;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00005}00005 \textcolor{keyword}{import} com.mongodb.client.MongoCursor;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00006}00006 \textcolor{keyword}{import} org.bson.Document;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00007}00007 \textcolor{keyword}{import} org.bson.types.Decimal128;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00008}00008 \textcolor{keyword}{import} org.slf4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00009}00009 \textcolor{keyword}{import} org.slf4j.LoggerFactory;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00011}00011 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.\mbox{\hyperlink{class_application_package_1_1_main_a4a55f74f7f1e55ddb4f8714f43cdb79f}{connector}};}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00013}\mbox{\hyperlink{class_model_package_1_1_recipe}{00013}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_model_package_1_1_recipe}{Recipe}} \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00015}00015     \textcolor{keyword}{private} String recipe\_id;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00016}00016     \textcolor{keyword}{private} String title;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00017}00017     \textcolor{keyword}{private} Decimal128 calories;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00018}00018     \textcolor{keyword}{private} Decimal128 carbohydrates;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00019}00019     \textcolor{keyword}{private} Decimal128 fats;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00020}00020     \textcolor{keyword}{private} Decimal128 proteins;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00021}00021     \textcolor{keyword}{private} \textcolor{keywordtype}{long} likes\_count;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00022}00022     \textcolor{keyword}{private} \textcolor{keywordtype}{long} readyInMinutes;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00023}00023     \textcolor{keyword}{private} String image;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00024}00024     \textcolor{keyword}{private} String imageType;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00025}00025     \textcolor{keyword}{private} String sourceURL;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00026}00026     \textcolor{keyword}{private} Boolean valid;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00028}00028     Logger logger = LoggerFactory.getLogger(\mbox{\hyperlink{class_model_package_1_1_user}{User}}.class);}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00030}\mbox{\hyperlink{class_model_package_1_1_recipe_a067512ac0cc7bf5807cdc8633942af2c}{00030}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_model_package_1_1_recipe_a067512ac0cc7bf5807cdc8633942af2c}{Recipe}}(String title) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00031}00031         this.title = title;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00032}00032         valid = \mbox{\hyperlink{class_model_package_1_1_recipe_a93b9f00deb4839bf86d971902c7c58f6}{recipeVerification}}();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00038}00038     \textcolor{comment}{//Getters and Setters}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00039}\mbox{\hyperlink{class_model_package_1_1_recipe_a944f61d2aaed7af747e426e596d3abf9}{00039}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_recipe_a944f61d2aaed7af747e426e596d3abf9}{getRecipe\_id}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00040}00040         \textcolor{keywordflow}{return} recipe\_id;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00043}\mbox{\hyperlink{class_model_package_1_1_recipe_acf04075cb8cbd0155fe94444ba497825}{00043}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_acf04075cb8cbd0155fe94444ba497825}{setRecipe\_id}}(String recipe\_id) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00044}00044         this.recipe\_id = recipe\_id;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00047}\mbox{\hyperlink{class_model_package_1_1_recipe_ab6507232edd8b988a88ee520e50bd18e}{00047}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_recipe_ab6507232edd8b988a88ee520e50bd18e}{getTitle}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00048}00048         \textcolor{keywordflow}{return} title;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00051}\mbox{\hyperlink{class_model_package_1_1_recipe_a37f92fe83cfd034210f2439495e9b4ce}{00051}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_a37f92fe83cfd034210f2439495e9b4ce}{setTitle}}(String title) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00052}00052         this.title = title;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00055}\mbox{\hyperlink{class_model_package_1_1_recipe_a935a564a953b40d6fd493d6d547d3bec}{00055}}     \textcolor{keyword}{public} Decimal128 \mbox{\hyperlink{class_model_package_1_1_recipe_a935a564a953b40d6fd493d6d547d3bec}{getCalories}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00056}00056         \textcolor{keywordflow}{return} calories;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00057}00057     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00059}\mbox{\hyperlink{class_model_package_1_1_recipe_a2edc4ebd19b5975fc496af2b8c4c36f5}{00059}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_a2edc4ebd19b5975fc496af2b8c4c36f5}{setCalories}}(Decimal128 calories) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00060}00060         this.calories = calories;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00063}\mbox{\hyperlink{class_model_package_1_1_recipe_aa838ef0bd0b43a9c58c889951eb7569c}{00063}}     \textcolor{keyword}{public} Decimal128 \mbox{\hyperlink{class_model_package_1_1_recipe_aa838ef0bd0b43a9c58c889951eb7569c}{getCarbohydrates}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00064}00064         \textcolor{keywordflow}{return} carbohydrates;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00067}\mbox{\hyperlink{class_model_package_1_1_recipe_a6fa3503ac99118d3397a7f4d46e76f9d}{00067}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_a6fa3503ac99118d3397a7f4d46e76f9d}{setCarbohydrates}}(Decimal128 carbohydrates) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00068}00068         this.carbohydrates = carbohydrates;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00071}\mbox{\hyperlink{class_model_package_1_1_recipe_aeaca8a4cf7471d1c986b7c01f0bc4849}{00071}}     \textcolor{keyword}{public} Decimal128 \mbox{\hyperlink{class_model_package_1_1_recipe_aeaca8a4cf7471d1c986b7c01f0bc4849}{getFats}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00072}00072         \textcolor{keywordflow}{return} fats;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00073}00073     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00075}\mbox{\hyperlink{class_model_package_1_1_recipe_a66eda35a5497b43fc2cdea748fd709aa}{00075}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_a66eda35a5497b43fc2cdea748fd709aa}{setFats}}(Decimal128 fats) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00076}00076         this.fats = fats;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00079}\mbox{\hyperlink{class_model_package_1_1_recipe_a0b863386e1a5c9e1ee3b488d887914e0}{00079}}     \textcolor{keyword}{public} Decimal128 \mbox{\hyperlink{class_model_package_1_1_recipe_a0b863386e1a5c9e1ee3b488d887914e0}{getProteins}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00080}00080         \textcolor{keywordflow}{return} proteins;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00083}\mbox{\hyperlink{class_model_package_1_1_recipe_aada33a6df81e54b0cd268abf2f610ea0}{00083}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_aada33a6df81e54b0cd268abf2f610ea0}{setProteins}}(Decimal128 proteins) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00084}00084         this.proteins = proteins;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00087}\mbox{\hyperlink{class_model_package_1_1_recipe_aad77388b6c7f8316b50f3715662a6ce7}{00087}}     \textcolor{keyword}{public} Boolean \mbox{\hyperlink{class_model_package_1_1_recipe_aad77388b6c7f8316b50f3715662a6ce7}{getValid}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00088}00088         \textcolor{keywordflow}{return} valid;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00091}\mbox{\hyperlink{class_model_package_1_1_recipe_a43d2aaeffca9b7bc56a2b7ccdfe2fb80}{00091}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_a43d2aaeffca9b7bc56a2b7ccdfe2fb80}{setValid}}(Boolean valid) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00092}00092         this.valid = valid;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00093}00093     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00095}\mbox{\hyperlink{class_model_package_1_1_recipe_a14eeee0f36946402fd4c32692d78a4fe}{00095}}     \textcolor{keyword}{public} \textcolor{keywordtype}{long} \mbox{\hyperlink{class_model_package_1_1_recipe_a14eeee0f36946402fd4c32692d78a4fe}{getlikes\_count}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00096}00096         \textcolor{keywordflow}{return} likes\_count;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00099}\mbox{\hyperlink{class_model_package_1_1_recipe_a0e6c8205d6848ce7141377dce303c9c6}{00099}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_a0e6c8205d6848ce7141377dce303c9c6}{setlikes\_count}}(\textcolor{keywordtype}{long} likes\_count) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00100}00100         this.likes\_count = likes\_count;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00101}00101     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00103}\mbox{\hyperlink{class_model_package_1_1_recipe_a5de397e5658ede557e1a606556d2b492}{00103}}     \textcolor{keyword}{public} \textcolor{keywordtype}{long} \mbox{\hyperlink{class_model_package_1_1_recipe_a5de397e5658ede557e1a606556d2b492}{getReadyInMinutes}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00104}00104         \textcolor{keywordflow}{return} readyInMinutes;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00105}00105     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00107}\mbox{\hyperlink{class_model_package_1_1_recipe_ac010e888aff2c48c6781cd60e4e73148}{00107}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_ac010e888aff2c48c6781cd60e4e73148}{setReadyInMinutes}}(\textcolor{keywordtype}{int} readyInMinutes) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00108}00108         this.readyInMinutes = readyInMinutes;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00109}00109     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00111}\mbox{\hyperlink{class_model_package_1_1_recipe_a31e621695f933664475e444b9ff58659}{00111}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_recipe_a31e621695f933664475e444b9ff58659}{getImage}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00112}00112         \textcolor{keywordflow}{return} image;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00113}00113     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00115}\mbox{\hyperlink{class_model_package_1_1_recipe_a89e247511567ce5ea9cb16639f8600b6}{00115}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_a89e247511567ce5ea9cb16639f8600b6}{setImage}}(String image) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00116}00116         this.image = image;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00117}00117     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00119}\mbox{\hyperlink{class_model_package_1_1_recipe_a288ea287b935905c3a71dfbcc49ba4c7}{00119}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_recipe_a288ea287b935905c3a71dfbcc49ba4c7}{getImageType}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00120}00120         \textcolor{keywordflow}{return} imageType;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00121}00121     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00123}\mbox{\hyperlink{class_model_package_1_1_recipe_aa613bc2ee40e257cf447b74f894792f4}{00123}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_aa613bc2ee40e257cf447b74f894792f4}{setImageType}}(String imageType) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00124}00124         this.imageType = imageType;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00125}00125     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00127}\mbox{\hyperlink{class_model_package_1_1_recipe_addc3c19af7dd51a73f8028e085df0c2e}{00127}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_recipe_addc3c19af7dd51a73f8028e085df0c2e}{getSourceURL}}() \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00128}00128         \textcolor{keywordflow}{return} sourceURL;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00129}00129     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00131}\mbox{\hyperlink{class_model_package_1_1_recipe_af880b80cbb1ff657ac5d2572faba7833}{00131}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_recipe_af880b80cbb1ff657ac5d2572faba7833}{setSourceURL}}(String sourceURL) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00132}00132         this.sourceURL = sourceURL;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00133}00133     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00135}00135     \textcolor{comment}{//Helper Methods:}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00136}\mbox{\hyperlink{class_model_package_1_1_recipe_a93b9f00deb4839bf86d971902c7c58f6}{00136}}     \textcolor{keyword}{public} Boolean \mbox{\hyperlink{class_model_package_1_1_recipe_a93b9f00deb4839bf86d971902c7c58f6}{recipeVerification}}()\{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00138}00138         MongoCollection<Document> col = connector.db.getCollection(\textcolor{stringliteral}{"{}Recipe"{}});}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00139}00139         BasicDBObject query = \textcolor{keyword}{new} BasicDBObject();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00140}00140 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00141}00141         query.put(\textcolor{stringliteral}{"{}Title"{}},this.title);}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00143}00143 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00146}00146         \textcolor{keywordflow}{try} (MongoCursor<Document> cursor = col.find(query).iterator()) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00147}00147             valid = cursor.hasNext();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00148}00148             \textcolor{keywordflow}{if} (valid)\{}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00149}00149                 Document obj = cursor.next();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00151}00151                 this.recipe\_id = obj.get(\textcolor{stringliteral}{"{}Recipe\_Id"{}}).toString();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00152}00152                 this.title = obj.get(\textcolor{stringliteral}{"{}Title"{}}).toString();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00153}00153                 this.calories = (Decimal128) obj.get(\textcolor{stringliteral}{"{}Calories"{}});}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00154}00154                 this.carbohydrates = (Decimal128) obj.get(\textcolor{stringliteral}{"{}Carbohydrates"{}});}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00155}00155                 this.fats = (Decimal128) obj.get(\textcolor{stringliteral}{"{}Fats"{}});}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00156}00156                 this.proteins = (Decimal128) obj.get(\textcolor{stringliteral}{"{}Proteins"{}});}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00157}00157                 this.likes\_count = (long) obj.get(\textcolor{stringliteral}{"{}Likes"{}});}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00158}00158                 this.readyInMinutes = (long) obj.get(\textcolor{stringliteral}{"{}readyInMinutes"{}});}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00159}00159                 this.image = obj.get(\textcolor{stringliteral}{"{}image"{}}).toString();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00160}00160                 this.imageType = obj.get(\textcolor{stringliteral}{"{}imageType"{}}).toString();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00161}00161                 this.sourceURL = obj.get(\textcolor{stringliteral}{"{}sourceURL"{}}).toString();}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00165}00165             \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00166}00166         \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00168}00168         \textcolor{comment}{//System.out.println("{}Matched Credentials? : "{}+valid);}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00169}00169         logger.info(\textcolor{stringliteral}{"{}Matched Recipe Data? : "{}}+valid);}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00170}00170         \textcolor{keywordflow}{return} valid;}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00171}00171     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_8java_source_l00172}00172 \}}
+
+\end{DoxyCode}

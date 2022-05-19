@@ -1,0 +1,30 @@
+\hypertarget{_view_model_8java_source}{}\doxysection{View\+Model.\+java}
+\label{_view_model_8java_source}\index{src/main/java/ControllerPackage/ViewModel.java@{src/main/java/ControllerPackage/ViewModel.java}}
+\mbox{\hyperlink{_view_model_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00001}00001 \textcolor{keyword}{package }ControllerPackage;}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00003}00003 \textcolor{keyword}{import} javafx.beans.property.ObjectProperty;}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00004}00004 \textcolor{keyword}{import} javafx.beans.property.SimpleObjectProperty;}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00006}\mbox{\hyperlink{class_controller_package_1_1_view_model}{00006}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_controller_package_1_1_view_model}{ViewModel}} \{}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00008}\mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view_a894a8415a490fa5dd8630db5c3321047}{00008}}     \textcolor{keyword}{public} \textcolor{keyword}{enum} \mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view}{View}} \{\mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view_a894a8415a490fa5dd8630db5c3321047}{A}}, B\}}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00010}00010     \textcolor{keyword}{private} \textcolor{keyword}{final} ObjectProperty<View> currentView = \textcolor{keyword}{new} SimpleObjectProperty<>(\mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view}{View}}.\mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view_a894a8415a490fa5dd8630db5c3321047}{A}});}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00012}\mbox{\hyperlink{class_controller_package_1_1_view_model_a304bac41972c791c3583caac2189a3d1}{00012}}     \textcolor{keyword}{public} ObjectProperty<View> \mbox{\hyperlink{class_controller_package_1_1_view_model_a304bac41972c791c3583caac2189a3d1}{currentViewProperty}}() \{}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00013}00013         \textcolor{keywordflow}{return} currentView ;}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00014}00014     \}}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00016}\mbox{\hyperlink{class_controller_package_1_1_view_model_a5a00b6ff1ad7b2a316f830e69e2361dd}{00016}}     \textcolor{keyword}{public} \textcolor{keyword}{final} \mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view}{View}} \mbox{\hyperlink{class_controller_package_1_1_view_model_a5a00b6ff1ad7b2a316f830e69e2361dd}{getCurrentView}}() \{}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00017}00017         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_controller_package_1_1_view_model_a304bac41972c791c3583caac2189a3d1}{currentViewProperty}}().get();}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00018}00018     \}}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00020}\mbox{\hyperlink{class_controller_package_1_1_view_model_a685c16e48105bdffae0b78f19da9cdc2}{00020}}     \textcolor{keyword}{public} \textcolor{keyword}{final} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_view_model_a685c16e48105bdffae0b78f19da9cdc2}{setCurrentView}}(\mbox{\hyperlink{enum_controller_package_1_1_view_model_1_1_view}{View}} view) \{}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00021}00021         \mbox{\hyperlink{class_controller_package_1_1_view_model_a304bac41972c791c3583caac2189a3d1}{currentViewProperty}}().set(view);}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_view_model_8java_source_l00024}00024 \}}
+
+\end{DoxyCode}

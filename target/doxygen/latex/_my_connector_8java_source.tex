@@ -1,0 +1,78 @@
+\hypertarget{_my_connector_8java_source}{}\doxysection{My\+Connector.\+java}
+\label{_my_connector_8java_source}\index{src/main/java/MongoConnector/MyConnector.java@{src/main/java/MongoConnector/MyConnector.java}}
+\mbox{\hyperlink{_my_connector_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00001}00001 \textcolor{keyword}{package }MongoConnector;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00003}00003 \textcolor{keyword}{import} com.mongodb.ConnectionString;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00004}00004 \textcolor{keyword}{import} com.mongodb.MongoClientSettings;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00005}00005 \textcolor{keyword}{import} com.mongodb.client.*;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00006}00006 \textcolor{keyword}{import} org.bson.Document;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00007}00007 \textcolor{keyword}{import} org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00008}00008 \textcolor{keyword}{import} org.slf4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00009}00009 \textcolor{keyword}{import} org.slf4j.LoggerFactory;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00011}00011 \textcolor{keyword}{import} java.nio.file.FileVisitResult;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00012}00012 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00014}\mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{00014}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{MyConnector}} \textcolor{keyword}{implements} \mbox{\hyperlink{interface_mongo_connector_1_1c_system}{cSystem}} \{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00015}00015     \textcolor{keyword}{private} ArrayList<String> col\_Names = \textcolor{keyword}{new} ArrayList<>();}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00016}\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{00016}}     \textcolor{keyword}{public} MongoDatabase \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{db}};}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00017}00017     Logger logger = LoggerFactory.getLogger(\mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{MyConnector}}.class);}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00019}00019     \textcolor{comment}{// Constructors:}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00020}\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a6bb6f3b8f4d9dedef1e618827d91debf}{00020}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a6bb6f3b8f4d9dedef1e618827d91debf}{MyConnector}}()\{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00021}00021         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00022}00022             ConnectionString connectionString = \textcolor{keyword}{new} ConnectionString(\mbox{\hyperlink{interface_mongo_connector_1_1c_system}{cSystem}}.\mbox{\hyperlink{interface_mongo_connector_1_1c_system_a309525ada1e9a75ce1a9906f46b76a17}{Connection\_Uri}});}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00023}00023             MongoClientSettings settings = MongoClientSettings.builder()}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00024}00024                     .applyConnectionString(connectionString)}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00025}00025                     .build();}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00026}00026             MongoClient mongoClient = MongoClients.create(settings);}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00027}00027             \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{db}} = mongoClient.getDatabase(\mbox{\hyperlink{interface_mongo_connector_1_1c_system}{cSystem}}.\mbox{\hyperlink{interface_mongo_connector_1_1c_system_a4df2771c4502a1f5b8019027f8f574a5}{DB\_Name}});}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00028}00028             \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_afb4a28e1027299fbec079a5f83bd95d2}{setCol\_Names}}(\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{db}});}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00029}00029             \textcolor{comment}{//System.out.println(statusToString(db));}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00030}00030             logger.info(\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a016c422a7d9101ee63315c7cccfe3bd2}{statusToString}}(\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{db}}));}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00032}00032         \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00033}00033             \textcolor{comment}{//System.err.println("{}ERROR: Something went wrong in MyConnector.java"{});}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00034}00034             logger.error(\textcolor{stringliteral}{"{}ERROR: Something went wrong in MyConnector.java"{}});}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00035}00035             e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00036}00036         \}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00039}00039     \textcolor{comment}{// Getters:}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00040}\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a434e4ed760cf5ec02e97b9d2d14547c4}{00040}}     \textcolor{keyword}{public} ArrayList<String> \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a434e4ed760cf5ec02e97b9d2d14547c4}{getCol\_Names}}() \{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00041}00041         \textcolor{keywordflow}{return} col\_Names;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00042}00042     \}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00044}00044     \textcolor{comment}{// Setters:}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00045}\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_afb4a28e1027299fbec079a5f83bd95d2}{00045}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_afb4a28e1027299fbec079a5f83bd95d2}{setCol\_Names}}(MongoDatabase \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{db}}) \{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00046}00046         \textcolor{keywordflow}{for} (Object i: \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{db}}.listCollectionNames()) \{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00047}00047             this.col\_Names.add(i.toString());}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00048}00048         \}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00050}\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a02f9551c7ebd72e5c0603f7a59591880}{00050}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a02f9551c7ebd72e5c0603f7a59591880}{setCol\_Names}}(ArrayList<String> col\_Names) \{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00051}00051         this.col\_Names = col\_Names;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00052}00052     \}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00056}00056     \textcolor{comment}{// Helper Methods:}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00060}00060     \textcolor{comment}{//toStrings:}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00061}\mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a016c422a7d9101ee63315c7cccfe3bd2}{00061}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_a016c422a7d9101ee63315c7cccfe3bd2}{statusToString}}(MongoDatabase \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{db}})\{}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00062}00062         String divider = \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00064}00064         String s = \textcolor{stringliteral}{"{}CONNECTION STATUS: \(\backslash\)n"{}} +}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00065}00065                 divider +}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00066}00066                 String.format(\textcolor{stringliteral}{"{}Connected to -\/> \%s \(\backslash\)n"{}}, \mbox{\hyperlink{class_mongo_connector_1_1_my_connector_abd5932d1e09bc2fc15c2db4dbd4db0d2}{db}}.getName()) +}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00067}00067                 String.format(\textcolor{stringliteral}{"{}Available Collections: \(\backslash\)n\%s\(\backslash\)n"{}}, col\_Names.toString()) +}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00068}00068                 divider;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00070}00070         \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00071}00071     \}}
+\DoxyCodeLine{\Hypertarget{_my_connector_8java_source_l00072}00072 \}}
+
+\end{DoxyCode}
