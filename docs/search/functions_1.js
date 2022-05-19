@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['getcalories_0',['getCalories',['../class_model_package_1_1_recipe.html#a935a564a953b40d6fd493d6d547d3bec',1,'ModelPackage::Recipe']]],
+  ['getcarbohydrates_1',['getCarbohydrates',['../class_model_package_1_1_recipe.html#aa838ef0bd0b43a9c58c889951eb7569c',1,'ModelPackage::Recipe']]],
+  ['getcol_5fnames_2',['getCol_Names',['../class_mongo_connector_1_1_my_connector.html#a434e4ed760cf5ec02e97b9d2d14547c4',1,'MongoConnector::MyConnector']]],
+  ['getcurrentview_3',['getCurrentView',['../class_controller_package_1_1_view_model.html#a5a00b6ff1ad7b2a316f830e69e2361dd',1,'ControllerPackage::ViewModel']]],
+  ['getfats_4',['getFats',['../class_model_package_1_1_recipe.html#aeaca8a4cf7471d1c986b7c01f0bc4849',1,'ModelPackage::Recipe']]],
+  ['getfirst_5fname_5',['getFirst_name',['../class_model_package_1_1_user.html#af23e06cc9e5bf6d440bd68a209dfe8ae',1,'ModelPackage::User']]],
+  ['getid_6',['getId',['../class_model_package_1_1_user.html#ad0e06d6230bef27b77f057f10d662b57',1,'ModelPackage::User']]],
+  ['getimage_7',['getImage',['../class_model_package_1_1_recipe.html#a31e621695f933664475e444b9ff58659',1,'ModelPackage::Recipe']]],
+  ['getimagetype_8',['getImageType',['../class_model_package_1_1_recipe.html#a288ea287b935905c3a71dfbcc49ba4c7',1,'ModelPackage::Recipe']]],
+  ['getlast_5fname_9',['getLast_name',['../class_model_package_1_1_user.html#a90b351ead44570defbe61d289c78dc98',1,'ModelPackage::User']]],
+  ['getlikes_5fcount_10',['getlikes_count',['../class_model_package_1_1_recipe.html#a14eeee0f36946402fd4c32692d78a4fe',1,'ModelPackage::Recipe']]],
+  ['getlikes_5flist_11',['getLikes_list',['../class_model_package_1_1_user.html#ace08403da34774cdd462a26e69a4516a',1,'ModelPackage::User']]],
+  ['getpassword_12',['getPassword',['../class_model_package_1_1_user.html#a0719945ebb88c292ce404d14dcfd1267',1,'ModelPackage::User']]],
+  ['getproteins_13',['getProteins',['../class_model_package_1_1_recipe.html#a0b863386e1a5c9e1ee3b488d887914e0',1,'ModelPackage::Recipe']]],
+  ['getreadyinminutes_14',['getReadyInMinutes',['../class_model_package_1_1_recipe.html#a5de397e5658ede557e1a606556d2b492',1,'ModelPackage::Recipe']]],
+  ['getrecipe_5fid_15',['getRecipe_id',['../class_model_package_1_1_recipe.html#a944f61d2aaed7af747e426e596d3abf9',1,'ModelPackage::Recipe']]],
+  ['getsourceurl_16',['getSourceURL',['../class_model_package_1_1_recipe.html#addc3c19af7dd51a73f8028e085df0c2e',1,'ModelPackage::Recipe']]],
+  ['gettitle_17',['getTitle',['../class_model_package_1_1_recipe.html#ab6507232edd8b988a88ee520e50bd18e',1,'ModelPackage::Recipe']]],
+  ['getusername_18',['getUsername',['../class_model_package_1_1_user.html#a22ab0c7642690be9ebc26e17a6b46e33',1,'ModelPackage::User']]],
+  ['getvalid_19',['getValid',['../class_model_package_1_1_recipe.html#aad77388b6c7f8316b50f3715662a6ce7',1,'ModelPackage.Recipe.getValid()'],['../class_model_package_1_1_user.html#abd7bdaea7853e48b2c960141552e8235',1,'ModelPackage.User.getValid()']]]
+];
