@@ -19,6 +19,8 @@ import java.util.ResourceBundle;
 
 import static ApplicationPackage.Main.window2;
 import static ControllerPackage.HomeController.local_recipe;
+import static ControllerPackage.LoginController.local_user;
+
 public class RecipeController implements Initializable {
 
     FXMLLoader loader = new FXMLLoader();
@@ -66,6 +68,7 @@ public class RecipeController implements Initializable {
     }
 
     public void switchToHome() throws IOException {
+        window2.setTitle("Welcome Home, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Home.fxml"));
         this.anchorPane = (AnchorPane)this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);
