@@ -13,13 +13,19 @@ import org.slf4j.LoggerFactory;
 public class Main extends Application {
     @SuppressWarnings("ClassEscapesDefinedScope")
     public static MyConnector connector;
-    // Switch Scenes Variables:
+    /**
+     * Switch Scenes Variables:
+     */
+
     FXMLLoader loader = new FXMLLoader();
     public static Stage window2;
-    //public static String message = "";
+    public static String message = "";
     Logger logger = LoggerFactory.getLogger(Main.class);
 
 
+    /**
+     * Method that runs the application
+     */
     @Override
     public void start(Stage window1) throws IOException {
 

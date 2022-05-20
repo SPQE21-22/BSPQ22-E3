@@ -19,13 +19,18 @@ public class RecipeController implements Initializable{
     @FXML
     Label Like_label;
 
-    ///Gets the value of the likes counter
+    /**
+     * Gets the value of the likes counter
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        Like_label.setText(String.valueOf(countLikes));
 
     }
-    /// method with the like counter
+
+    /**
+     * method with the like counter
+     */
     public void onFavButtonClick(ActionEvent event) throws Exception {
     countLikes +=1;
     Like_label.setText(String.valueOf(countLikes));

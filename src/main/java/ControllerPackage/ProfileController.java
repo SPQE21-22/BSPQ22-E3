@@ -17,7 +17,9 @@ import java.util.ResourceBundle;
 import static ControllerPackage.LoginController.local_user;
 
 public class ProfileController implements Initializable {
-
+    /**
+     * Labels of the register interface
+     */
     @FXML
     Label name_label;
     @FXML
@@ -44,6 +46,13 @@ public class ProfileController implements Initializable {
 
     FXMLLoader loader = new FXMLLoader();
 
+    /**
+     * Button events:
+     */
+
+    /**
+     * Button for the user logout
+     */
     public void onLogOutButtonClick(ActionEvent event) throws Exception {
         try {
 
@@ -63,6 +72,9 @@ public class ProfileController implements Initializable {
         }
     }
 
+    /**
+     * Button to go to the favorites interface
+     */
     public void onHeartButtonClick(ActionEvent event) throws Exception {
         try {
 

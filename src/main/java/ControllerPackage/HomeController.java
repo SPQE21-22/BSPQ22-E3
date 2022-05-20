@@ -32,7 +32,13 @@ public class HomeController {
     FXMLLoader loader = new FXMLLoader();
     private AnchorPane anchorPane;
 
+    /**
+     * Button events:
+     */
 
+    /**
+     * Button to go to the profile
+     */
     public void onProfileButtonClick(ActionEvent event) throws Exception {
 
         try {
@@ -48,6 +54,10 @@ public class HomeController {
         }
 
     }
+
+    /**
+     * Button to go to the home window
+     */
     public void onHeartButtonClick(ActionEvent event) throws Exception {
         try {
             window2.setTitle("Welcome, please login");

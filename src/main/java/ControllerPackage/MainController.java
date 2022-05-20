@@ -9,7 +9,9 @@ import javafx.stage.Window;
 
 
 public class MainController {
-
+    /**
+     * Button, viewModel and labels of the register interface
+     */
     @FXML
     private Label verification_label;
     @FXML
@@ -22,34 +24,48 @@ public class MainController {
     private ViewModel viewModel ;
 
 
+    /**
+     * Button Events:
+     */
 
-
-
-    // Button Events:
     @FXML
     protected void onLogInButtonClick() {
 
-        // Write Code for Verification using Variable "connector" from Main
-            //1 Connect to connetor.<USERNAME/PASSWORD COLLECTION>
-            //2 Verify that data input provided by the user matches a stored combination
+        /**
+         *  Write Code for Verification using Variable "connector" from Main
+         *             //1 Connect to connetor.<USERNAME/PASSWORD COLLECTION>
+         *             //2 Verify that data input provided by the user matches a stored combination
+          */
 
-        // If it does, save the Object ID & let them in:
+
+        /**
+         *  If it does, save the Object ID & let them in
+          */
+
         verification_label.setStyle("-fx-text-fill:Green");
-        //Write Code here:
 
 
-        // Else, display log-in message error:
+        /**
+         *  Else, display log-in message error
+         */
+
         verification_label.setStyle("-fx-text-fill:Red");
         verification_label.setText("Incorrect username or password");
     }
 
 
-    // Change Views:
+    /**
+     * Register button for the user
+      */
+
     @FXML
     private void onRegisterButtonClick() {
         viewModel.setCurrentView(ViewModel.View.B);
     }
 
+    /**
+     * Method to switch the view
+     */
     public void setViewModel(ViewModel viewModel) {
         this.viewModel = viewModel ;
     }

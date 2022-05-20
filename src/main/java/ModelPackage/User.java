@@ -12,6 +12,9 @@ import java.util.ArrayList;
 
 import static ApplicationPackage.Main.connector;
 
+/**
+ * User class attributes
+ */
 public class User {
 
     private String username;
@@ -21,7 +24,9 @@ public class User {
     private String id;
     private Boolean valid;
     public ArrayList<String> likes_list = new ArrayList<String>();
-
+    /**
+     * User class logger
+     */
     Logger logger = LoggerFactory.getLogger(User.class);
     //Constructors:
 
@@ -37,7 +42,9 @@ public class User {
         this.password = "";
     }
 
-    // Getters:
+    /**
+     * Getters of the user class
+     */
     public String getUsername() {
         return username;
     }
@@ -62,7 +69,9 @@ public class User {
 
     public ArrayList<String> getLikes_list() { return likes_list;}
 
-    //Setters:
+    /**
+     * Setters of the user class
+     */
     public void setUsername(String username) {
         this.username = username;
     }
@@ -89,15 +98,21 @@ public class User {
 
     public void setLikes_list(ArrayList<String> likes_list) { this.likes_list = likes_list;}
 
-    //Helper Methods:
+    /**
+     *Helpers method of the user class
+     */
     public Boolean userVerification(){
-
+        /**
+         * User verification when login
+         */
         MongoCollection<Document> col = connector.db.getCollection("Credentials");
         BasicDBObject query = new BasicDBObject();
         query.put("username",this.username);
         query.put("password",this.password);
 
-
+        /**
+         * Gets user attributes values for the login
+         */
         try (MongoCursor<Document> cursor = col.find(query).iterator()) {
             valid = cursor.hasNext();
             if (valid){
@@ -115,6 +130,10 @@ public class User {
 
     }
 
+    /**
+     * Method that checks the maximum amount of the list of likes
+
+     */
     public boolean checkLikesListSize() {
 
         return (likes_list.size() < 3);
