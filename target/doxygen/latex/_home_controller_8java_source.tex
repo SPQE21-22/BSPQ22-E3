@@ -1,0 +1,115 @@
+\hypertarget{_home_controller_8java_source}{}\doxysection{Home\+Controller.\+java}
+\label{_home_controller_8java_source}\index{src/main/java/ControllerPackage/HomeController.java@{src/main/java/ControllerPackage/HomeController.java}}
+\mbox{\hyperlink{_home_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00001}00001 \textcolor{keyword}{package }ControllerPackage;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00004}00004 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}};}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00005}00005 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_model_package}{ModelPackage}}.\mbox{\hyperlink{class_model_package_1_1_recipe}{Recipe}};}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00006}00006 \textcolor{keyword}{import} javafx.fxml.FXML;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00007}00007 \textcolor{keyword}{import} javafx.fxml.FXMLLoader;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00008}00008 \textcolor{keyword}{import} javafx.scene.Scene;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00009}00009 \textcolor{keyword}{import} javafx.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00010}00010 \textcolor{keyword}{import} javafx.scene.Parent;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00011}00011 \textcolor{keyword}{import} javafx.fxml.FXML;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00012}00012 \textcolor{keyword}{import} javafx.fxml.FXMLLoader;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00013}00013 \textcolor{keyword}{import} javafx.scene.control.*;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00014}00014 \textcolor{keyword}{import} javafx.scene.layout.AnchorPane;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00015}00015 \textcolor{keyword}{import} javafx.scene.text.Text;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00016}00016 \textcolor{keyword}{import} javafx.stage.Stage;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00017}00017 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_controller_package}{ControllerPackage}}.\mbox{\hyperlink{class_controller_package_1_1_login_controller}{LoginController}};}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00018}00018 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_controller_package}{ControllerPackage}}.\mbox{\hyperlink{class_controller_package_1_1_profile_controller}{ProfileController}};}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00019}00019 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_controller_package}{ControllerPackage}}.\mbox{\hyperlink{class_controller_package_1_1_profile_controller}{ProfileController}};}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00020}00020 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_model_package}{ModelPackage}}.\mbox{\hyperlink{class_model_package_1_1_user}{User}};}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00021}00021 \textcolor{keyword}{import} org.slf4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00022}00022 \textcolor{keyword}{import} org.slf4j.LoggerFactory;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00024}00024 \textcolor{keyword}{import} java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00025}00025 \textcolor{keyword}{import} java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00027}00027 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.\mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}};}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00028}00028 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_controller_package}{ControllerPackage}}.\mbox{\hyperlink{class_controller_package_1_1_login_controller}{LoginController}}.local\_user;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00030}\mbox{\hyperlink{class_controller_package_1_1_home_controller}{00030}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_controller_package_1_1_home_controller}{HomeController}} \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00032}00032     FXMLLoader loader = \textcolor{keyword}{new} FXMLLoader();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00034}00034     \textcolor{keyword}{private} AnchorPane anchorPane;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00036}00036     @FXML}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00037}00037     \textcolor{keyword}{private} TextField recipy\_box;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00038}00038     @FXML}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00039}00039     \textcolor{keyword}{private} Button lens\_button;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00041}00041     Logger logger = LoggerFactory.getLogger(\mbox{\hyperlink{class_controller_package_1_1_login_controller}{LoginController}}.class);}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00043}00043     \textcolor{keyword}{static} \mbox{\hyperlink{class_model_package_1_1_recipe}{Recipe}} local\_recipe;}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00045}\mbox{\hyperlink{class_controller_package_1_1_home_controller_a8934e9c31dc397f2c29c35cd08f2629b}{00045}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_home_controller_a8934e9c31dc397f2c29c35cd08f2629b}{onProfileButtonClick}}(ActionEvent event) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00047}00047         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00048}00048             FXMLLoader fmxloader = \textcolor{keyword}{new} FXMLLoader(getClass().getResource(\textcolor{stringliteral}{"{}/ApplicationPackage/Profile.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00049}00049             Parent root1 = (Parent) fmxloader.load();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00050}00050             Stage stage = \textcolor{keyword}{new} Stage();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00051}00051             stage.setScene(\textcolor{keyword}{new} Scene(root1));}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00052}00052             stage.setTitle(\textcolor{stringliteral}{"{}Your Profile"{}});}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00053}00053             stage.show();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00055}00055         \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00056}00056             e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00057}00057         \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00060}00060     \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00061}00061     @FXML}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00062}00062     \textcolor{keyword}{private} \textcolor{keywordtype}{void} onLensRecipyClick(ActionEvent event) \textcolor{keywordflow}{throws} IOException \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00063}00063         String input\_recipeTitle = recipy\_box.getText();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00064}00064         \textcolor{comment}{//System.out.println("{}Input User: "{}+ input\_user);}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00065}00065         logger.info(\textcolor{stringliteral}{"{}Input Recipe: "{}}+ input\_recipeTitle);}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00067}00067         \textcolor{comment}{// Save \& verify recipy data:}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00068}00068         local\_recipe = \textcolor{keyword}{new} \mbox{\hyperlink{class_model_package_1_1_recipe}{Recipe}}(input\_recipeTitle);}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00072}00072         \textcolor{comment}{// If it does, save the User \& let them in:}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00073}00073         \textcolor{keywordflow}{if}(local\_recipe.\mbox{\hyperlink{class_model_package_1_1_recipe_aad77388b6c7f8316b50f3715662a6ce7}{getValid}}()) \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00074}00074             logger.info(\textcolor{stringliteral}{"{}Existing recipe in Database!"{}});}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00075}00075             \mbox{\hyperlink{class_controller_package_1_1_home_controller_a0753fa20caddfb90ad096650ad0b913d}{switchToRecipe}}();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00076}00076         \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00078}00078         \textcolor{comment}{// Else, display log-\/in message error:}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00079}00079         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00080}00080             logger.error(\textcolor{stringliteral}{"{}No recipy with such title!"{}});}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00081}00081         \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00083}\mbox{\hyperlink{class_controller_package_1_1_home_controller_a0753fa20caddfb90ad096650ad0b913d}{00083}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_home_controller_a0753fa20caddfb90ad096650ad0b913d}{switchToRecipe}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00084}00084         window2.setTitle(\textcolor{stringliteral}{"{}Here is your recipe, "{}}+local\_user.getFirst\_name());}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00085}00085         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Recipe.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00086}00086         this.anchorPane = this.loader.load();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00087}00087         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00088}00088         window2.setScene(scene2);}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00089}00089         window2.show();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00090}00090     \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00091}\mbox{\hyperlink{class_controller_package_1_1_home_controller_a323ca91b6179fae6ddba979847481506}{00091}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_home_controller_a323ca91b6179fae6ddba979847481506}{onHeartButtonClick}}(ActionEvent event) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00092}00092         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00094}00094             Alert alerta2 = \textcolor{keyword}{new} Alert(Alert.AlertType.INFORMATION);}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00095}00095             alerta2.setTitle(\textcolor{stringliteral}{"{}Sorry, "{}}+local\_user.getFirst\_name());}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00096}00096             alerta2.setHeaderText(\textcolor{stringliteral}{"{}Window under construction."{}});}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00097}00097             Optional<ButtonType> resultado = alerta2.showAndWait();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00099}00099             \textcolor{keywordflow}{if} (resultado.get() == ButtonType.OK) \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00100}00100                 alerta2.close();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00101}00101             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00102}00102                 \textcolor{keyword}{event}.consume();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00103}00103             \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00104}00104         \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00105}00105             e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00106}00106         \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00107}00107     \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00108}00108 \}}
+\DoxyCodeLine{\Hypertarget{_home_controller_8java_source_l00109}00109 }
+
+\end{DoxyCode}

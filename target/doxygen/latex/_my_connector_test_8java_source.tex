@@ -1,0 +1,39 @@
+\hypertarget{_my_connector_test_8java_source}{}\doxysection{My\+Connector\+Test.\+java}
+\label{_my_connector_test_8java_source}\index{src/test/MongoConnector/MyConnectorTest.java@{src/test/MongoConnector/MyConnectorTest.java}}
+\mbox{\hyperlink{_my_connector_test_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00001}00001 \textcolor{keyword}{package }MongoConnector;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00003}00003 \textcolor{keyword}{import} org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00005}00005 \textcolor{keyword}{import} org.junit.jupiter.api.Test;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00006}00006 \textcolor{comment}{//import org.junit.Rule;}}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00007}00007 \textcolor{keyword}{import} org.databene.contiperf.Required;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00008}00008 \textcolor{keyword}{import} org.databene.contiperf.PerfTest;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00009}00009 \textcolor{keyword}{import} org.databene.contiperf.junit.ContiPerfRule;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00010}00010 \textcolor{keyword}{import} org.databene.contiperf.report.EmptyReportModule;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00011}00011 \textcolor{keyword}{import} \textcolor{keyword}{static} org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00012}00012 \textcolor{keyword}{import} \textcolor{keyword}{static} org.junit.jupiter.api.Assertions.*;}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00014}00014 @PerfTest(invocations = 5)}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00015}00015 @Required(max = 1200, average = 250)}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00016}00016 class MyConnectorTest \{}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00017}00017     \textcolor{comment}{//This activates contiperf}}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00018}00018    \textcolor{comment}{// @Rule}}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00019}00019     \textcolor{comment}{//public ContiPerfRule i = new ContiPerfRule();}}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00020}00020     \textcolor{comment}{// Executes the test repeatedly for at least 10,000 milliseconds (10 seconds)}}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00021}00021     @Test}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00022}00022     @PerfTest(duration = 10000)}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00023}00023     void testMyConnector()\{}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00024}00024         MyConnector m = \textcolor{keyword}{new} MyConnector();}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00025}00025         String connectedString = \textcolor{stringliteral}{"{}Connected to -\/> appDB"{}};}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00026}00026         String testString = m.statusToString(m.db);}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00028}00028         Boolean success = testString.contains(connectedString);}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00029}00029         assertEquals(\textcolor{keyword}{true},success);}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00032}00032     }
+\DoxyCodeLine{\Hypertarget{_my_connector_test_8java_source_l00033}00033 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,123 @@
+\hypertarget{_user_8java_source}{}\doxysection{User.\+java}
+\label{_user_8java_source}\index{src/main/java/ModelPackage/User.java@{src/main/java/ModelPackage/User.java}}
+\mbox{\hyperlink{_user_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00001}00001 \textcolor{keyword}{package }ModelPackage;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00003}00003 \textcolor{keyword}{import} com.mongodb.BasicDBObject;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00004}00004 \textcolor{keyword}{import} com.mongodb.client.MongoCollection;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00005}00005 \textcolor{keyword}{import} com.mongodb.client.MongoCursor;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00006}00006 \textcolor{keyword}{import} javafx.scene.control.TextField;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00007}00007 \textcolor{keyword}{import} org.bson.Document;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00008}00008 \textcolor{keyword}{import} org.slf4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00009}00009 \textcolor{keyword}{import} org.slf4j.LoggerFactory;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00011}00011 \textcolor{keyword}{import} java.util.ArrayList;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00013}00013 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.\mbox{\hyperlink{class_application_package_1_1_main_a4a55f74f7f1e55ddb4f8714f43cdb79f}{connector}};}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00018}\mbox{\hyperlink{class_model_package_1_1_user}{00018}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_model_package_1_1_user}{User}} \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00020}00020     \textcolor{keyword}{private} String username;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00021}00021     \textcolor{keyword}{private} String password;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00022}00022     \textcolor{keyword}{private} String first\_name = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00023}00023     \textcolor{keyword}{private} String last\_name = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00024}00024     \textcolor{keyword}{private} String id;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00025}00025     \textcolor{keyword}{private} Boolean valid;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00026}\mbox{\hyperlink{class_model_package_1_1_user_a00d6a594411299f95ada06aaf07da0e2}{00026}}     \textcolor{keyword}{public} ArrayList<String> \mbox{\hyperlink{class_model_package_1_1_user_a00d6a594411299f95ada06aaf07da0e2}{likes\_list}} = \textcolor{keyword}{new} ArrayList<String>();}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00030}00030     Logger logger = LoggerFactory.getLogger(\mbox{\hyperlink{class_model_package_1_1_user}{User}}.class);}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00031}00031     \textcolor{comment}{//Constructors:}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00033}\mbox{\hyperlink{class_model_package_1_1_user_af40febbc6419e1d0aa206594f9f04a19}{00033}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_model_package_1_1_user_af40febbc6419e1d0aa206594f9f04a19}{User}}(String username, String password) \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00034}00034         this.username = username;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00035}00035         this.password = password;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00036}00036         valid = \mbox{\hyperlink{class_model_package_1_1_user_aa361058686ea38650a7cdac1ef55814c}{userVerification}}();}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00037}00037     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00040}\mbox{\hyperlink{class_model_package_1_1_user_a059c8ee57b1d53067d6b7d4ab288fe59}{00040}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_user_a059c8ee57b1d53067d6b7d4ab288fe59}{clear}}(\mbox{\hyperlink{class_model_package_1_1_user}{User}} user)\{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00041}00041         this.username = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00042}00042         this.password = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00043}00043     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00048}\mbox{\hyperlink{class_model_package_1_1_user_a22ab0c7642690be9ebc26e17a6b46e33}{00048}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_user_a22ab0c7642690be9ebc26e17a6b46e33}{getUsername}}() \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00049}00049         \textcolor{keywordflow}{return} username;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00052}\mbox{\hyperlink{class_model_package_1_1_user_a0719945ebb88c292ce404d14dcfd1267}{00052}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_user_a0719945ebb88c292ce404d14dcfd1267}{getPassword}}() \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00053}00053         \textcolor{keywordflow}{return} password;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00056}\mbox{\hyperlink{class_model_package_1_1_user_ad0e06d6230bef27b77f057f10d662b57}{00056}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_user_ad0e06d6230bef27b77f057f10d662b57}{getId}}() \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00057}00057         \textcolor{keywordflow}{return} id;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00058}00058     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00060}\mbox{\hyperlink{class_model_package_1_1_user_abd7bdaea7853e48b2c960141552e8235}{00060}}     \textcolor{keyword}{public} Boolean \mbox{\hyperlink{class_model_package_1_1_user_abd7bdaea7853e48b2c960141552e8235}{getValid}}() \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00061}00061         \textcolor{keywordflow}{return} valid;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00064}\mbox{\hyperlink{class_model_package_1_1_user_af23e06cc9e5bf6d440bd68a209dfe8ae}{00064}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_user_af23e06cc9e5bf6d440bd68a209dfe8ae}{getFirst\_name}}() \{\textcolor{keywordflow}{return} first\_name; \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00066}\mbox{\hyperlink{class_model_package_1_1_user_a90b351ead44570defbe61d289c78dc98}{00066}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_user_a90b351ead44570defbe61d289c78dc98}{getLast\_name}}() \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00067}00067         \textcolor{keywordflow}{return} last\_name;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00070}\mbox{\hyperlink{class_model_package_1_1_user_ace08403da34774cdd462a26e69a4516a}{00070}}     \textcolor{keyword}{public} ArrayList<String> \mbox{\hyperlink{class_model_package_1_1_user_ace08403da34774cdd462a26e69a4516a}{getLikes\_list}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_model_package_1_1_user_a00d6a594411299f95ada06aaf07da0e2}{likes\_list}};\}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00075}\mbox{\hyperlink{class_model_package_1_1_user_a0ab7e00d80fffe2a53d7ba4d0a68de8b}{00075}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_user_a0ab7e00d80fffe2a53d7ba4d0a68de8b}{setUsername}}(String username) \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00076}00076         this.username = username;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00079}\mbox{\hyperlink{class_model_package_1_1_user_a71d2a0e366bb706ab4679dd3ee674c56}{00079}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_user_a71d2a0e366bb706ab4679dd3ee674c56}{setPassword}}(String password) \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00080}00080         this.password = password;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00081}00081     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00083}\mbox{\hyperlink{class_model_package_1_1_user_a01a629a724122827e4796844856186d2}{00083}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_user_a01a629a724122827e4796844856186d2}{setId}}(String \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00084}00084         this.\textcolor{keywordtype}{id} = id;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00085}00085     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00087}\mbox{\hyperlink{class_model_package_1_1_user_ac1ba1ab9c64c82aad8dcd6a1b1b1b640}{00087}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_user_ac1ba1ab9c64c82aad8dcd6a1b1b1b640}{setValid}}(Boolean valid) \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00088}00088         this.valid = valid;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00091}\mbox{\hyperlink{class_model_package_1_1_user_a350b368c21b0b0b0697796719b6ed1af}{00091}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_user_a350b368c21b0b0b0697796719b6ed1af}{setFirst\_name}}(String first\_name) \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00092}00092         this.first\_name = first\_name;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00093}00093     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00095}\mbox{\hyperlink{class_model_package_1_1_user_a1b0297f1b3ecc48ef2eca64007af603c}{00095}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_user_a1b0297f1b3ecc48ef2eca64007af603c}{setLast\_name}}(String last\_name) \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00096}00096         this.last\_name = last\_name;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00099}\mbox{\hyperlink{class_model_package_1_1_user_a537f156ac925464f99cad6c6edc8cb78}{00099}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_user_a537f156ac925464f99cad6c6edc8cb78}{setLikes\_list}}(ArrayList<String> \mbox{\hyperlink{class_model_package_1_1_user_a00d6a594411299f95ada06aaf07da0e2}{likes\_list}}) \{ this.likes\_list = \mbox{\hyperlink{class_model_package_1_1_user_a00d6a594411299f95ada06aaf07da0e2}{likes\_list}};\}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00104}\mbox{\hyperlink{class_model_package_1_1_user_aa361058686ea38650a7cdac1ef55814c}{00104}}     \textcolor{keyword}{public} Boolean \mbox{\hyperlink{class_model_package_1_1_user_aa361058686ea38650a7cdac1ef55814c}{userVerification}}()\{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00108}00108         MongoCollection<Document> col = connector.db.getCollection(\textcolor{stringliteral}{"{}Credentials"{}});}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00109}00109         BasicDBObject query = \textcolor{keyword}{new} BasicDBObject();}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00110}00110         query.put(\textcolor{stringliteral}{"{}username"{}},this.username);}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00111}00111         query.put(\textcolor{stringliteral}{"{}password"{}},this.password);}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00116}00116         \textcolor{keywordflow}{try} (MongoCursor<Document> cursor = col.find(query).iterator()) \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00117}00117             valid = cursor.hasNext();}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00118}00118             \textcolor{keywordflow}{if} (valid)\{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00119}00119                 Document obj = cursor.next();}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00120}00120                 this.\textcolor{keywordtype}{id} = obj.get(\textcolor{stringliteral}{"{}\_id"{}}).toString();}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00121}00121                 this.first\_name = obj.get(\textcolor{stringliteral}{"{}first\_name"{}}).toString();}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00122}00122                 this.last\_name = obj.get(\textcolor{stringliteral}{"{}last\_name"{}}).toString();}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00123}00123             \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00124}00124         \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00126}00126         \textcolor{comment}{//System.out.println("{}Matched Credentials? : "{}+valid);}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00127}00127         logger.info(\textcolor{stringliteral}{"{}Matched Credentials? : "{}}+valid);}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00128}00128         \textcolor{keywordflow}{return} valid;}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00129}00129 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00130}00130 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00131}00131     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00137}\mbox{\hyperlink{class_model_package_1_1_user_a3a06ddb412f00509308dd49a9cb81f25}{00137}}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{class_model_package_1_1_user_a3a06ddb412f00509308dd49a9cb81f25}{checkLikesListSize}}() \{}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00139}00139         \textcolor{keywordflow}{return} (\mbox{\hyperlink{class_model_package_1_1_user_a00d6a594411299f95ada06aaf07da0e2}{likes\_list}}.size() < 3);}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00140}00140     \}}
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_user_8java_source_l00142}00142 \}}
+
+\end{DoxyCode}

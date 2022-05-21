@@ -1,0 +1,77 @@
+\hypertarget{_create_account_8java_source}{}\doxysection{Create\+Account.\+java}
+\label{_create_account_8java_source}\index{src/main/java/ModelPackage/CreateAccount.java@{src/main/java/ModelPackage/CreateAccount.java}}
+\mbox{\hyperlink{_create_account_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00001}\mbox{\hyperlink{namespace_model_package}{00001}} \textcolor{keyword}{package }ModelPackage;}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00003}00003 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_mongo_connector}{MongoConnector}}.\mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{MyConnector}};}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00004}00004 \textcolor{keyword}{import} com.mongodb.BasicDBObject;}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00005}00005 \textcolor{keyword}{import} com.mongodb.client.MongoCollection;}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00006}00006 \textcolor{keyword}{import} com.mongodb.client.MongoCursor;}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00007}00007 \textcolor{keyword}{import} org.bson.Document;}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00008}00008 \textcolor{keyword}{import} org.slf4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00009}00009 \textcolor{keyword}{import} org.slf4j.LoggerFactory;}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00011}00011 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.\mbox{\hyperlink{class_application_package_1_1_main_a4a55f74f7f1e55ddb4f8714f43cdb79f}{connector}};}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00013}\mbox{\hyperlink{class_model_package_1_1_create_account}{00013}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_model_package_1_1_create_account}{CreateAccount}} \{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00014}\mbox{\hyperlink{class_model_package_1_1_create_account_aad1d8685d40c9bc38909fdb929ede8e4}{00014}}     \textcolor{keyword}{public} String \mbox{\hyperlink{class_model_package_1_1_create_account_aad1d8685d40c9bc38909fdb929ede8e4}{errorMessage}} = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00015}00015     Logger logger = LoggerFactory.getLogger(\mbox{\hyperlink{class_model_package_1_1_create_account}{CreateAccount}}.class);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00017}\mbox{\hyperlink{class_model_package_1_1_create_account_ac568b3c8eaa252eae1392f53927f0e76}{00017}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_model_package_1_1_create_account_ac568b3c8eaa252eae1392f53927f0e76}{CreateAccount}}()\{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00018}00018         \textcolor{keywordflow}{if} (connector == \textcolor{keyword}{null})\{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00019}00019             connector = \textcolor{keyword}{new} \mbox{\hyperlink{class_mongo_connector_1_1_my_connector}{MyConnector}}();}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00020}00020         \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00026}\mbox{\hyperlink{class_model_package_1_1_create_account_a01270e653d0adbc8024fa6b6fda003cf}{00026}}     \textcolor{keyword}{public} Boolean \mbox{\hyperlink{class_model_package_1_1_create_account_a01270e653d0adbc8024fa6b6fda003cf}{newAccountVerification}}(String username, String password, String first\_name, String last\_name)\{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00030}00030         \textcolor{keywordflow}{if} (username.equals(\textcolor{stringliteral}{"{}"{}})|| password.equals(\textcolor{stringliteral}{"{}"{}}) || first\_name.equals(\textcolor{stringliteral}{"{}"{}}) || last\_name.equals(\textcolor{stringliteral}{"{}"{}}))\{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00031}00031             \mbox{\hyperlink{class_model_package_1_1_create_account_aad1d8685d40c9bc38909fdb929ede8e4}{errorMessage}} = \textcolor{stringliteral}{"{}Please complete ALL text fields"{}};}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00032}00032             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00033}00033         \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00037}00037         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_model_package_1_1_create_account_acba1443c682fbaa95e8753640a042a26}{userNameCheck}}(username))}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00038}00038         \{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00039}00039             \mbox{\hyperlink{class_model_package_1_1_create_account_aad1d8685d40c9bc38909fdb929ede8e4}{errorMessage}} = \textcolor{stringliteral}{"{}Sorry, that username is already in use."{}};}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00040}00040             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00045}00045         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00046}00046             \mbox{\hyperlink{class_model_package_1_1_create_account_a02db0b4581d578d10b93e0493ebf40b9}{writeNewAccount}}(username,password,first\_name,last\_name);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00047}00047             \textcolor{keywordflow}{return} \textcolor{keyword}{true};\}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00053}\mbox{\hyperlink{class_model_package_1_1_create_account_acba1443c682fbaa95e8753640a042a26}{00053}}     \textcolor{keyword}{public} Boolean \mbox{\hyperlink{class_model_package_1_1_create_account_acba1443c682fbaa95e8753640a042a26}{userNameCheck}}(String username) \{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00054}00054         MongoCollection<Document> col = connector.db.getCollection(\textcolor{stringliteral}{"{}Credentials"{}});}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00055}00055         BasicDBObject query = \textcolor{keyword}{new} BasicDBObject();}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00056}00056         query.put(\textcolor{stringliteral}{"{}username"{}}, username);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00057}00057         \textcolor{keywordtype}{boolean} valid = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00058}00058         \textcolor{keywordflow}{try} (MongoCursor<Document> cursor = col.find(query).iterator()) \{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00059}00059             valid = cursor.hasNext();}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00060}00060         \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00061}00061         \textcolor{keywordflow}{return} valid;}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00067}\mbox{\hyperlink{class_model_package_1_1_create_account_a02db0b4581d578d10b93e0493ebf40b9}{00067}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_create_account_a02db0b4581d578d10b93e0493ebf40b9}{writeNewAccount}}(String username, String password, String first\_name, String last\_name)\{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00068}00068         Document document = \textcolor{keyword}{new} Document();}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00069}00069         document.append(\textcolor{stringliteral}{"{}username"{}}, username);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00070}00070         document.append(\textcolor{stringliteral}{"{}password"{}}, password);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00071}00071         document.append(\textcolor{stringliteral}{"{}first\_name"{}}, first\_name);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00072}00072         document.append(\textcolor{stringliteral}{"{}last\_name"{}}, last\_name);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00073}00073         connector.db.getCollection(\textcolor{stringliteral}{"{}Credentials"{}}).insertOne(document);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00074}00074         \textcolor{comment}{//System.out.println("{}Account created successfully"{});}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00075}00075         logger.info(\textcolor{stringliteral}{"{}Account created successfully"{}});}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00076}00076     \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00080}\mbox{\hyperlink{class_model_package_1_1_create_account_acbb42b13493e4fb4c7fd489644fad6b2}{00080}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_package_1_1_create_account_acbb42b13493e4fb4c7fd489644fad6b2}{removeOneAccount}}(String username, String password, String first\_name, String last\_name)\{}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00081}00081         Document document = \textcolor{keyword}{new} Document();}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00082}00082         document.append(\textcolor{stringliteral}{"{}username"{}}, username);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00083}00083         document.append(\textcolor{stringliteral}{"{}password"{}}, password);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00084}00084         document.append(\textcolor{stringliteral}{"{}first\_name"{}}, first\_name);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00085}00085         document.append(\textcolor{stringliteral}{"{}last\_name"{}}, last\_name);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00086}00086         connector.db.getCollection(\textcolor{stringliteral}{"{}Credentials"{}}).deleteOne(document);}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00087}00087         \textcolor{comment}{//System.out.println("{}Account deleted"{});}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00088}00088         logger.info(\textcolor{stringliteral}{"{}Account deleted successfully"{}});}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{_create_account_8java_source_l00092}00092 \}}
+
+\end{DoxyCode}
