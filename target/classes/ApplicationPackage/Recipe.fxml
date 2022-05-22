@@ -10,14 +10,14 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.RecipeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.RecipeController">
    <SplitPane dividerPositions="0.5082191780821917" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="618.0">
          <ImageView fitHeight="171.0" fitWidth="332.0" layoutX="238.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
          <ImageView fitHeight="83.0" fitWidth="95.0" layoutX="70.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../Images/Logo3grey.png" />
          </ImageView>
-         <ToggleButton layoutX="77.0" layoutY="141.0" mnemonicParsing="false" onAction="#onFavButtonClick" text="Add to favs" textFill="#9a126a" />
+         <ToggleButton layoutX="77.0" layoutY="141.0" mnemonicParsing="false" text="Add to favs" textFill="#9a126a" />
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <Label layoutX="48.0" layoutY="15.0" text="Name:">
