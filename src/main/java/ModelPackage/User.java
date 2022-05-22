@@ -1,15 +1,20 @@
 package ModelPackage;
 
-import com.fasterxml.jackson.core.FormatSchema;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import javafx.scene.control.TextField;
 import org.bson.Document;
-import org.bson.json.JsonReader;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
 
 import static ApplicationPackage.Main.connector;
 
+/**
+ * User class attributes
+ */
 public class User {
 
     private String username;
@@ -18,7 +23,11 @@ public class User {
     private String last_name = "";
     private String id;
     private Boolean valid;
-
+    public ArrayList<String> likes_list = new ArrayList<String>();
+    /**
+     * User class logger
+     */
+    Logger logger = LoggerFactory.getLogger(User.class);
     //Constructors:
 
     public User(String username, String password) {
@@ -28,8 +37,14 @@ public class User {
     }
 
 
+    public void clear(User user){
+        this.username = "";
+        this.password = "";
+    }
 
-    // Getters:
+    /**
+     * Getters of the user class
+     */
     public String getUsername() {
         return username;
     }
@@ -46,15 +61,17 @@ public class User {
         return valid;
     }
 
-    public String getFirst_name() {
-        return first_name;
-    }
+    public String getFirst_name() {return first_name; }
 
     public String getLast_name() {
         return last_name;
     }
 
-    //Setters:
+    public ArrayList<String> getLikes_list() { return likes_list;}
+
+    /**
+     * Setters of the user class
+     */
     public void setUsername(String username) {
         this.username = username;
     }
@@ -79,15 +96,23 @@ public class User {
         this.last_name = last_name;
     }
 
-    //Helper Methods:
-    public Boolean userVerification(){
+    public void setLikes_list(ArrayList<String> likes_list) { this.likes_list = likes_list;}
 
+    /**
+     *Helpers method of the user class
+     */
+    public Boolean userVerification(){
+        /**
+         * User verification when login
+         */
         MongoCollection<Document> col = connector.db.getCollection("Credentials");
         BasicDBObject query = new BasicDBObject();
         query.put("username",this.username);
         query.put("password",this.password);
 
-
+        /**
+         * Gets user attributes values for the login
+         */
         try (MongoCursor<Document> cursor = col.find(query).iterator()) {
             valid = cursor.hasNext();
             if (valid){
@@ -98,10 +123,20 @@ public class User {
             }
         }
 
-        System.out.println("Matched Credentials? : "+valid);
+        //System.out.println("Matched Credentials? : "+valid);
+        logger.info("Matched Credentials? : "+valid);
         return valid;
+
+
     }
 
+    /**
+     * Method that checks the maximum amount of the list of likes
 
+     */
+    public boolean checkLikesListSize() {
+
+        return (likes_list.size() < 3);
+    }
 
 }

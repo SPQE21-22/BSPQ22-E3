@@ -1,0 +1,83 @@
+\hypertarget{_recipe_controller_8java_source}{}\doxysection{Recipe\+Controller.\+java}
+\label{_recipe_controller_8java_source}\index{src/main/java/ControllerPackage/RecipeController.java@{src/main/java/ControllerPackage/RecipeController.java}}
+\mbox{\hyperlink{_recipe_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00001}00001 \textcolor{keyword}{package }ControllerPackage;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00003}00003 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}};}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00004}00004 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_model_package}{ModelPackage}}.\mbox{\hyperlink{class_model_package_1_1_recipe}{Recipe}};}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00005}00005 \textcolor{keyword}{import} javafx.fxml.FXML;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00006}00006 \textcolor{keyword}{import} javafx.fxml.FXMLLoader;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00007}00007 \textcolor{keyword}{import} javafx.fxml.Initializable;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00008}00008 \textcolor{keyword}{import} javafx.scene.Scene;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00009}00009 \textcolor{keyword}{import} javafx.scene.control.Button;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00010}00010 \textcolor{keyword}{import} javafx.scene.control.Label;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00011}00011 \textcolor{keyword}{import} javafx.scene.image.Image;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00012}00012 \textcolor{keyword}{import} javafx.scene.image.ImageView;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00013}00013 \textcolor{keyword}{import} javafx.scene.layout.AnchorPane;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00015}00015 \textcolor{keyword}{import} java.io.File;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00016}00016 \textcolor{keyword}{import} java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00017}00017 \textcolor{keyword}{import} java.net.URL;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00018}00018 \textcolor{keyword}{import} java.util.ResourceBundle;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00020}00020 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.\mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}};}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00021}00021 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_controller_package}{ControllerPackage}}.\mbox{\hyperlink{class_controller_package_1_1_home_controller}{HomeController}}.local\_recipe;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00022}00022 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_controller_package}{ControllerPackage}}.\mbox{\hyperlink{class_controller_package_1_1_login_controller}{LoginController}}.local\_user;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00024}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller}{00024}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_controller_package_1_1_recipe_controller}{RecipeController}} \textcolor{keyword}{implements} Initializable \{}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00026}00026     FXMLLoader loader = \textcolor{keyword}{new} FXMLLoader();}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00027}00027     \textcolor{keyword}{private} AnchorPane anchorPane;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00030}00030     @FXML}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00031}00031     \textcolor{keyword}{private} Label name\_label;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00032}00032     @FXML}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00033}00033     \textcolor{keyword}{private} Label calories\_label;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00034}00034     @FXML}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00035}00035     \textcolor{keyword}{private} Label carbohydrates\_label;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00036}00036     @FXML}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00037}00037     \textcolor{keyword}{private} Label proteins\_label;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00038}00038     @FXML}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00039}00039     \textcolor{keyword}{private} Label fats\_label;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00040}00040     @FXML}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00041}00041     \textcolor{keyword}{private} Label readyInMinutes\_label;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00042}00042     @FXML}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00043}00043     \textcolor{keyword}{private} Label likes\_label;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00044}00044     @FXML}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00045}00045     \textcolor{keyword}{private} ImageView image\_id;}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00053}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a052c4c53195d620005c3913ee6463199}{00053}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a052c4c53195d620005c3913ee6463199}{initialize}}(URL url, ResourceBundle rb) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00054}00054         name\_label.setText(local\_recipe.getTitle());}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00055}00055         calories\_label.setText(String.valueOf(local\_recipe.getCalories()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00056}00056         carbohydrates\_label.setText(String.valueOf(local\_recipe.getCarbohydrates()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00057}00057         proteins\_label.setText(String.valueOf(local\_recipe.getProteins()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00058}00058         fats\_label.setText(String.valueOf(local\_recipe.getFats()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00059}00059         readyInMinutes\_label.setText(String.valueOf(local\_recipe.getReadyInMinutes()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00060}00060         likes\_label.setText(String.valueOf(local\_recipe.getlikes\_count()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00062}00062         \textcolor{comment}{// File file = new File(local\_recipe.getImage());}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00063}00063        \textcolor{comment}{/* Image image = new Image(local\_recipe.getImage());}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00064}00064 \textcolor{comment}{        System.out.println(image);}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00065}00065 \textcolor{comment}{        image\_id.setImage(image);*/}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00066}00066     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00070}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a7add0a37b0ee33e794c7034fd5bcb4e3}{00070}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a7add0a37b0ee33e794c7034fd5bcb4e3}{onBackButtonClick}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00071}00071         \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{switchToHome}}();}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00074}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{00074}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{switchToHome}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00075}00075         window2.setTitle(\textcolor{stringliteral}{"{}Welcome Home, "{}}+local\_user.getFirst\_name());}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00076}00076         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Home.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00077}00077         this.anchorPane = (AnchorPane)this.loader.load();}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00078}00078         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00079}00079         window2.setScene(scene2);}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00080}00080         window2.show();}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00084}00084 \}}
+
+\end{DoxyCode}

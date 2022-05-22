@@ -1,0 +1,95 @@
+\hypertarget{_login_controller_8java_source}{}\doxysection{Login\+Controller.\+java}
+\label{_login_controller_8java_source}\index{src/main/java/ControllerPackage/LoginController.java@{src/main/java/ControllerPackage/LoginController.java}}
+\mbox{\hyperlink{_login_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00001}00001 \textcolor{keyword}{package }ControllerPackage;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00005}00005 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}};}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00006}00006 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_model_package}{ModelPackage}}.\mbox{\hyperlink{class_model_package_1_1_user}{User}};}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00007}00007 \textcolor{keyword}{import} javafx.fxml.FXML;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00008}00008 \textcolor{keyword}{import} javafx.fxml.FXMLLoader;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00009}00009 \textcolor{keyword}{import} javafx.scene.Scene;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00010}00010 \textcolor{keyword}{import} javafx.scene.control.Button;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00011}00011 \textcolor{keyword}{import} javafx.scene.control.Label;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00012}00012 \textcolor{keyword}{import} javafx.scene.control.PasswordField;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00013}00013 \textcolor{keyword}{import} javafx.scene.control.TextField;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00014}00014 \textcolor{keyword}{import} javafx.scene.layout.AnchorPane;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00015}00015 \textcolor{keyword}{import} org.slf4j.Logger;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00016}00016 \textcolor{keyword}{import} org.slf4j.LoggerFactory;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00018}00018 \textcolor{keyword}{import} java.io.IOException;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00020}00020 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_application_package}{ApplicationPackage}}.\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.\mbox{\hyperlink{class_application_package_1_1_main_af0e9cfc072c4a2f79ffac19a8420f255}{window2}};}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00023}\mbox{\hyperlink{class_controller_package_1_1_login_controller}{00023}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_controller_package_1_1_login_controller}{LoginController}} \{}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00024}00024     FXMLLoader loader = \textcolor{keyword}{new} FXMLLoader();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00025}00025     \textcolor{keyword}{private} AnchorPane anchorPane;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00029}00029     @FXML}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00030}00030     \textcolor{keyword}{private} Label verification\_label;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00031}00031     @FXML}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00032}00032     \textcolor{keyword}{private} Button registration\_button;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00033}00033     @FXML}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00034}00034     \textcolor{keyword}{private} Button login\_button;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00035}00035     @FXML}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00036}00036     \textcolor{keyword}{private} TextField username\_box;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00037}00037     @FXML}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00038}00038     \textcolor{keyword}{private} PasswordField password\_box;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00040}00040     \textcolor{keyword}{static} \mbox{\hyperlink{class_model_package_1_1_user}{User}} local\_user;}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00042}00042     Logger logger = LoggerFactory.getLogger(\mbox{\hyperlink{class_controller_package_1_1_login_controller}{LoginController}}.class);}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00054}00054     @FXML}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00055}00055     \textcolor{keyword}{private} \textcolor{keywordtype}{void} onLoginButtonClick() \textcolor{keywordflow}{throws} IOException \{}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00057}00057         String input\_user = username\_box.getText();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00058}00058         String input\_password = password\_box.getText();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00060}00060         \textcolor{comment}{//System.out.println("{}Input User: "{}+ input\_user);}}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00061}00061         logger.info(\textcolor{stringliteral}{"{}Input User: "{}}+ input\_user);}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00062}00062         \textcolor{comment}{//System.out.println("{}Input Password: "{}+ input\_password);}}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00063}00063         logger.info(\textcolor{stringliteral}{"{}Input Password: "{}}+ input\_password);}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00069}00069         local\_user = \textcolor{keyword}{new} \mbox{\hyperlink{class_model_package_1_1_user}{User}}(input\_user,input\_password);}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00075}00075         \textcolor{keywordflow}{if}(local\_user.\mbox{\hyperlink{class_model_package_1_1_user_abd7bdaea7853e48b2c960141552e8235}{getValid}}()) \{}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00076}00076             verification\_label.setStyle(\textcolor{stringliteral}{"{}-\/fx-\/text-\/fill:Green"{}});}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00077}00077             verification\_label.setText(\textcolor{stringliteral}{"{}Access Granted!"{}});}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00078}00078             \mbox{\hyperlink{class_controller_package_1_1_login_controller_a7c953276056b66815fbcfd6b45091961}{switchToHome}}();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00079}00079         \}}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00085}00085         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00086}00086             verification\_label.setStyle(\textcolor{stringliteral}{"{}-\/fx-\/text-\/fill:Red"{}});}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00087}00087             verification\_label.setText(\textcolor{stringliteral}{"{}Incorrect username or password"{}});}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00088}00088         \}}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00089}00089     \}}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00094}00094     @FXML}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00095}00095     \textcolor{keyword}{private} \textcolor{keywordtype}{void} onRegisterButtonClick() \textcolor{keywordflow}{throws} IOException \{}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00096}00096         \mbox{\hyperlink{class_controller_package_1_1_login_controller_a966e1de0895a926e6d939eba1fe4622d}{switchToRegister}}();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00097}00097     \}}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00105}\mbox{\hyperlink{class_controller_package_1_1_login_controller_a7c953276056b66815fbcfd6b45091961}{00105}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_login_controller_a7c953276056b66815fbcfd6b45091961}{switchToHome}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00106}00106         window2.setTitle(\textcolor{stringliteral}{"{}Welcome Home, "{}}+local\_user.\mbox{\hyperlink{class_model_package_1_1_user_af23e06cc9e5bf6d440bd68a209dfe8ae}{getFirst\_name}}());}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00107}00107         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Home.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00108}00108         this.anchorPane = this.loader.load();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00109}00109         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00110}00110         window2.setScene(scene2);}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00111}00111         window2.show();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00112}00112     \}}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00117}\mbox{\hyperlink{class_controller_package_1_1_login_controller_a966e1de0895a926e6d939eba1fe4622d}{00117}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_login_controller_a966e1de0895a926e6d939eba1fe4622d}{switchToRegister}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00118}00118         window2.setTitle(\textcolor{stringliteral}{"{}Create an Account"{}});}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00119}00119         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Register.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00120}00120         this.anchorPane = this.loader.load();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00121}00121         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00122}00122         window2.setScene(scene2);}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00123}00123         window2.show();}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00124}00124     \}}
+\DoxyCodeLine{\Hypertarget{_login_controller_8java_source_l00125}00125 \}}
+
+\end{DoxyCode}

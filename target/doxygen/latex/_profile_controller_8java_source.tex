@@ -1,0 +1,81 @@
+\hypertarget{_profile_controller_8java_source}{}\doxysection{Profile\+Controller.\+java}
+\label{_profile_controller_8java_source}\index{src/main/java/ControllerPackage/ProfileController.java@{src/main/java/ControllerPackage/ProfileController.java}}
+\mbox{\hyperlink{_profile_controller_8java}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00001}00001 \textcolor{keyword}{package }ControllerPackage;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00003}00003 \textcolor{keyword}{import} javafx.event.ActionEvent;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00004}00004 \textcolor{keyword}{import} javafx.fxml.FXML;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00005}00005 \textcolor{keyword}{import} javafx.fxml.FXMLLoader;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00006}00006 \textcolor{keyword}{import} javafx.fxml.Initializable;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00007}00007 \textcolor{keyword}{import} javafx.scene.control.Alert;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00008}00008 \textcolor{keyword}{import} javafx.scene.control.ButtonType;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00009}00009 \textcolor{keyword}{import} javafx.scene.control.Label;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00010}00010 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_controller_package}{ControllerPackage}}.\mbox{\hyperlink{class_controller_package_1_1_login_controller}{LoginController}};}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00011}00011 \textcolor{keyword}{import} \mbox{\hyperlink{namespace_model_package}{ModelPackage}}.\mbox{\hyperlink{class_model_package_1_1_user}{User}};}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00013}00013 \textcolor{keyword}{import} java.net.URL;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00014}00014 \textcolor{keyword}{import} java.util.Optional;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00015}00015 \textcolor{keyword}{import} java.util.ResourceBundle;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00017}00017 \textcolor{keyword}{import} \textcolor{keyword}{static} \mbox{\hyperlink{namespace_controller_package}{ControllerPackage}}.\mbox{\hyperlink{class_controller_package_1_1_login_controller}{LoginController}}.local\_user;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00019}\mbox{\hyperlink{class_controller_package_1_1_profile_controller}{00019}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_controller_package_1_1_profile_controller}{ProfileController}} \textcolor{keyword}{implements} Initializable \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00021}00021     @FXML}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00022}00022     Label name\_label;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00023}00023     @FXML}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00024}00024     Label surname\_label;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00025}00025     @FXML}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00026}00026     Label user\_label;}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00036}00036     @Override}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00037}\mbox{\hyperlink{class_controller_package_1_1_profile_controller_a61cb55056976a7a549b5f1eddd0ac31e}{00037}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_profile_controller_a61cb55056976a7a549b5f1eddd0ac31e}{initialize}}(URL url, ResourceBundle rb) \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00038}00038         user\_label.setText(local\_user.getUsername());}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00039}00039         name\_label.setText(local\_user.getFirst\_name());}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00040}00040         surname\_label.setText(local\_user.getLast\_name());}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00045}00045     FXMLLoader loader = \textcolor{keyword}{new} FXMLLoader();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00053}\mbox{\hyperlink{class_controller_package_1_1_profile_controller_a3ebda4ffa46d10442c06801ac910d5ff}{00053}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_profile_controller_a3ebda4ffa46d10442c06801ac910d5ff}{onLogOutButtonClick}}(ActionEvent event) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00054}00054         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00056}00056             Alert alerta = \textcolor{keyword}{new} Alert(Alert.AlertType.CONFIRMATION);}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00057}00057             alerta.setTitle(\textcolor{stringliteral}{"{}Exit"{}});}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00058}00058             alerta.setHeaderText(\textcolor{stringliteral}{"{}Are you sure?"{}});}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00059}00059             Optional<ButtonType> resultado = alerta.showAndWait();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00061}00061             \textcolor{keywordflow}{if} (resultado.get() == ButtonType.OK) \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00062}00062                 local\_user.clear(local\_user);}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00063}00063                 System.exit(0);}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00064}00064             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00065}00065                 \textcolor{keyword}{event}.consume();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00066}00066             \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00067}00067         \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00068}00068             e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00069}00069         \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00070}00070     \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00074}\mbox{\hyperlink{class_controller_package_1_1_profile_controller_a07bc2fb76c10a99a41f7ad062ae33a58}{00074}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_profile_controller_a07bc2fb76c10a99a41f7ad062ae33a58}{onHeartButtonClick}}(ActionEvent event) \textcolor{keywordflow}{throws} Exception \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00075}00075         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00077}00077             Alert alerta2 = \textcolor{keyword}{new} Alert(Alert.AlertType.INFORMATION);}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00078}00078             alerta2.setTitle(\textcolor{stringliteral}{"{}Sorry, "{}}+local\_user.getFirst\_name());}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00079}00079             alerta2.setHeaderText(\textcolor{stringliteral}{"{}Window under construction."{}});}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00080}00080             Optional<ButtonType> resultado = alerta2.showAndWait();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00082}00082             \textcolor{keywordflow}{if} (resultado.get() == ButtonType.OK) \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00083}00083                 alerta2.close();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00084}00084             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00085}00085                 \textcolor{keyword}{event}.consume();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00086}00086             \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00087}00087         \} \textcolor{keywordflow}{catch} (Exception e) \{}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00088}00088             e.printStackTrace();}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00089}00089         \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00090}00090     \}}
+\DoxyCodeLine{\Hypertarget{_profile_controller_8java_source_l00091}00091 \}}
+
+\end{DoxyCode}

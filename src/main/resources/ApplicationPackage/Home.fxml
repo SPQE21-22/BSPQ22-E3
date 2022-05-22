@@ -9,29 +9,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.HomeController">
+<AnchorPane prefHeight="333.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.HomeController">
    <children>
-      <SplitPane dividerPositions="0.4" layoutX="10.0" layoutY="10.0" orientation="VERTICAL" prefHeight="375.0" prefWidth="579.0">
+      <SplitPane dividerPositions="0.3284182305630027" orientation="VERTICAL" prefHeight="337.0" prefWidth="492.0">
          <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="111.0" prefWidth="327.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="566.0">
                <children>
-                  <ImageView fitHeight="77.0" fitWidth="152.0" focusTraversable="true" layoutX="296.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="77.0" fitWidth="152.0" focusTraversable="true" layoutX="226.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/Logo1grey.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" layoutX="174.0" layoutY="54.0" prefHeight="42.0" prefWidth="97.0" text="Welcome to" textFill="#66228f">
+                  <Label alignment="CENTER" layoutX="88.0" layoutY="41.0" prefHeight="42.0" prefWidth="97.0" text="Welcome to" textFill="#66228f">
                      <font>
                         <Font name="Gadugi" size="18.0" />
                      </font>
                   </Label>
+                  <Button fx:id="profile_button" layoutX="399.0" layoutY="14.0" mnemonicParsing="false" onAction="#onProfileButtonClick" prefHeight="35.0" prefWidth="41.0">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/perfil.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="95.0" prefWidth="157.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="490.0">
                <children>
-                  <Label layoutX="85.0" layoutY="111.0" text="Búsqueda: " textFill="#66228f" />
-                  <TextField layoutX="157.0" layoutY="107.0" prefHeight="26.0" prefWidth="264.0" />
-                  <Button layoutX="443.0" layoutY="102.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="41.0">
+                  <Label layoutX="61.0" layoutY="32.0" text="Search:" textFill="#66228f" />
+                  <TextField fx:id="recipy_box" layoutX="113.0" layoutY="28.0" prefHeight="26.0" prefWidth="264.0" />
+                  <Button fx:id="lens_button" layoutX="401.0" layoutY="23.0" mnemonicParsing="false" onAction="#onLensRecipyClick" prefHeight="35.0" prefWidth="41.0">
                      <graphic>
                         <ImageView fitHeight="19.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -40,9 +49,30 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <ImageView fitHeight="77.0" fitWidth="50.0" layoutX="78.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/american_food.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="50.0" layoutX="372.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/italian_food.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="77.0" fitWidth="50.0" layoutX="171.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/spanish_food.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="50.0" layoutX="277.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/japanese_food.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </items>
       </SplitPane>
    </children>
 </AnchorPane>
+
