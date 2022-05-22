@@ -1,5 +1,6 @@
 package ModelPackage;
 
+import MongoConnector.MyConnector;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -134,8 +135,11 @@ public class Recipe {
 
     //Helper Methods:
     public Boolean recipeVerification(){
-
+        if (connector == null) {
+            connector = new MyConnector();
+        }
         MongoCollection<Document> col = connector.db.getCollection("Recipe");
+
         BasicDBObject query = new BasicDBObject();
 
         query.put("Title",this.title);
