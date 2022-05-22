@@ -46,8 +46,6 @@ public class RecipeController implements Initializable {
     private Label likes_label;
     @FXML
     private ImageView image_id;
-    @FXML
-    private Label Like_label;
 
 
 
@@ -86,7 +84,9 @@ public class RecipeController implements Initializable {
 
     }
 
-    /// method with the like counter
+    /**
+     method with the like counter
+     */
     public void onFavButtonClick(ActionEvent event) throws Exception {
         countLikes +=1;
         Like_label.setText(String.valueOf(countLikes));

@@ -3,8 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,8 +16,6 @@
          <ImageView fitHeight="83.0" fitWidth="95.0" layoutX="70.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../Images/Logo3grey.png" />
          </ImageView>
-         <ToggleButton layoutX="77.0" layoutY="141.0" mnemonicParsing="false" onAction="#onFavButtonClick" text="Add to favs" textFill="#9a126a" />
-         <TextField fx:id="Like_label" layoutX="163.0" layoutY="141.0" prefHeight="25.0" prefWidth="35.0" />
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <Label layoutX="48.0" layoutY="15.0" text="Name:">
