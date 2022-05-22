@@ -41,7 +41,13 @@ public class HomeController {
     Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     static Recipe local_recipe;
+    /**
+     * Button events:
+     */
 
+    /**
+     * Button to go to the profile
+     */
     public void onProfileButtonClick(ActionEvent event) throws Exception {
 
         try {
@@ -58,6 +64,9 @@ public class HomeController {
 
 
     }
+    /**
+     * Button to search for the recipe
+     */
     @FXML
     private void onLensRecipyClick(ActionEvent event) throws IOException {
         String input_recipeTitle = recipy_box.getText();
@@ -80,6 +89,10 @@ public class HomeController {
             logger.error("No recipy with such title!");
         }
     }
+
+    /**
+     * Method to switch to the recipe window after searching
+     */
     public void switchToRecipe() throws IOException {
         window2.setTitle("Here is your recipe, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Recipe.fxml"));
@@ -88,6 +101,10 @@ public class HomeController {
         window2.setScene(scene2);
         window2.show();
     }
+
+    /**
+     * Button to go to the home window
+     */
     public void onHeartButtonClick(ActionEvent event) throws Exception {
         try {
 

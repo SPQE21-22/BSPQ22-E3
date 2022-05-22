@@ -23,62 +23,59 @@
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00019}\mbox{\hyperlink{class_controller_package_1_1_register_controller}{00019}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_controller_package_1_1_register_controller}{RegisterController}} \{}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00020}00020     FXMLLoader loader = \textcolor{keyword}{new} FXMLLoader();}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00021}00021     \textcolor{keyword}{private} AnchorPane anchorPane;}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00022}00022 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00023}00023     @FXML}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00024}00024     \textcolor{keyword}{private} Button register\_button;}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00025}00025     @FXML}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00026}00026     \textcolor{keyword}{private} Button back\_button;}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00026}00026     \textcolor{keyword}{private} Button register\_button;}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00027}00027     @FXML}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00028}00028     \textcolor{keyword}{private} TextField first\_name\_box;}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00028}00028     \textcolor{keyword}{private} Button back\_button;}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00029}00029     @FXML}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00030}00030     \textcolor{keyword}{private} TextField last\_name\_box;}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00030}00030     \textcolor{keyword}{private} TextField first\_name\_box;}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00031}00031     @FXML}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00032}00032     \textcolor{keyword}{private} TextField username\_box;}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00032}00032     \textcolor{keyword}{private} TextField last\_name\_box;}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00033}00033     @FXML}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00034}00034     \textcolor{keyword}{private} PasswordField password\_box;}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00034}00034     \textcolor{keyword}{private} TextField username\_box;}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00035}00035     @FXML}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00036}00036     \textcolor{keyword}{private} Label status\_label;}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00037}00037 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00038}00038     \textcolor{comment}{//Button Clicks:}}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00039}00039     @FXML}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00040}\mbox{\hyperlink{class_controller_package_1_1_register_controller_a41e87cdbe6095a5f56b92727ff698fed}{00040}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_register_controller_a41e87cdbe6095a5f56b92727ff698fed}{onBackButtonClick}}() throws IOException \{}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00041}00041         \mbox{\hyperlink{class_controller_package_1_1_register_controller_a31870d249f776f3a5ca9e93b2d8fb784}{switchToLogin}}();}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00042}00042     \}}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00043}\mbox{\hyperlink{class_controller_package_1_1_register_controller_a6dc7797e8a28481e86f37ef9797a4484}{00043}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_register_controller_a6dc7797e8a28481e86f37ef9797a4484}{onRegisterButtonClick}}() throws IOException \{}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00044}00044         \mbox{\hyperlink{class_model_package_1_1_create_account}{CreateAccount}} c = \textcolor{keyword}{new} \mbox{\hyperlink{class_model_package_1_1_create_account}{CreateAccount}}();}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00045}00045         Boolean valid = c.\mbox{\hyperlink{class_model_package_1_1_create_account_a01270e653d0adbc8024fa6b6fda003cf}{newAccountVerification}}(username\_box.getText(), password\_box.getText(), first\_name\_box.getText(), last\_name\_box.getText());}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00046}00046         \textcolor{keywordflow}{if}(valid) \mbox{\hyperlink{class_controller_package_1_1_register_controller_a31870d249f776f3a5ca9e93b2d8fb784}{switchToLogin}}();}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00047}00047 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00048}00048         \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00049}00049             status\_label.setStyle(\textcolor{stringliteral}{"{}-\/fx-\/text-\/fill:Red"{}});}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00050}00050             status\_label.setText(c.\mbox{\hyperlink{class_model_package_1_1_create_account_aad1d8685d40c9bc38909fdb929ede8e4}{errorMessage}});}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00051}00051         \}}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00052}00052 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00053}00053     \}}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00054}00054 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00055}00055 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00056}00056     \textcolor{comment}{//View Switchers:}}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00057}\mbox{\hyperlink{class_controller_package_1_1_register_controller_a31870d249f776f3a5ca9e93b2d8fb784}{00057}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_register_controller_a31870d249f776f3a5ca9e93b2d8fb784}{switchToLogin}}() throws IOException \{}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00058}00058         window2.setTitle(\textcolor{stringliteral}{"{}Welcome, please login"{}});}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00059}00059         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Login.fxml"{}}));}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00060}00060         this.anchorPane = (AnchorPane)this.loader.load();}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00061}00061         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00062}00062         window2.setScene(scene2);}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00063}00063         window2.show();}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00036}00036     \textcolor{keyword}{private} PasswordField password\_box;}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00037}00037     @FXML}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00038}00038     \textcolor{keyword}{private} Label status\_label;}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00045}00045     @FXML}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00046}\mbox{\hyperlink{class_controller_package_1_1_register_controller_a41e87cdbe6095a5f56b92727ff698fed}{00046}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_register_controller_a41e87cdbe6095a5f56b92727ff698fed}{onBackButtonClick}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00047}00047         \mbox{\hyperlink{class_controller_package_1_1_register_controller_a31870d249f776f3a5ca9e93b2d8fb784}{switchToLogin}}();}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00053}\mbox{\hyperlink{class_controller_package_1_1_register_controller_a6dc7797e8a28481e86f37ef9797a4484}{00053}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_register_controller_a6dc7797e8a28481e86f37ef9797a4484}{onRegisterButtonClick}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00054}00054         \mbox{\hyperlink{class_model_package_1_1_create_account}{CreateAccount}} c = \textcolor{keyword}{new} \mbox{\hyperlink{class_model_package_1_1_create_account}{CreateAccount}}();}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00055}00055         Boolean valid = c.\mbox{\hyperlink{class_model_package_1_1_create_account_a01270e653d0adbc8024fa6b6fda003cf}{newAccountVerification}}(username\_box.getText(), password\_box.getText(), first\_name\_box.getText(), last\_name\_box.getText());}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00056}00056         \textcolor{keywordflow}{if}(valid) \mbox{\hyperlink{class_controller_package_1_1_register_controller_a31870d249f776f3a5ca9e93b2d8fb784}{switchToLogin}}();}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00058}00058         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00059}00059             status\_label.setStyle(\textcolor{stringliteral}{"{}-\/fx-\/text-\/fill:Red"{}});}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00060}00060             status\_label.setText(c.\mbox{\hyperlink{class_model_package_1_1_create_account_aad1d8685d40c9bc38909fdb929ede8e4}{errorMessage}});}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00061}00061         \}}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00063}00063     \}}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00064}00064 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00065}00065     \}}
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00066}00066 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00067}00067 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00068}00068 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00069}00069 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00070}00070 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00071}00071 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00072}00072 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00073}00073 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00074}00074 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00069}\mbox{\hyperlink{class_controller_package_1_1_register_controller_a31870d249f776f3a5ca9e93b2d8fb784}{00069}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_register_controller_a31870d249f776f3a5ca9e93b2d8fb784}{switchToLogin}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00070}00070         window2.setTitle(\textcolor{stringliteral}{"{}Welcome, please login"{}});}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00071}00071         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Login.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00072}00072         this.anchorPane = (AnchorPane)this.loader.load();}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00073}00073         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00074}00074         window2.setScene(scene2);}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00075}00075         window2.show();}
 \DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00076}00076 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00077}00077 }
-\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_register_controller_8java_source_l00090}00090 \}}
 
 \end{DoxyCode}

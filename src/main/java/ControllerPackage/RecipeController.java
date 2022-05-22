@@ -46,7 +46,9 @@ public class RecipeController implements Initializable {
 
 
 
-
+    /**
+     * Gets the value of the likes counter
+     */
 
     public void initialize(URL url, ResourceBundle rb) {
         name_label.setText(local_recipe.getTitle());
@@ -57,12 +59,14 @@ public class RecipeController implements Initializable {
         readyInMinutes_label.setText(String.valueOf(local_recipe.getReadyInMinutes()));
         likes_label.setText(String.valueOf(local_recipe.getlikes_count()));
 
-       // File file = new File(local_recipe.getImage());
+        // File file = new File(local_recipe.getImage());
        /* Image image = new Image(local_recipe.getImage());
         System.out.println(image);
         image_id.setImage(image);*/
     }
-
+    /**
+     * Button to go back to home
+     */
     public void onBackButtonClick() throws IOException {
         switchToHome();
     }

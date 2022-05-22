@@ -3,7 +3,6 @@ package ControllerPackage;
 
 
 import ApplicationPackage.Main;
-import ModelPackage.Recipe;
 import ModelPackage.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +23,9 @@ import static ApplicationPackage.Main.window2;
 public class LoginController {
     FXMLLoader loader = new FXMLLoader();
     private AnchorPane anchorPane;
-
+    /**
+     * Button, textfield/passwordfield and labels of the register interface
+     */
     @FXML
     private Label verification_label;
     @FXML
@@ -36,19 +37,19 @@ public class LoginController {
     @FXML
     private PasswordField password_box;
 
-
-
     static User local_user;
-
 
     Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 
+    /**
+     * Button Events:
+     */
 
 
-    // Button Events:
-
-
+    /**
+     * Button for the user login
+     */
 
     @FXML
     private void onLoginButtonClick() throws IOException {
@@ -61,30 +62,46 @@ public class LoginController {
         //System.out.println("Input Password: "+ input_password);
         logger.info("Input Password: "+ input_password);
 
-        // Save & verify user credentials:
+        /**
+         *  Save & verify user credentials
+         */
+
         local_user = new User(input_user,input_password);
 
-        // If it does, save the User & let them in:
+        /**
+         * If it does, save the User & let them in:
+         */
+
         if(local_user.getValid()) {
             verification_label.setStyle("-fx-text-fill:Green");
             verification_label.setText("Access Granted!");
             switchToHome();
         }
 
-        // Else, display log-in message error:
+        /**
+         * Else, display log-in message error:
+         */
+
         else {
             verification_label.setStyle("-fx-text-fill:Red");
             verification_label.setText("Incorrect username or password");
         }
     }
 
-
+    /**
+     * Button for the user registration
+     */
     @FXML
     private void onRegisterButtonClick() throws IOException {
         switchToRegister();
     }
 
-    // Change Views:
+    /**
+     * Change Views:
+     */
+    /**
+     * Home view switching
+     */
     public void switchToHome() throws IOException {
         window2.setTitle("Welcome Home, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Home.fxml"));
@@ -94,6 +111,9 @@ public class LoginController {
         window2.show();
     }
 
+    /**
+     * Register view switching
+     */
     public void switchToRegister() throws IOException {
         window2.setTitle("Create an Account");
         this.loader.setLocation(Main.class.getResource("Register.fxml"));
@@ -102,12 +122,4 @@ public class LoginController {
         window2.setScene(scene2);
         window2.show();
     }
-
-
-
-
-
-
-
-
 }

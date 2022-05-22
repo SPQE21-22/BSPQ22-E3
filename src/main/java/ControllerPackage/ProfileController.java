@@ -43,7 +43,13 @@ public class ProfileController implements Initializable {
 
 
     FXMLLoader loader = new FXMLLoader();
+    /**
+     * Button events:
+     */
 
+    /**
+     * Button for the user logout
+     */
     public void onLogOutButtonClick(ActionEvent event) throws Exception {
         try {
 
@@ -62,7 +68,9 @@ public class ProfileController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Button to go to the favorites interface
+     */
     public void onHeartButtonClick(ActionEvent event) throws Exception {
         try {
 

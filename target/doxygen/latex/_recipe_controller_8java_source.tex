@@ -50,37 +50,34 @@
 \DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00046}00046 }
 \DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00047}00047 }
 \DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00048}00048 }
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00049}00049 }
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00050}00050 }
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00051}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a052c4c53195d620005c3913ee6463199}{00051}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a052c4c53195d620005c3913ee6463199}{initialize}}(URL url, ResourceBundle rb) \{}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00052}00052         name\_label.setText(local\_recipe.getTitle());}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00053}00053         calories\_label.setText(String.valueOf(local\_recipe.getCalories()));}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00054}00054         carbohydrates\_label.setText(String.valueOf(local\_recipe.getCarbohydrates()));}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00055}00055         proteins\_label.setText(String.valueOf(local\_recipe.getProteins()));}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00056}00056         fats\_label.setText(String.valueOf(local\_recipe.getFats()));}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00057}00057         readyInMinutes\_label.setText(String.valueOf(local\_recipe.getReadyInMinutes()));}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00058}00058         likes\_label.setText(String.valueOf(local\_recipe.getlikes\_count()));}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00059}00059 }
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00060}00060        \textcolor{comment}{// File file = new File(local\_recipe.getImage());}}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00061}00061        \textcolor{comment}{/* Image image = new Image(local\_recipe.getImage());}}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00062}00062 \textcolor{comment}{        System.out.println(image);}}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00063}00063 \textcolor{comment}{        image\_id.setImage(image);*/}}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00064}00064     \}}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00065}00065 }
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00066}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a7add0a37b0ee33e794c7034fd5bcb4e3}{00066}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a7add0a37b0ee33e794c7034fd5bcb4e3}{onBackButtonClick}}() throws IOException \{}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00067}00067         \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{switchToHome}}();}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00068}00068     \}}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00069}00069 }
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00070}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{00070}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{switchToHome}}() throws IOException \{}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00071}00071         window2.setTitle(\textcolor{stringliteral}{"{}Welcome Home, "{}}+local\_user.getFirst\_name());}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00072}00072         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Home.fxml"{}}));}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00073}00073         this.anchorPane = (AnchorPane)this.loader.load();}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00074}00074         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00075}00075         window2.setScene(scene2);}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00076}00076         window2.show();}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00077}00077 }
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00078}00078     \}}
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00079}00079 }
-\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00053}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a052c4c53195d620005c3913ee6463199}{00053}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a052c4c53195d620005c3913ee6463199}{initialize}}(URL url, ResourceBundle rb) \{}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00054}00054         name\_label.setText(local\_recipe.getTitle());}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00055}00055         calories\_label.setText(String.valueOf(local\_recipe.getCalories()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00056}00056         carbohydrates\_label.setText(String.valueOf(local\_recipe.getCarbohydrates()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00057}00057         proteins\_label.setText(String.valueOf(local\_recipe.getProteins()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00058}00058         fats\_label.setText(String.valueOf(local\_recipe.getFats()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00059}00059         readyInMinutes\_label.setText(String.valueOf(local\_recipe.getReadyInMinutes()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00060}00060         likes\_label.setText(String.valueOf(local\_recipe.getlikes\_count()));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00062}00062         \textcolor{comment}{// File file = new File(local\_recipe.getImage());}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00063}00063        \textcolor{comment}{/* Image image = new Image(local\_recipe.getImage());}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00064}00064 \textcolor{comment}{        System.out.println(image);}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00065}00065 \textcolor{comment}{        image\_id.setImage(image);*/}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00066}00066     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00070}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a7add0a37b0ee33e794c7034fd5bcb4e3}{00070}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_a7add0a37b0ee33e794c7034fd5bcb4e3}{onBackButtonClick}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00071}00071         \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{switchToHome}}();}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00072}00072     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00074}\mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{00074}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_controller_package_1_1_recipe_controller_ae9676bcc1022a34041c4cad5cdcb967d}{switchToHome}}() throws IOException \{}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00075}00075         window2.setTitle(\textcolor{stringliteral}{"{}Welcome Home, "{}}+local\_user.getFirst\_name());}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00076}00076         this.loader.setLocation(\mbox{\hyperlink{class_application_package_1_1_main}{Main}}.class.getResource(\textcolor{stringliteral}{"{}Home.fxml"{}}));}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00077}00077         this.anchorPane = (AnchorPane)this.loader.load();}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00078}00078         Scene scene2 = \textcolor{keyword}{new} Scene(this.anchorPane);}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00079}00079         window2.setScene(scene2);}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00080}00080         window2.show();}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{_recipe_controller_8java_source_l00084}00084 \}}
 
 \end{DoxyCode}

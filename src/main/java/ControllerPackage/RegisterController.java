@@ -19,7 +19,9 @@ import static ApplicationPackage.Main.window2;
 public class RegisterController {
     FXMLLoader loader = new FXMLLoader();
     private AnchorPane anchorPane;
-
+    /**
+     * Button, textfield and labels of the register interface
+     */
     @FXML
     private Button register_button;
     @FXML
@@ -34,12 +36,20 @@ public class RegisterController {
     private PasswordField password_box;
     @FXML
     private Label status_label;
-
-    //Button Clicks:
+    /**
+     * Button events:
+     */
+    /**
+     * Switch window button (Goes to the preview window)
+     */
     @FXML
     public void onBackButtonClick() throws IOException {
         switchToLogin();
     }
+
+    /**
+     * User register button
+     */
     public void onRegisterButtonClick() throws IOException {
         CreateAccount c = new CreateAccount();
         Boolean valid = c.newAccountVerification(username_box.getText(), password_box.getText(), first_name_box.getText(), last_name_box.getText());
@@ -53,7 +63,9 @@ public class RegisterController {
     }
 
 
-    //View Switchers:
+    /**
+     * Method which switches of window
+     */
     public void switchToLogin() throws IOException {
         window2.setTitle("Welcome, please login");
         this.loader.setLocation(Main.class.getResource("Login.fxml"));

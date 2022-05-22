@@ -107,69 +107,66 @@ $(document).ready(function(){initNavTree('_register_controller_8java_source.html
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_controller_package_1_1_register_controller.html">   19</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_controller_package_1_1_register_controller.html">RegisterController</a> {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    FXMLLoader loader = <span class="keyword">new</span> FXMLLoader();</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">private</span> AnchorPane anchorPane;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    @FXML</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">private</span> Button register_button;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    @FXML</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">private</span> Button back_button;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">private</span> Button register_button;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    @FXML</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">private</span> TextField first_name_box;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">private</span> Button back_button;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    @FXML</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span> TextField last_name_box;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span> TextField first_name_box;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    @FXML</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span> TextField username_box;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">private</span> TextField last_name_box;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    @FXML</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">private</span> PasswordField password_box;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">private</span> TextField username_box;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    @FXML</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">private</span> Label status_label;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">//Button Clicks:</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    @FXML</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_controller_package_1_1_register_controller.html#a41e87cdbe6095a5f56b92727ff698fed">   40</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a41e87cdbe6095a5f56b92727ff698fed">onBackButtonClick</a>() throws IOException {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">switchToLogin</a>();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_controller_package_1_1_register_controller.html#a6dc7797e8a28481e86f37ef9797a4484">   43</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a6dc7797e8a28481e86f37ef9797a4484">onRegisterButtonClick</a>() throws IOException {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_class" href="class_model_package_1_1_create_account.html">CreateAccount</a> c = <span class="keyword">new</span> <a class="code hl_class" href="class_model_package_1_1_create_account.html">CreateAccount</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        Boolean valid = c.<a class="code hl_function" href="class_model_package_1_1_create_account.html#a01270e653d0adbc8024fa6b6fda003cf">newAccountVerification</a>(username_box.getText(), password_box.getText(), first_name_box.getText(), last_name_box.getText());</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span>(valid) <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">switchToLogin</a>();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            status_label.setStyle(<span class="stringliteral">&quot;-fx-text-fill:Red&quot;</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            status_label.setText(c.<a class="code hl_variable" href="class_model_package_1_1_create_account.html#aad1d8685d40c9bc38909fdb929ede8e4">errorMessage</a>);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">//View Switchers:</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">   57</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">switchToLogin</a>() throws IOException {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        window2.setTitle(<span class="stringliteral">&quot;Welcome, please login&quot;</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        this.loader.setLocation(<a class="code hl_class" href="class_application_package_1_1_main.html">Main</a>.class.getResource(<span class="stringliteral">&quot;Login.fxml&quot;</span>));</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        this.anchorPane = (AnchorPane)this.loader.load();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        Scene scene2 = <span class="keyword">new</span> Scene(this.anchorPane);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        window2.setScene(scene2);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        window2.show();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">private</span> PasswordField password_box;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    @FXML</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">private</span> Label status_label;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    @FXML</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_controller_package_1_1_register_controller.html#a41e87cdbe6095a5f56b92727ff698fed">   46</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a41e87cdbe6095a5f56b92727ff698fed">onBackButtonClick</a>() throws IOException {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">switchToLogin</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_controller_package_1_1_register_controller.html#a6dc7797e8a28481e86f37ef9797a4484">   53</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a6dc7797e8a28481e86f37ef9797a4484">onRegisterButtonClick</a>() throws IOException {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_class" href="class_model_package_1_1_create_account.html">CreateAccount</a> c = <span class="keyword">new</span> <a class="code hl_class" href="class_model_package_1_1_create_account.html">CreateAccount</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        Boolean valid = c.<a class="code hl_function" href="class_model_package_1_1_create_account.html#a01270e653d0adbc8024fa6b6fda003cf">newAccountVerification</a>(username_box.getText(), password_box.getText(), first_name_box.getText(), last_name_box.getText());</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span>(valid) <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">switchToLogin</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            status_label.setStyle(<span class="stringliteral">&quot;-fx-text-fill:Red&quot;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            status_label.setText(c.<a class="code hl_variable" href="class_model_package_1_1_create_account.html#aad1d8685d40c9bc38909fdb929ede8e4">errorMessage</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">   69</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">switchToLogin</a>() throws IOException {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        window2.setTitle(<span class="stringliteral">&quot;Welcome, please login&quot;</span>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        this.loader.setLocation(<a class="code hl_class" href="class_application_package_1_1_main.html">Main</a>.class.getResource(<span class="stringliteral">&quot;Login.fxml&quot;</span>));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        this.anchorPane = (AnchorPane)this.loader.load();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        Scene scene2 = <span class="keyword">new</span> Scene(this.anchorPane);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        window2.setScene(scene2);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        window2.show();</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
 <div class="ttc" id="aclass_application_package_1_1_main_html"><div class="ttname"><a href="class_application_package_1_1_main.html">ApplicationPackage.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00013">Main.java:13</a></div></div>
 <div class="ttc" id="aclass_application_package_1_1_main_html_af0e9cfc072c4a2f79ffac19a8420f255"><div class="ttname"><a href="class_application_package_1_1_main.html#af0e9cfc072c4a2f79ffac19a8420f255">ApplicationPackage.Main.window2</a></div><div class="ttdeci">static Stage window2</div><div class="ttdef"><b>Definition:</b> <a href="_main_8java_source.html#l00018">Main.java:18</a></div></div>
 <div class="ttc" id="aclass_controller_package_1_1_register_controller_html"><div class="ttname"><a href="class_controller_package_1_1_register_controller.html">ControllerPackage.RegisterController</a></div><div class="ttdef"><b>Definition:</b> <a href="_register_controller_8java_source.html#l00019">RegisterController.java:19</a></div></div>
-<div class="ttc" id="aclass_controller_package_1_1_register_controller_html_a31870d249f776f3a5ca9e93b2d8fb784"><div class="ttname"><a href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">ControllerPackage.RegisterController.switchToLogin</a></div><div class="ttdeci">void switchToLogin()</div><div class="ttdef"><b>Definition:</b> <a href="_register_controller_8java_source.html#l00057">RegisterController.java:57</a></div></div>
-<div class="ttc" id="aclass_controller_package_1_1_register_controller_html_a41e87cdbe6095a5f56b92727ff698fed"><div class="ttname"><a href="class_controller_package_1_1_register_controller.html#a41e87cdbe6095a5f56b92727ff698fed">ControllerPackage.RegisterController.onBackButtonClick</a></div><div class="ttdeci">void onBackButtonClick()</div><div class="ttdef"><b>Definition:</b> <a href="_register_controller_8java_source.html#l00040">RegisterController.java:40</a></div></div>
-<div class="ttc" id="aclass_controller_package_1_1_register_controller_html_a6dc7797e8a28481e86f37ef9797a4484"><div class="ttname"><a href="class_controller_package_1_1_register_controller.html#a6dc7797e8a28481e86f37ef9797a4484">ControllerPackage.RegisterController.onRegisterButtonClick</a></div><div class="ttdeci">void onRegisterButtonClick()</div><div class="ttdef"><b>Definition:</b> <a href="_register_controller_8java_source.html#l00043">RegisterController.java:43</a></div></div>
+<div class="ttc" id="aclass_controller_package_1_1_register_controller_html_a31870d249f776f3a5ca9e93b2d8fb784"><div class="ttname"><a href="class_controller_package_1_1_register_controller.html#a31870d249f776f3a5ca9e93b2d8fb784">ControllerPackage.RegisterController.switchToLogin</a></div><div class="ttdeci">void switchToLogin()</div><div class="ttdef"><b>Definition:</b> <a href="_register_controller_8java_source.html#l00069">RegisterController.java:69</a></div></div>
+<div class="ttc" id="aclass_controller_package_1_1_register_controller_html_a41e87cdbe6095a5f56b92727ff698fed"><div class="ttname"><a href="class_controller_package_1_1_register_controller.html#a41e87cdbe6095a5f56b92727ff698fed">ControllerPackage.RegisterController.onBackButtonClick</a></div><div class="ttdeci">void onBackButtonClick()</div><div class="ttdef"><b>Definition:</b> <a href="_register_controller_8java_source.html#l00046">RegisterController.java:46</a></div></div>
+<div class="ttc" id="aclass_controller_package_1_1_register_controller_html_a6dc7797e8a28481e86f37ef9797a4484"><div class="ttname"><a href="class_controller_package_1_1_register_controller.html#a6dc7797e8a28481e86f37ef9797a4484">ControllerPackage.RegisterController.onRegisterButtonClick</a></div><div class="ttdeci">void onRegisterButtonClick()</div><div class="ttdef"><b>Definition:</b> <a href="_register_controller_8java_source.html#l00053">RegisterController.java:53</a></div></div>
 <div class="ttc" id="aclass_model_package_1_1_create_account_html"><div class="ttname"><a href="class_model_package_1_1_create_account.html">ModelPackage.CreateAccount</a></div><div class="ttdef"><b>Definition:</b> <a href="_create_account_8java_source.html#l00013">CreateAccount.java:13</a></div></div>
 <div class="ttc" id="aclass_model_package_1_1_create_account_html_a01270e653d0adbc8024fa6b6fda003cf"><div class="ttname"><a href="class_model_package_1_1_create_account.html#a01270e653d0adbc8024fa6b6fda003cf">ModelPackage.CreateAccount.newAccountVerification</a></div><div class="ttdeci">Boolean newAccountVerification(String username, String password, String first_name, String last_name)</div><div class="ttdef"><b>Definition:</b> <a href="_create_account_8java_source.html#l00026">CreateAccount.java:26</a></div></div>
 <div class="ttc" id="aclass_model_package_1_1_create_account_html_aad1d8685d40c9bc38909fdb929ede8e4"><div class="ttname"><a href="class_model_package_1_1_create_account.html#aad1d8685d40c9bc38909fdb929ede8e4">ModelPackage.CreateAccount.errorMessage</a></div><div class="ttdeci">String errorMessage</div><div class="ttdef"><b>Definition:</b> <a href="_create_account_8java_source.html#l00014">CreateAccount.java:14</a></div></div>
