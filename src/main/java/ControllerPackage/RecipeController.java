@@ -2,6 +2,7 @@ package ControllerPackage;
 
 import ApplicationPackage.Main;
 import ModelPackage.Recipe;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,7 +26,9 @@ public class RecipeController implements Initializable {
 
     FXMLLoader loader = new FXMLLoader();
     private AnchorPane anchorPane;
-
+    private Button fav_button;
+    int countLikes = 0;
+    Label Like_label;
 
     @FXML
     private Label name_label;
@@ -43,6 +46,8 @@ public class RecipeController implements Initializable {
     private Label likes_label;
     @FXML
     private ImageView image_id;
+    @FXML
+    private Label Like_label;
 
 
 
@@ -58,7 +63,7 @@ public class RecipeController implements Initializable {
         fats_label.setText(String.valueOf(local_recipe.getFats()));
         readyInMinutes_label.setText(String.valueOf(local_recipe.getReadyInMinutes()));
         likes_label.setText(String.valueOf(local_recipe.getlikes_count()));
-
+        Like_label.setText(String.valueOf(countLikes));
         // File file = new File(local_recipe.getImage());
        /* Image image = new Image(local_recipe.getImage());
         System.out.println(image);
@@ -80,5 +85,13 @@ public class RecipeController implements Initializable {
         window2.show();
 
     }
+
+    /// method with the like counter
+    public void onFavButtonClick(ActionEvent event) throws Exception {
+        countLikes +=1;
+        Like_label.setText(String.valueOf(countLikes));
+
+    }
+
 
 }
