@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
-class MyConnectorTest {
+public class MyConnectorTest {
     //This activates contiperf
     @Rule
     public ContiPerfRule i = new ContiPerfRule();

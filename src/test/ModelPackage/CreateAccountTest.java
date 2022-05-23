@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 @PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
-class CreateAccountTest {
+public class CreateAccountTest {
 
     @Rule
     public ContiPerfRule rule = new ContiPerfRule(new EmptyReportModule());
