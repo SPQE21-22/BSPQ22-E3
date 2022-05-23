@@ -89,7 +89,6 @@ public class RecipeController implements Initializable {
         String id = local_recipe.getRecipe_id();
         String path = "https://raw.githubusercontent.com/SPQE21-22/BSPQ22-E3/0ec5c83c84f256cd37ff817e3d1718d7c2027eb6/src/main/resources/Images/"+id+".jpg";
         Image i = new Image(path);
-        System.out.println(i.getHeight());
         myImageView.setImage(i);
     }
     /**
