@@ -37,6 +37,8 @@ public class HomeController {
     private TextField recipy_box;
     @FXML
     private Button lens_button;
+    @FXML
+    private Label Info_Label;
 
     Logger logger = LoggerFactory.getLogger(LoginController.class);
 
@@ -86,7 +88,8 @@ public class HomeController {
 
         // Else, display log-in message error:
         else {
-            logger.error("No recipy with such title!");
+            Info_Label.setText("Sorry, no recipe was found");
+            logger.error("No recipe with such title!");
         }
     }
 
@@ -94,7 +97,7 @@ public class HomeController {
      * Method to switch to the recipe window after searching
      */
     public void switchToRecipe() throws IOException {
-        window2.setTitle("Here is your recipe, "+local_user.getFirst_name());
+        window2.setTitle("🍎 Here is your recipe, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Recipe.fxml"));
         this.anchorPane = this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);

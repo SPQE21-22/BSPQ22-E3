@@ -105,7 +105,7 @@ public class LoginController {
      * Home view switching
      */
     public void switchToHome() throws IOException {
-        window2.setTitle("Welcome Home, "+local_user.getFirst_name());
+        window2.setTitle("🏠 Welcome Back, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Home.fxml"));
         this.anchorPane = this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);
@@ -117,7 +117,7 @@ public class LoginController {
      * Register view switching
      */
     public void switchToRegister() throws IOException {
-        window2.setTitle("Create an Account");
+        window2.setTitle("📝 Create an Account");
         this.loader.setLocation(Main.class.getResource("Register.fxml"));
         this.anchorPane = this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);

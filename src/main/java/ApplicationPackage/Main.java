@@ -24,7 +24,7 @@ public class Main extends Application {
     public void start(Stage window1) throws IOException {
 
         window2 = window1;
-        window2.setTitle("Welcome");
+        window2.setTitle("👋🏼Welcome");
         window2.setResizable(false);
         this.loader.setLocation(Main.class.getResource("Login.fxml"));
         AnchorPane anchorPane = this.loader.load();
