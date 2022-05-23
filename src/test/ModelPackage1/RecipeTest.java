@@ -17,4 +17,7 @@ public class RecipeTest {
         Recipe testRecipe = new Recipe("Broccolini");
         assertTrue(testRecipe.getValid());
     }
+
 }
+
+

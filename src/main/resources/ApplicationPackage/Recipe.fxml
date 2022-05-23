@@ -13,12 +13,12 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.RecipeController">
    <SplitPane dividerPositions="0.5082191780821917" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="618.0">
-         <ImageView fx:id="myImageView" fitHeight="148.0" fitWidth="295.0" layoutX="203.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fx:id="myImageView" fitHeight="148.0" fitWidth="241.0" layoutX="240.0" layoutY="26.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
          <ImageView fitHeight="104.0" fitWidth="133.0" layoutX="58.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../Images/Logo3grey.png" />
          </ImageView>
-         <ToggleButton fx:id="Favs_Button" layoutX="513.0" layoutY="143.0" mnemonicParsing="false" onAction="#onFavsButtonClick" text="Add to favs" textFill="#9a126a" />
-         <Button fx:id="URL_Button" layoutX="513.0" layoutY="107.0" mnemonicParsing="false" onAction="#onURLButtonClick" prefHeight="25.0" prefWidth="76.0" text="Read it!" textFill="#250dd8" />
+         <ToggleButton fx:id="Likes_Button" layoutX="513.0" layoutY="143.0" mnemonicParsing="false" onAction="#onLikesButtonClick" text="👍 Like" textFill="#9a126a" />
+         <Button fx:id="URL_Button" layoutX="513.0" layoutY="107.0" mnemonicParsing="false" onAction="#onURLButtonClick" prefHeight="25.0" prefWidth="76.0" text="📖 Read it!" textFill="#250dd8" />
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <Label layoutX="48.0" layoutY="15.0" text="Title:">

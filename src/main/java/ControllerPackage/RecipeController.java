@@ -3,6 +3,9 @@ package ControllerPackage;
 import ApplicationPackage.Main;
 import ModelPackage.Recipe;
 import ModelPackage.User;
+import com.mongodb.BasicDBObject;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +16,8 @@ import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import org.bson.Document;
+import org.bson.conversions.Bson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,6 +31,7 @@ import java.util.ResourceBundle;
 import java.awt.Desktop;
 import java.net.URI;
 
+import static ApplicationPackage.Main.connector;
 import static ApplicationPackage.Main.window2;
 import static ControllerPackage.HomeController.local_recipe;
 import static ControllerPackage.LoginController.local_user;
@@ -56,10 +62,12 @@ public class RecipeController implements Initializable {
     @FXML
     private Button Back_Button;
     @FXML
-    private ToggleButton Favs_Button;
+    private ToggleButton Likes_Button;
     @FXML
     private ImageView myImageView;
+    Logger logger = LoggerFactory.getLogger(RecipeController.class);
 
+    long LikesTracker =  local_recipe.getlikes_count();
 
 
 
@@ -76,6 +84,7 @@ public class RecipeController implements Initializable {
         fats_label.setText(String.valueOf(local_recipe.getFats()));
         readyInMinutes_label.setText(String.valueOf(local_recipe.getReadyInMinutes()));
         likes_label.setText(String.valueOf(local_recipe.getlikes_count()));
+
 
         String id = local_recipe.getRecipe_id();
         String path = "https://raw.githubusercontent.com/SPQE21-22/BSPQ22-E3/0ec5c83c84f256cd37ff817e3d1718d7c2027eb6/src/main/resources/Images/"+id+".jpg";
@@ -104,14 +113,33 @@ public class RecipeController implements Initializable {
             rt.exec("open " + url);
         }
         else{
-            Logger logger = LoggerFactory.getLogger(RecipeController.class);
+
             logger.info("Sorry, your Operating System: " + os +" is not supported at the moment for redirects.\n" +
                     "To read your recipe visit: "+url );
         }
 
     }
-    public void onFavsButtonClick() throws IOException {
 
+    /**
+     * Likes or Dislikes Recipe
+     */
+    public void onLikesButtonClick() throws IOException {
+
+        Bson filter = Filters.eq("Recipe_Id", local_recipe.getRecipe_id());
+        Bson updates;
+        String action;
+
+        if (Likes_Button.isSelected()) {
+            updates = Updates.set("Likes", LikesTracker++);
+            action = "liked";
+        }
+        else {
+            updates = Updates.set("Likes", LikesTracker--);
+            action = "disliked";
+        }
+        likes_label.setText(String.valueOf(LikesTracker));
+        connector.db.getCollection("Recipe").findOneAndUpdate(filter, updates);
+        logger.info("Successfully "+action+" "+local_recipe.getTitle());
     }
 
 

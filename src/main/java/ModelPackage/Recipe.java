@@ -152,8 +152,6 @@ public class Recipe {
             query.put("Title", input);
         }
 
-
-
         try (MongoCursor<Document> cursor = col.find(query).iterator()) {
             valid = cursor.hasNext();
             if (valid){
