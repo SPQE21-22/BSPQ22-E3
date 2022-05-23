@@ -1,4 +1,5 @@
 module com.example.recipeapp {
+    requires slf4j.api;
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -7,7 +8,7 @@ module com.example.recipeapp {
     requires org.mongodb.bson;
     requires org.mongodb.driver.core;
     requires com.fasterxml.jackson.databind;
-    requires slf4j.api;
+
 
 
 
