@@ -9,7 +9,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 @PerfTest(invocations = 3)
-@Required(max = 15000, average = 1500) // Max Execution time 10.5s and at most 1.5 avg. per execution
+@Required(max = 35000, average = 3000) // Max Execution time 10.5s and at most 3 avg. per execution
 public class MyConnectorTest {
     //This activates contiperf
     @Rule

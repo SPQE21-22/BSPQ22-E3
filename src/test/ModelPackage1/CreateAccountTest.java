@@ -24,10 +24,10 @@ public class CreateAccountTest {
 
 
     //The test should be executed 20 times with no concurrent threads.
-    //In addition, a maximum execution time of 2.5 seconds and an average below or equals 2500 milliseconds are tolerated
+    //In addition, a maximum execution time of 10 seconds and an average below or equals 7500 milliseconds are tolerated
     @Test
     @PerfTest(invocations = 1)
-    @Required(max = 2500, average = 2500)
+    @Required(max = 10000, average = 7500)
     public void A_writeNewAccount() {
         CreateAccount c = new CreateAccount();
         boolean success = c.newAccountVerification("thisisaTestAccount2", "thisisaTestPassword!", "testname", "testLastName");
