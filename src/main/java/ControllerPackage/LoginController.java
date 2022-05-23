@@ -11,11 +11,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.imageio.ImageIO;
 import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
 
 import static ApplicationPackage.Main.window2;
 
@@ -57,6 +61,11 @@ public class LoginController {
         String input_user = username_box.getText();
         String input_password = password_box.getText();
 
+//        URL url = getClass().getResource("C:\\Users\\herre\\IdeaProjects\\BSPQ22-E3\\src\\main\\resources\\Images\\001.jpg");
+//        System.out.println(url);
+//        Image i = new Image("src/main/resources/Images/001.jpg");
+//
+//        System.out.println(i.getHeight());
 
         logger.info("Input User: "+ input_user);
         StringBuilder p = new StringBuilder();

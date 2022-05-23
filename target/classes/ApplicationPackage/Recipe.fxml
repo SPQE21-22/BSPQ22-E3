@@ -10,19 +10,20 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.RecipeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPackage.RecipeController">
    <SplitPane dividerPositions="0.5082191780821917" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0">
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="181.0" prefWidth="618.0">
-         <ImageView fitHeight="171.0" fitWidth="332.0" layoutX="238.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-         <ImageView fitHeight="83.0" fitWidth="95.0" layoutX="70.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fx:id="myImageView" fitHeight="148.0" fitWidth="295.0" layoutX="203.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fitHeight="104.0" fitWidth="133.0" layoutX="58.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../Images/Logo3grey.png" />
          </ImageView>
-         <ToggleButton layoutX="77.0" layoutY="141.0" mnemonicParsing="false" text="Add to favs" textFill="#9a126a" />
+         <ToggleButton fx:id="Favs_Button" layoutX="513.0" layoutY="143.0" mnemonicParsing="false" onAction="#onFavsButtonClick" text="Add to favs" textFill="#9a126a" />
+         <Button fx:id="URL_Button" layoutX="513.0" layoutY="107.0" mnemonicParsing="false" onAction="#onURLButtonClick" prefHeight="25.0" prefWidth="76.0" text="Read it!" textFill="#250dd8" />
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-         <Label layoutX="48.0" layoutY="15.0" text="Name:">
+         <Label layoutX="48.0" layoutY="15.0" text="Title:">
             <font>
-               <Font name="Tahoma Bold" size="13.0" />
+               <Font name="Tahoma Bold" size="10.0" />
             </font></Label>
          <Label layoutX="46.0" layoutY="82.0" prefHeight="17.0" prefWidth="48.0" text="Calories:" />
          <Label layoutX="48.0" layoutY="112.0" text="Proteins:" />
@@ -39,11 +40,14 @@
                <Font name="Tahoma Bold" size="13.0" />
             </font></Label>
          <Line endX="7.5" endY="58.5" layoutX="352.0" layoutY="74.0" startX="7.5" startY="-23.5" />
-         <Button fx:id="onBackButtonClick" layoutX="527.0" layoutY="141.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" textFill="#66228f">
+         <Button fx:id="Back_Button" layoutX="14.0" layoutY="152.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" textFill="#66228f">
             <font>
                <Font name="Tahoma" size="13.0" />
             </font></Button>
-         <Label fx:id="name_label" layoutX="91.0" layoutY="14.0" prefHeight="18.0" prefWidth="220.0" />
+         <Label fx:id="name_label" layoutX="79.0" layoutY="7.0" prefHeight="25.0" prefWidth="498.0" textFill="#5e0889">
+            <font>
+               <Font name="Californian FB Italic" size="18.0" />
+            </font></Label>
          <Label layoutX="155.0" layoutY="48.0" prefHeight="18.0" prefWidth="46.0" />
          <Label fx:id="calories_label" layoutX="103.0" layoutY="82.0" prefHeight="18.0" prefWidth="79.0" />
          <Label fx:id="carbohydrates_label" layoutX="284.0" layoutY="82.0" prefHeight="18.0" prefWidth="66.0" />

@@ -40,8 +40,6 @@ public class Main extends Application {
         if (connector == null) {
             connector = new MyConnector();
         }
-        //Image i = new Image(Objects.requireNonNull(getClass().getResourceAsStream("Images/001.jpg")));
-        //System.out.println(i.getHeight());
         launch();
     }
 }
