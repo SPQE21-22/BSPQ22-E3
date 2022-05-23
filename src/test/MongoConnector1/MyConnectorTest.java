@@ -1,7 +1,8 @@
-package MongoConnector;
+package MongoConnector1;
 
 
 //import org.junit.Rule;
+import MongoConnector.MyConnector;
 import org.databene.contiperf.Required;
 import org.databene.contiperf.PerfTest;
 import org.databene.contiperf.junit.ContiPerfRule;
