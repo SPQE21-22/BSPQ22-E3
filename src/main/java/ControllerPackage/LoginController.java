@@ -57,10 +57,11 @@ public class LoginController {
         String input_user = username_box.getText();
         String input_password = password_box.getText();
 
-        //System.out.println("Input User: "+ input_user);
+
         logger.info("Input User: "+ input_user);
-        //System.out.println("Input Password: "+ input_password);
-        logger.info("Input Password: "+ input_password);
+        StringBuilder p = new StringBuilder();
+        p.append("*".repeat(input_password.length()));
+        logger.info("Input Password: "+ p);
 
         /**
          *  Save & verify user credentials
