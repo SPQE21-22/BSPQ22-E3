@@ -25,11 +25,14 @@ public class Recipe {
     private String imageType;
     private String sourceURL;
     private Boolean valid;
+    private boolean flag;
+    private String input;
 
     Logger logger = LoggerFactory.getLogger(User.class);
 
-    public Recipe(String title) {
-        this.title = title;
+    public Recipe(String input) {
+        this.input = input;
+        this.flag = (input.length()==3);
         valid = recipeVerification();
     }
 
@@ -141,9 +144,13 @@ public class Recipe {
         MongoCollection<Document> col = connector.db.getCollection("Recipe");
 
         BasicDBObject query = new BasicDBObject();
+        if (flag){
+            query.put("Recipe_Id", input);
+        }
 
-        query.put("Title",this.title);
-
+        else {
+            query.put("Title", input);
+        }
 
 
 
