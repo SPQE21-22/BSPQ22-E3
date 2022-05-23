@@ -10,6 +10,7 @@ module com.example.recipeapp {
     requires slf4j.api;
 
 
+
     opens ApplicationPackage to javafx.fxml;
     exports ApplicationPackage;
     opens ControllerPackage to javafx.fxml;

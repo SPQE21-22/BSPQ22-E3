@@ -1,6 +1,7 @@
-package ModelPackage;
+package ModelPackage1;
 
 
+import ModelPackage.Recipe;
 import org.databene.contiperf.Required;
 import org.databene.contiperf.PerfTest;
 import org.junit.*;

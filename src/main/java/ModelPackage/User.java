@@ -1,5 +1,6 @@
 package ModelPackage;
 
+import MongoConnector.MyConnector;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
@@ -31,6 +32,9 @@ public class User {
     //Constructors:
 
     public User(String username, String password) {
+        if (connector == null) {
+            connector = new MyConnector();
+        }
         this.username = username;
         this.password = password;
         valid = userVerification();
@@ -38,6 +42,9 @@ public class User {
 
 
     public void clear(User user){
+        if (connector == null) {
+            connector = new MyConnector();
+        }
         this.username = "";
         this.password = "";
     }
