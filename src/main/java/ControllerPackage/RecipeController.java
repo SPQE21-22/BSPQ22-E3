@@ -77,20 +77,11 @@ public class RecipeController implements Initializable {
         readyInMinutes_label.setText(String.valueOf(local_recipe.getReadyInMinutes()));
         likes_label.setText(String.valueOf(local_recipe.getlikes_count()));
 
-        String path = local_recipe.getImage();
-
-
-        //Image i = new Image(Objects.requireNonNull(getClass().getResourceAsStream("Images/001.jpg")));
-        //System.out.println(i.getHeight());
-        //myImageView.setImage(i);
-
-        // this.image_id = new ImageView(new Image(path));
-
-
-        // File file = new File(local_recipe.getImage());
-       /* Image image = new Image(local_recipe.getImage());
-        System.out.println(image);
-        image_id.setImage(image);*/
+        String id = local_recipe.getRecipe_id();
+        String path = "https://raw.githubusercontent.com/SPQE21-22/BSPQ22-E3/0ec5c83c84f256cd37ff817e3d1718d7c2027eb6/src/main/resources/Images/"+id+".jpg";
+        Image i = new Image(path);
+        System.out.println(i.getHeight());
+        myImageView.setImage(i);
     }
     /**
      * Button to go back to home
@@ -98,7 +89,7 @@ public class RecipeController implements Initializable {
     public void onBackButtonClick() throws IOException {
         switchToHome();
     }
-    public void onURLButtonClick() throws IOException, URISyntaxException {
+    public void onURLButtonClick() throws IOException {
         Runtime rt = Runtime.getRuntime();
         String url = local_recipe.getSourceURL();
         String os = System.getProperty("os.name");
@@ -125,7 +116,7 @@ public class RecipeController implements Initializable {
     public void switchToHome() throws IOException {
         window2.setTitle("Welcome Home, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Home.fxml"));
-        this.anchorPane = (AnchorPane)this.loader.load();
+        this.anchorPane = this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);
         window2.setScene(scene2);
         window2.show();
