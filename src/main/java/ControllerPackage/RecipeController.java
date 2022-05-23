@@ -144,7 +144,7 @@ public class RecipeController implements Initializable {
 
 
     public void switchToHome() throws IOException {
-        window2.setTitle("Welcome Home, "+local_user.getFirst_name());
+        window2.setTitle("🏠 Welcome Back, "+local_user.getFirst_name());
         this.loader.setLocation(Main.class.getResource("Home.fxml"));
         this.anchorPane = this.loader.load();
         Scene scene2 = new Scene(this.anchorPane);
